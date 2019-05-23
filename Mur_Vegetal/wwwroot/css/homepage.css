@@ -3,7 +3,6 @@ HOME PAGE
 --------------------------------------------------------------------------------------*/
 .frontpage-body{
   background-color:#333;
-  margin:10px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -11,7 +10,6 @@ HOME PAGE
     align-content: space-around;
     height: 100%;
     width: 100%;
-    padding: 20px;
   }
   
   .first-third{
@@ -19,6 +17,7 @@ HOME PAGE
   margin: 10px;
   padding: 10px;
   border-radius: 10px;
+  width: 33%;
   }
   
   .second-third{
@@ -26,6 +25,7 @@ HOME PAGE
     margin:10px;
     padding: 10px;
     border-radius : 10px;
+    width: 33%;
   }
   
   .third-third{
@@ -33,6 +33,7 @@ HOME PAGE
     margin:10px;
     padding: 10px;
     border-radius : 10px;
+    width: 33%;
   }
   
   .wall-box{
@@ -40,6 +41,9 @@ HOME PAGE
   margin:10px;/*haut-bas/gauche-droite*/
   padding:50px;
   border-radius : 10px;
+  }
+  .mur{
+  width: 100%;
   }
   
   .countdown-box{
