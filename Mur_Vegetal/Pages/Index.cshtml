@@ -5,17 +5,23 @@
 }
 @section heads{
   <link href="@Url.Content("~/css/homepage.css")" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="@Url.Content("~/js/countdown.js")"></script>
 }
 
 
 <div class="frontpage-body">
     <div class="first-third">
         <div class="wall-box">
-            WALL
+            <img class="mur" src="images/mur.jpg"  />
         </div>
         <div class="countdown-box">
-            COUNTDOWN  
+            <div id="countdown-display">
+            </div>
+            <script>
+                countDown("May 30 11:00:00 2019","countdown-display");
+            </script>
         </div>
+    
     </div>
 
     <div class="second-third">

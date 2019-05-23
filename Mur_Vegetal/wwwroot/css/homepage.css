@@ -2,37 +2,67 @@
 HOME PAGE  
 --------------------------------------------------------------------------------------*/
 .frontpage-body{
+  background-color:#333;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: stretch;
     align-content: space-around;
+    height: 100%;
+    width: 100%;
   }
   
   .first-third{
-  
+  background-color: rgb(85, 85, 85);
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  width: 33%;
   }
   
   .second-third{
-  
+    background-color: rgb(85, 85, 85);
+    margin:10px;
+    padding: 10px;
+    border-radius : 10px;
+    width: 33%;
   }
   
   .third-third{
-  
+    background-color: rgb(85, 85, 85);
+    margin:10px;
+    padding: 10px;
+    border-radius : 10px;
+    width: 33%;
   }
   
   .wall-box{
-  
+  background-color:rgb(100, 185, 79); 
+  margin:10px;/*haut-bas/gauche-droite*/
+  padding:50px;
+  border-radius : 10px;
+  }
+  .mur{
+  width: 100%;
   }
   
   .countdown-box{
-  
+  background-color:rgb(100, 185, 79);
+  margin:10px;
+  padding:50px;
+  border-radius : 10px;
   }
   
   .news-box{
-    
+  background-color: rgb(100, 185, 79);
+  margin:10px;
+  padding:50px;
+  border-radius: 10px;
   }
   
   .socialnetworks-box{
-  
+  background-color: rgb(100, 185, 79);
+  margin:10px;
+  padding:50px;
+  border-radius : 10px;
   }
