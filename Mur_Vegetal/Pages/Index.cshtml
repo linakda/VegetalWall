@@ -5,7 +5,7 @@
 }
 @section heads{
   <link href="@Url.Content("~/css/homepage.css")" rel="stylesheet" type="text/css" />
-  <script type="text/javascript" src="@Url.Content("~/js/site.js")"></script>
+  <script type="text/javascript" src="@Url.Content("~/js/countdown.js")"></script>
 }
 
 
@@ -14,7 +14,13 @@
         <div class="wall-box">
             WALL
         </div>
-        <div class="countdown-box"><script>compte_a_rebours();</script></script></div>
+        <div class="countdown-box">
+            <div id="countdown-display">
+            </div>
+            <script>
+                countDown("May 30 11:00:00 2019","countdown-display");
+            </script>
+        </div>
     
     </div>
 
