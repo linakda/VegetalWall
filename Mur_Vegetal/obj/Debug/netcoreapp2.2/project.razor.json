@@ -1,5 +1,5 @@
 {
-  "FilePath": "/Users/louisvivier/Documents/Scolarité/ISEN/CIR3/Projet Fin d'Année/GitHub/ProjDevLogi_WEB/Mur_Vegetal/Mur_Vegetal.csproj",
+  "FilePath": "c:\\Users\\vande\\OneDrive\\Documents\\PROJET\\ProjDevLogi_WEB\\Mur_Vegetal\\Mur_Vegetal.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-2.1",
     "LanguageVersion": "2.1",
@@ -2759,53 +2759,53 @@
   "RootNamespace": "Mur_Vegetal",
   "Documents": [
     {
-      "FilePath": "Pages/Admin.cshtml",
-      "TargetPath": "Admin.cshtml",
+      "FilePath": "Pages\\Index.cshtml",
+      "TargetPath": "Pages\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "Pages/Index.cshtml",
-      "TargetPath": "Index.cshtml",
+      "FilePath": "Pages\\_ViewImports.cshtml",
+      "TargetPath": "Pages\\_ViewImports.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "Pages/Socialnetworks.cshtml",
-      "TargetPath": "Socialnetworks.cshtml",
+      "FilePath": "Pages\\Medias.cshtml",
+      "TargetPath": "Pages\\Medias.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "Pages/_ViewStart.cshtml",
-      "TargetPath": "_ViewStart.cshtml",
+      "FilePath": "Pages\\Countdown.cshtml",
+      "TargetPath": "Pages\\Countdown.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "Pages/News.cshtml",
-      "TargetPath": "News.cshtml",
+      "FilePath": "Pages\\News.cshtml",
+      "TargetPath": "Pages\\News.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "Pages/Medias.cshtml",
-      "TargetPath": "Medias.cshtml",
+      "FilePath": "Pages\\Socialnetworks.cshtml",
+      "TargetPath": "Pages\\Socialnetworks.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "Pages/Shared/_Layout.cshtml",
-      "TargetPath": "_Layout.cshtml",
+      "FilePath": "Pages\\_ViewStart.cshtml",
+      "TargetPath": "Pages\\_ViewStart.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "Pages/Countdown.cshtml",
-      "TargetPath": "Countdown.cshtml",
+      "FilePath": "Pages\\Wall.cshtml",
+      "TargetPath": "Pages\\Wall.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "Pages/Wall.cshtml",
-      "TargetPath": "Wall.cshtml",
+      "FilePath": "Pages\\Admin.cshtml",
+      "TargetPath": "Pages\\Admin.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "Pages/_ViewImports.cshtml",
-      "TargetPath": "_ViewImports.cshtml",
+      "FilePath": "Pages\\Shared\\_Layout.cshtml",
+      "TargetPath": "Pages\\Shared\\_Layout.cshtml",
       "FileKind": "mvc"
     }
   ]

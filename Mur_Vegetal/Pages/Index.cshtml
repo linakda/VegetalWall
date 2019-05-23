@@ -5,6 +5,7 @@
 }
 @section heads{
   <link href="@Url.Content("~/css/homepage.css")" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="@Url.Content("~/js/site.js")"></script>
 }
 
 
@@ -13,9 +14,8 @@
         <div class="wall-box">
             WALL
         </div>
-        <div class="countdown-box">
-            COUNTDOWN  
-        </div>
+        <div class="countdown-box"><script>compte_a_rebours();</script></script></div>
+    
     </div>
 
     <div class="second-third">
