@@ -11,7 +11,12 @@ function countDown(userDefinedEventDate,id){ //Paramètre : date de fin et id de
     let hours = Math.floor((duration - (days * 60 * 60 * 24)) / (60 * 60)); //Calcul du nombre d'heures
     let minutes = Math.floor((duration - ((days * 60 * 60 * 24 + hours * 60 * 60))) / 60); //Calcul du nombre de minutes
     let secondes = Math.floor(duration - ((days * 60 * 60 * 24 + hours * 60 * 60 + minutes * 60))); //Calcul du nombre de secondes
-    
+
+    days = (days).toLocaleString('fr-FR', {minimumIntegerDigits: 2, useGrouping:false});
+    hours = (hours).toLocaleString('fr-FR', {minimumIntegerDigits: 2, useGrouping:false});
+    minutes = (minutes).toLocaleString('fr-FR', {minimumIntegerDigits: 2, useGrouping:false});
+    secondes = (secondes).toLocaleString('fr-FR', {minimumIntegerDigits: 2, useGrouping:false});
+
     let actualisation = setTimeout('countDown("'+userDefinedEventDate+'","'+id+'");', 1000);
 
     document.getElementById(id).innerHTML = days + 'J ' + hours  + 'H' + minutes + 'M' + secondes +'S';
