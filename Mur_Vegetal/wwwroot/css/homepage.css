@@ -3,66 +3,93 @@ HOME PAGE
 --------------------------------------------------------------------------------------*/
 .frontpage-body{
   background-color:#333;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: stretch;
-    align-content: space-around;
-    height: 100%;
-    width: 100%;
-  }
-  
-  .first-third{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-content: space-around;
+  height: 100%;
+  width: 100%;
+}
+
+.first-third{
   background-color: rgb(85, 85, 85);
   margin: 10px;
   padding: 10px;
   border-radius: 10px;
-  width: 33%;
-  }
-  
-  .second-third{
-    background-color: rgb(85, 85, 85);
-    margin:10px;
-    padding: 10px;
-    border-radius : 10px;
-    width: 33%;
-  }
-  
-  .third-third{
-    background-color: rgb(85, 85, 85);
-    margin:10px;
-    padding: 10px;
-    border-radius : 10px;
-    width: 33%;
-  }
-  
-  .wall-box{
+  width: 25%;
+  height: 70%;
+}
+
+.second-third{
+  background-color: rgb(85, 85, 85);
+  margin:10px;
+  padding: 10px;
+  border-radius : 10px;
+  width: 25%;
+}
+
+.third-third{
+  background-color: rgb(85, 85, 85);
+  margin:10px;
+  padding: 10px;
+  border-radius : 10px;
+  width: 25%;
+}
+
+
+/* -------------------------------------------
+Wall box  
+-------------------------------------------*/
+.wall-box{
   background-color:rgb(100, 185, 79); 
   margin:10px;/*haut-bas/gauche-droite*/
   padding:50px;
   border-radius : 10px;
-  }
-  .mur{
+}
+.mur{
   width: 100%;
-  }
-  
-  .countdown-box{
+}
+
+/* -------------------------------------------
+Countdown box  
+-------------------------------------------*/
+.countdown-box{
   background-color:rgb(100, 185, 79);
   margin:10px;
   padding:50px;
   border-radius : 10px;
-  }
-  
-  .news-box{
+  text-align: center;
+}
+
+
+/* -------------------------------------------
+News box  
+-------------------------------------------*/
+.news-box{
   background-color: rgb(100, 185, 79);
   margin:10px;
   padding:50px;
   border-radius: 10px;
-  }
-  
-  .socialnetworks-box{
+  height: auto;
+}
+
+.news-image img{
+  width: 100%;
+}
+
+.news-text{
+  font-family: 'Courier New';
+  text-align: center;
+}
+
+
+/* -------------------------------------------
+Social Networks box  
+-------------------------------------------*/
+.socialnetworks-box{
   background-color: rgb(100, 185, 79);
   margin:10px;
   padding:50px;
   border-radius : 10px;
-  }
+}
