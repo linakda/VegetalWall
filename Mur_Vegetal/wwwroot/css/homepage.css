@@ -6,10 +6,11 @@ HOME PAGE
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   align-content: space-around;
   height: 100%;
   width: 100%;
+  align-items: flex-start;
 }
 
 .first-third{
@@ -17,8 +18,8 @@ HOME PAGE
   margin: 10px;
   padding: 10px;
   border-radius: 10px;
-  width: 25%;
-  height: 70%;
+  max-width: 30%;
+  min-width: 300px;
 }
 
 .second-third{
@@ -26,7 +27,8 @@ HOME PAGE
   margin:10px;
   padding: 10px;
   border-radius : 10px;
-  width: 25%;
+  max-width: 30%;
+  min-width: 300px;
 }
 
 .third-third{
@@ -34,7 +36,8 @@ HOME PAGE
   margin:10px;
   padding: 10px;
   border-radius : 10px;
-  width: 25%;
+  max-width: 30%;
+  min-width: 300px;
 }
 
 
@@ -60,6 +63,13 @@ Countdown box
   padding:50px;
   border-radius : 10px;
   text-align: center;
+  text-transform: uppercase;
+  font-family: Raleway-Bold, sans-serif;
+  font-size: 100%;
+}
+
+.countdown-text{
+  font-size: 100%;
 }
 
 
@@ -79,7 +89,6 @@ News box
 }
 
 .news-text{
-  font-family: 'Courier New';
   text-align: center;
 }
 
