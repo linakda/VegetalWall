@@ -1,13 +1,35 @@
 ﻿/* --------------------------------------------------------------------------------------
 LAYOUT  
 --------------------------------------------------------------------------------------*/
+@font-face{
+  font-family: 'Raleway-Bold'; 
+  src: url('/fonts/Raleway/Raleway-Bold.ttf'); 
+}
+@font-face{
+  font-family: 'Raleway-Black'; 
+  src: url('/fonts/Raleway/Raleway-Black.ttf'); 
+}
+@font-face{
+  font-family: 'Raleway-Light'; 
+  src: url('/fonts/Raleway/Raleway-Light.ttf'); 
+}
+@font-face{
+  font-family: 'Raleway-Regular'; 
+  src: url('/fonts/Raleway/Raleway-Regular.ttf'); 
+}
+@font-face{
+  font-family: 'Raleway-SemiBold'; 
+  src: url('/fonts/Raleway/Raleway-SemiBold.ttf'); 
+}
+
 html {
 }
 body {
   height: 100vh;
   margin: 0;
   padding:0;
-  background-color: rgb(100, 185, 79); 
+  background-color: rgb(100, 185, 79);
+  font-family: Raleway-Regular, sans-serif;
 }
 
 
@@ -21,6 +43,9 @@ body {
   background-color: #333;
   overflow: hidden;
   height: 30px;
+  font-family: Raleway-Bold, sans-serif;
+  text-transform: uppercase;
+  font-size: 90%
 }
 .navbar a {
   float: left;
