@@ -1,3 +1,26 @@
 /* --------------------------------------------------------------------------------------
 NEWS PAGE  
 --------------------------------------------------------------------------------------*/
+.newspage-body{
+    background-color: goldenrod;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: stretch;
+    align-content: space-around;
+    height: 100%;
+    width: 100%;
+}
+
+.news-block{
+    background-color: magenta;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    width: 25%;
+    text-align: center;
+}
+
+.news-image img{
+    width: 100%;
+}
