@@ -5,13 +5,19 @@
 }
 @section heads{
   <link href="@Url.Content("~/css/countdownpage.css")" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="@Url.Content("~/js/countdown.js")"></script>
 }
 
-
 <div class="countdownpage-body">
-    COUNTDOWN
+
+<div class="countdownpage-block">
+    <div class="countdownpage-text">
+      <h1>Journée portes ouvertes</h1>
+    </div>
+    <div id="countdown-display">
+    </div>
+    <script> countDown("May 30 11:00:00 2019","countdown-display");
+    </script> 
 </div>
 
-
-    
-
+</div>
