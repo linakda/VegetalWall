@@ -9,7 +9,9 @@
 </head>
 <body>
     <header>
-         <div class="navbar">
+         
+    </header>
+    <div class="navbar">
             <a asp-page="/Index">Accueil</a>
             <a asp-page="/Wall">Mur Vegetal</a>
             <a asp-page="/News">Informations</a>
@@ -17,9 +19,7 @@
             <a asp-page="/Countdown">Compte à rebours</a>
             <a asp-page="/Socialnetworks">Réseaux Sociaux</a>
             <a style="float:right" asp-page="/Admin">Admin</a>
-        </div>
-    </header>
-
+    </div>
     <div class="main-body">
         <main role="main">
             @RenderBody()
