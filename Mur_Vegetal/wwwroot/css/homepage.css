@@ -15,7 +15,7 @@ HOME PAGE
 
 .first-third{
   background-color: rgb(85, 85, 85);
-  margin: 10px;
+  margin: 40px;
   padding: 10px;
   border-radius: 10px;
   max-width: 30%;
@@ -50,9 +50,16 @@ Wall box
   padding:50px;
   border-radius : 10px;
 }
-.mur{
-  width: 100%;
+.wall-icon img{
+  width: 50%;
 }
+.wall-info{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-flow: row wrap;
+}
+
 
 /* -------------------------------------------
 Countdown box  
