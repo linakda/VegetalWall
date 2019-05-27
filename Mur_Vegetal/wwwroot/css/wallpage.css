@@ -21,13 +21,22 @@ WALL PAGE
     padding: 10px;
     flex: 1 100%;
   }
-  /*.prout{
+  .wall-block{
     display : flex;
-    flex-flow: row-reverse nowrap;
-  }*/
+    flex-flow: column wrap;
+  }
 
   .wallpage-body{
-    background: url("images/murvege.jpg");
+  
+    background-color: #333;
+    display: flex;
+    flex-flow: row wrap;
+    height: 100%;
+    width: 100%;
+    margin: 10px;
+    overflow: auto;
+    align-items: flex-start;
+    justify-content: flex-start;
   }
   .header {
     background: rgb(1, 99, 53);
@@ -44,38 +53,98 @@ WALL PAGE
   
   .aside-1 {
     background: linear-gradient(rgba(0, 255, 98, 0.5), rgba(255, 0, 0, 0.5));
-    -moz-border-radius:10px 10px;
-    -webkit-border-radius:10px 10px;
-    border-radius:50px 50px;
-    width: 40%;
+    max-width: 25%;
+    min-width: 300px;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 5px;
 
   }
   
   .aside-2 {
-    background: rgb(58, 216, 208);
-    -moz-border-radius: 5px 5px;
-    -webkit-border-radius:5px 5px;
-    border-radius:50px 50px;
-    width: 40%
-    
+    background-color: rgb(85, 85, 85);
+    max-width: 25%;
+    min-width: 300px;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 5px;
+}
+
+.aside-3 {
+  background-color: rgb(85, 85, 85);
+    max-width: 25%;
+    min-width: 300px;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 5px;
+ 
 }
   
-/*@media all and (min-width: 60px) {
+/* @media all and (min-width: 60px) {
   .aside { flex: 1 0 0; }
-}*/
+}
 
   @media all and (min-width: 800px) {
     .main    { flex: 100px; }
     .aside-1 { order: 1; } 
     .main    { order: 2; }
     .aside-2 { order: 3; }
-    .footer  { order: 4; }
-  }
+    .aside-3 { order: 4; }
+    .footer  { order: 5; }
+  } */
   
-  img {
-      height: 70%;
-      width: 70%;
-  }
+  img{
+    background-color: rgb(100, 185, 79);
+    padding:5px;
+    width: 95%;
+    height: 95%;
+    border-radius : 10px;
+    flex-shrink: 0;
+}
+
+
+.wallpage-body{
+    background-color: #333;
+    display: flex;
+    flex-flow: row wrap;
+    height: 100%;
+    width: 100%;
+    margin: 10px;
+    overflow: auto;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.wall-block{
+    background-color: rgb(85, 85, 85);
+    max-width: 25%;
+    min-width: 300px;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 5px;
+}
+
+.wall-image img{
+    background-color: rgb(100, 185, 79);
+    padding:5px;
+    width: 95%;
+    height: 95%;
+    border-radius : 10px;
+    flex-shrink: 0;
+}
+
+.wall-text{
+    background-color: rgb(100, 185, 79);
+    overflow-wrap: normal;
+    align-content: center;
+    padding: 5px;
+    border-radius : 10px;
+}
+
 
 
 
