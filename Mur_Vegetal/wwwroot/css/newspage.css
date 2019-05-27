@@ -2,25 +2,29 @@
 NEWS PAGE  
 --------------------------------------------------------------------------------------*/
 .newspage-body{
-    background-color: #333;
-    display: flex;
-    flex-flow: row wrap;
-    height: 100%;
+    background-color:rgb(53, 50, 50);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, auto));
+    padding: 10px;
     width: 100%;
-    margin: 10px;
+    height: 100%;
+    justify-content: space-around;
+    align-content: start;
+    grid-gap: 50px 100px;
     overflow: auto;
-    align-items: flex-start;
-    justify-content: flex-start;
+    
 }
+
 
 .news-block{
     background-color: rgb(85, 85, 85);
-    max-width: 25%;
+    /*max-width: 25%;*/
     min-width: 300px;
     text-align: center;
     padding: 10px;
     border-radius: 10px;
     margin: 5px;
+    justify-self: center;
 }
 
 .news-image img{
