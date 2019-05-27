@@ -1,3 +1,82 @@
 /* --------------------------------------------------------------------------------------
 WALL PAGE  
 --------------------------------------------------------------------------------------*/
+.wrapper {
+    display: flex;  
+    flex-flow: column wrap;
+    font-weight: bold;
+    text-align: center;
+  }
+  .wrapper > * {
+    padding: 10px;
+    flex: 1 100%;
+  }
+.wrapper {
+    display: flex;  
+    flex-flow: column wrap;
+    font-weight: bold;
+    text-align: center;
+  }
+  .wrapper > * {
+    padding: 10px;
+    flex: 1 100%;
+  }
+  /*.prout{
+    display : flex;
+    flex-flow: row-reverse nowrap;
+  }*/
+
+  .wallpage-body{
+    background: url("images/murvege.jpg");
+  }
+  .header {
+    background: rgb(1, 99, 53);
+  }
+  
+  .footer {
+    background: rgb(241, 239, 237);
+  }
+  
+  .main {
+    text-align: left;
+    background: rgb(235, 237, 238);
+  }
+  
+  .aside-1 {
+    background: linear-gradient(rgba(0, 255, 98, 0.5), rgba(255, 0, 0, 0.5));
+    -moz-border-radius:10px 10px;
+    -webkit-border-radius:10px 10px;
+    border-radius:50px 50px;
+    width: 40%;
+
+  }
+  
+  .aside-2 {
+    background: rgb(58, 216, 208);
+    -moz-border-radius: 5px 5px;
+    -webkit-border-radius:5px 5px;
+    border-radius:50px 50px;
+    width: 40%
+    
+}
+  
+/*@media all and (min-width: 60px) {
+  .aside { flex: 1 0 0; }
+}*/
+
+  @media all and (min-width: 800px) {
+    .main    { flex: 100px; }
+    .aside-1 { order: 1; } 
+    .main    { order: 2; }
+    .aside-2 { order: 3; }
+    .footer  { order: 4; }
+  }
+  
+  img {
+      height: 70%;
+      width: 70%;
+  }
+
+
+
+
