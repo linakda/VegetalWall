@@ -3,18 +3,62 @@ ADMIN PAGE
 --------------------------------------------------------------------------------------*/
 
 .adminpage-body{
-    background-color: rgb(255, 255, 255);
     display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
+    flex-direction: row;
     align-items: center;
-    align-content: center;
-    height: 100%;
+    justify-content: center;
     width: 100%;
+    height: 100%;
+    background-color:#333;
+    
 }
 
-.login-block{
-    background-color: rgb(255, 0, 0);
+.passblock{
+    background-color: rgb(85, 85, 85);
+    margin: 40px;   
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 30%;
+    min-width: 300px;
+}
+
+.pass{
+    background-color:rgb(100, 185, 79);
+    margin:10px;
+    padding:50px;
+    border-radius : 10px;
     text-align: center;
-
+    font-family: Raleway-Bold, sans-serif;
+    font-size: 100%;
+  }
+  
+  .connexion{
+    margin:10px;
+    border-radius : 10px;
+    text-align: right;
+    font-family: Raleway-Bold, sans-serif;
+  }
+  input[type="password"] {
+    background: white;
+    border: 2px solid rgb(85, 85, 85);
+    border-radius : 5px;
+    outline: none;
 }
+
+   
+  .mdp{
+    margin:20px;
+  }
+
+  .bouton{
+    background-color: rgb(100, 185, 79);
+    border: 2px solid #333;
+    border-radius : 5px;
+    
+    font-family: Raleway-Bold, sans-serif;
+  }
+  .bouton:hover {
+    background-color: #333; /* Green */
+    border: 2px solid rgb(100, 185, 79);
+    color: white;
+  }
