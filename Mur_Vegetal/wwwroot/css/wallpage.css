@@ -1,5 +1,5 @@
 /* --------------------------------------------------------------------------------------
-NEWS PAGE  
+WALL PAGE
 --------------------------------------------------------------------------------------*/
 .wallpage-body{
   background-color:rgb(53, 50, 50);
@@ -15,17 +15,35 @@ NEWS PAGE
   
 }
 
-
 .wall-block{
-  background-color: rgb(85, 85, 85);
-  /*max-width: 25%;*/
+  background-color: rgb(53, 50, 50);
   min-width: 300px;
   text-align: center;
   padding: 10px;
   border-radius: 10px;
   margin: 5px;
   justify-self: center;
+  color: aliceblue;
 }
+
+
+/* --------------------------------------------------------------------------------------
+WALL INFO
+--------------------------------------------------------------------------------------*/
+
+.wall-info{
+  display: flex;
+  align-items: center;
+  flex-flow: row wrap;
+}
+
+.wall-info img{
+  width: 50%;
+}
+
+/* --------------------------------------------------------------------------------------
+WALL GRAPH
+--------------------------------------------------------------------------------------*/
 
 .wall-graph img{
   background-color: rgb(100, 185, 79);
@@ -33,7 +51,6 @@ NEWS PAGE
   width: 95%;
   height: 95%;
   border-radius : 10px;
-  flex-shrink: 0;
 }
 
 
