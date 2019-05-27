@@ -1,151 +1,39 @@
 /* --------------------------------------------------------------------------------------
-WALL PAGE  
+NEWS PAGE  
 --------------------------------------------------------------------------------------*/
-.wrapper {
-    display: flex;  
-    flex-flow: column wrap;
-    font-weight: bold;
-    text-align: center;
-  }
-  .wrapper > * {
-    padding: 10px;
-    flex: 1 100%;
-  }
-.wrapper {
-    display: flex;  
-    flex-flow: column wrap;
-    font-weight: bold;
-    text-align: center;
-  }
-  .wrapper > * {
-    padding: 10px;
-    flex: 1 100%;
-  }
-  .wall-block{
-    display : flex;
-    flex-flow: column wrap;
-  }
-
-  .wallpage-body{
-  
-    background-color: #333;
-    display: flex;
-    flex-flow: row wrap;
-    height: 100%;
-    width: 100%;
-    margin: 10px;
-    overflow: auto;
-    align-items: flex-start;
-    justify-content: flex-start;
-  }
-  .header {
-    background: rgb(1, 99, 53);
-  }
-  
-  .footer {
-    background: rgb(241, 239, 237);
-  }
-  
-  .main {
-    text-align: left;
-    background: rgb(235, 237, 238);
-  }
-  
-  .aside-1 {
-    background: linear-gradient(rgba(0, 255, 98, 0.5), rgba(255, 0, 0, 0.5));
-    max-width: 25%;
-    min-width: 300px;
-    text-align: center;
-    padding: 10px;
-    border-radius: 10px;
-    margin: 5px;
-
-  }
-  
-  .aside-2 {
-    background-color: rgb(85, 85, 85);
-    max-width: 25%;
-    min-width: 300px;
-    text-align: center;
-    padding: 10px;
-    border-radius: 10px;
-    margin: 5px;
-}
-
-.aside-3 {
-  background-color: rgb(85, 85, 85);
-    max-width: 25%;
-    min-width: 300px;
-    text-align: center;
-    padding: 10px;
-    border-radius: 10px;
-    margin: 5px;
- 
-}
-  
-/* @media all and (min-width: 60px) {
-  .aside { flex: 1 0 0; }
-}
-
-  @media all and (min-width: 800px) {
-    .main    { flex: 100px; }
-    .aside-1 { order: 1; } 
-    .main    { order: 2; }
-    .aside-2 { order: 3; }
-    .aside-3 { order: 4; }
-    .footer  { order: 5; }
-  } */
-  
-  img{
-    background-color: rgb(100, 185, 79);
-    padding:5px;
-    width: 95%;
-    height: 95%;
-    border-radius : 10px;
-    flex-shrink: 0;
-}
-
-
 .wallpage-body{
-    background-color: #333;
-    display: flex;
-    flex-flow: row wrap;
-    height: 100%;
-    width: 100%;
-    margin: 10px;
-    overflow: auto;
-    align-items: flex-start;
-    justify-content: flex-start;
+  background-color:rgb(53, 50, 50);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, auto));
+  padding: 10px;
+  width: 100%;
+  height: 100%;
+  justify-content: space-around;
+  align-content: start;
+  grid-gap: 50px 100px;
+  overflow: auto;
+  
 }
+
 
 .wall-block{
-    background-color: rgb(85, 85, 85);
-    max-width: 25%;
-    min-width: 300px;
-    text-align: center;
-    padding: 10px;
-    border-radius: 10px;
-    margin: 5px;
+  background-color: rgb(85, 85, 85);
+  /*max-width: 25%;*/
+  min-width: 300px;
+  text-align: center;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 5px;
+  justify-self: center;
 }
 
-.wall-image img{
-    background-color: rgb(100, 185, 79);
-    padding:5px;
-    width: 95%;
-    height: 95%;
-    border-radius : 10px;
-    flex-shrink: 0;
+.wall-graph img{
+  background-color: rgb(100, 185, 79);
+  padding:5px;
+  width: 95%;
+  height: 95%;
+  border-radius : 10px;
+  flex-shrink: 0;
 }
-
-.wall-text{
-    background-color: rgb(100, 185, 79);
-    overflow-wrap: normal;
-    align-content: center;
-    padding: 5px;
-    border-radius : 10px;
-}
-
-
-
 
 
