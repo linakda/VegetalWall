@@ -1,7 +1,7 @@
 /* --------------------------------------------------------------------------------------
 HOME PAGE  
 --------------------------------------------------------------------------------------*/
-.frontpage-body{
+.home-body{
   background-color:rgb(53, 50, 50);
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, auto));
@@ -13,6 +13,8 @@ HOME PAGE
   grid-gap: 50px 100px;
   overflow: auto;
 }
+
+
 
 a {
   text-decoration:none;
@@ -33,12 +35,11 @@ Wall box
   border-radius: 10px;
   margin: 5px;
   justify-self: center;
-}
-.frontpage-body:first-of-type>div:nth-child(1){
   border-width:4px;
   border-style:dotted;
   border-color:rgb(100, 185, 79);
 }
+
 
 
 .wall-icon img{
