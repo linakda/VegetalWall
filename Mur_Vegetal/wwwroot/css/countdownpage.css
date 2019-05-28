@@ -2,7 +2,7 @@
 COUNTDOWN PAGE  
 --------------------------------------------------------------------------------------*/
 
-.countdownpage-body{
+.countdown-body{
   display: flex;
   flex-direction: row;
   align-items: center;
