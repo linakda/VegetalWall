@@ -28,11 +28,3 @@ COUNTDOWN PAGE
 .countdownpage-image img{
   width: 100%;
 }
-
-.countdownpage-text{
-  background-color: rgb(255, 255, 255);
-  overflow-wrap: normal;
-  align-content: center;
-  padding: 5px;
-  border-radius : 10px;
-}
