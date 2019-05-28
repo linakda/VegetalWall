@@ -1,52 +1,34 @@
 /* --------------------------------------------------------------------------------------
 WALL PAGE
 --------------------------------------------------------------------------------------*/
-.wallpage-body{
+.wall-body{
+  width: 100%;
+  height: 100%;
+  overflow: auto;
   background-color:rgb(53, 50, 50);
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, auto));
-  padding: 10px;
-  width: 100%;
-  height: 100%;
-  justify-content: space-around;
-  align-content: start;
   grid-gap: 50px 100px;
-  overflow: auto;
-  
+  grid-auto-flow: row;
+  align-content: start;
+  justify-content: space-around;
+  padding: 10px;
 }
 
 .wall-block{
-  background-color: rgb(53, 50, 50);
   min-width: 300px;
-  text-align: center;
   padding: 10px;
   border-radius: 10px;
   margin: 5px;
+  background-color: rgb(53, 50, 50);
   justify-self: center;
+  align-self: flex-start;
+  text-align: center;
 }
 
-/* --------------------------------------------------------------------------------------
-WALL INFO
---------------------------------------------------------------------------------------*/
-
-.wall-info{
-  display: flex;
-  align-items: center;
-  flex-flow: row wrap;
-}
-
-.wall-info img{
+.wall-block img{
   width: 50%;
 }
-
-
-.wallpage-body:first-of-type>div:nth-child(1){
-  border-width:4px;
-  border-style:dotted;
-  border-color:rgb(100, 185, 79);
-  grid-row: auto;
-}
-
 
 .wall-text{
   color : aliceblue;
@@ -56,17 +38,23 @@ WALL INFO
   color : rgb(100, 185, 79);
 }
 
+.wall-info{
+  display: flex;
+  align-items: center;
+  flex-flow: row wrap;
+}
 
-/* --------------------------------------------------------------------------------------
-WALL GRAPH
---------------------------------------------------------------------------------------*/
-
-.wall-graph img{
-  background-color: rgb(100, 185, 79);
-  padding:5px;
-  width: 95%;
-  height: 95%;
-  border-radius : 10px;
+.wall-body:first-of-type>div:nth-child(1){
+  border-width: 4px;
+  border-style: solid;
+  border-color : rgb(100, 185, 79);
 }
 
 
+.wall-graph img{
+  background-color: rgb(100, 185, 79);
+  padding: 5px;
+  width: 95%;
+  height: 95%;
+  border-radius: 10px;
+}
