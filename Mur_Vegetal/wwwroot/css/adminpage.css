@@ -2,7 +2,7 @@
 ADMIN PAGE  
 --------------------------------------------------------------------------------------*/
 
-.adminpage-body{
+.admin-body{
     display: flex;
     flex-direction: row;
     align-items: center;
