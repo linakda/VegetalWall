@@ -25,14 +25,6 @@ WALL PAGE
   justify-self: center;
 }
 
-
-.wallpage-body:first-of-type>div:nth-child(1){
-  border-width:4px;
-  border-style:dotted;
-  border-color:rgb(100, 185, 79);
-  color : aliceblue;
-}
-
 /* --------------------------------------------------------------------------------------
 WALL INFO
 --------------------------------------------------------------------------------------*/
@@ -46,6 +38,24 @@ WALL INFO
 .wall-info img{
   width: 50%;
 }
+
+
+.wallpage-body:first-of-type>div:nth-child(1){
+  border-width:4px;
+  border-style:dotted;
+  border-color:rgb(100, 185, 79);
+  grid-row: auto;
+}
+
+
+.wall-text{
+  color : aliceblue;
+}
+
+.wall-text:hover{
+  color : rgb(100, 185, 79);
+}
+
 
 /* --------------------------------------------------------------------------------------
 WALL GRAPH
