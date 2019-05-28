@@ -19,7 +19,6 @@ COUNTDOWN PAGE
   padding: 10px;
   border-radius: 10px;
   width: 80%;
-  min-width: 400px;
   height: auto;
 }
 
@@ -30,5 +29,5 @@ COUNTDOWN PAGE
   border-radius : 10px;
   text-align: center;
   font-family: Raleway-Bold, sans-serif;
-  font-size: 3em;
+  font-size: 9vw;
 }
