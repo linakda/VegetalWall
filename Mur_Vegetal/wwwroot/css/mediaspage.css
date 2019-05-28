@@ -68,3 +68,7 @@ MEDIAS PAGE
 {
     background-color: rgb(176, 255, 102);
 }
+
+video{
+    outline: none;
+  }
