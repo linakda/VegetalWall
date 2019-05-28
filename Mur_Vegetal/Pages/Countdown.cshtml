@@ -1,5 +1,5 @@
 @page
-@model IndexModel
+@model CountdownModel
 @{
     ViewData["Title"] = "Compte à rebours";
 }
@@ -9,15 +9,14 @@
 }
 
 <div class="countdownpage-body">
-
-<div class="countdownpage-block">
-    <div class="countdownpage-text">
-      <h1>Journée portes ouvertes</h1>
+  <div class="countdown-block">
+        <div class="countdown-text">
+            Journée Porte Ouverte
+            <div id="countdown-display">
+            </div>
+            <script>
+                countDown("May 30 11:00:00 2019","countdown-display");
+            </script>
+        </div>
     </div>
-    <div id="countdown-display">
-    </div>
-    <script> countDown("May 30 11:00:00 2019","countdown-display");
-    </script> 
-</div>
-
 </div>
