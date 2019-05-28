@@ -23,9 +23,15 @@ WALL PAGE
   border-radius: 10px;
   margin: 5px;
   justify-self: center;
-  color: aliceblue;
 }
 
+
+.wallpage-body:first-of-type>div:nth-child(1){
+  border-width:4px;
+  border-style:dotted;
+  border-color:rgb(100, 185, 79);
+  color : aliceblue;
+}
 
 /* --------------------------------------------------------------------------------------
 WALL INFO
