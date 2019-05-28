@@ -16,7 +16,6 @@ MEDIAS PAGE
 
 .medias-block{
     background-color: rgb(53, 50, 50);
-    /*max-width: 25%;*/
     min-width: 300px;
     text-align: center;
     padding: 10px;
@@ -44,18 +43,18 @@ a /* Liens par défaut (non survolés) */
    font-style: italic;
 }
 
-a:hover /* Apparence au survol des liens */
+a:hover /* Au survol des liens */
 {
    text-decoration: underline;
    color:blue;
 }
 
-a:active /* Quand le visiteur clique sur le lien */
+a:active /* Quand clique sur le lien */
 {
     background-color: #FFCC66;
 }
 
-a:focus /* Quand le visiteur sélectionne le lien */
+a:focus /* Quand sélectionne le lien */
 {
     background-color: rgb(176, 255, 102);
 }
