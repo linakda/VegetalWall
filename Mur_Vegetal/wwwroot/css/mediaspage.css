@@ -36,25 +36,25 @@ MEDIAS PAGE
     flex-shrink: 0;
 }
 
-a /* Liens par défaut (non survolés) */
+.mediaspage-body a /* Liens par défaut (non survolés) */
 {
    text-decoration: none;
    color:rgb(0, 9, 128);
    font-style: italic;
 }
 
-a:hover /* Au survol des liens */
+.mediaspage-body a:hover /* Au survol des liens */
 {
    text-decoration: underline;
    color:blue;
 }
 
-a:active /* Quand clique sur le lien */
+.mediaspage-body a:active /* Quand clique sur le lien */
 {
     background-color: #FFCC66;
 }
 
-a:focus /* Quand sélectionne le lien */
+.mediaspage-body a:focus /* Quand sélectionne le lien */
 {
     background-color: rgb(176, 255, 102);
 }
