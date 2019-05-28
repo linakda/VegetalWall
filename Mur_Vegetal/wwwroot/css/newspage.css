@@ -1,7 +1,7 @@
 /* --------------------------------------------------------------------------------------
 NEWS PAGE  
 --------------------------------------------------------------------------------------*/
-.newspage-body{
+.news-body{
     background-color:rgb(53, 50, 50);
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, auto));
