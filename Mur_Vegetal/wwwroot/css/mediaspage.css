@@ -36,6 +36,16 @@ MEDIAS PAGE
     flex-shrink: 0;
 }
 
+.medias-video video{
+    width: 100%;
+    background-color: rgb(100, 185, 79);
+    padding:5px;
+    width: 95%;
+    height: 95%;
+    border-radius : 10px;
+    flex-shrink: 0;
+}
+
 .mediaspage-body a /* Liens par défaut (non survolés) */
 {
    text-decoration: none;
