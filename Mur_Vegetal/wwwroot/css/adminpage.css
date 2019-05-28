@@ -45,6 +45,9 @@ ADMIN PAGE
     outline: none;
 }
 
+  .password{
+    text-align: center;
+  }
    
   .mdp{
     margin:20px;
