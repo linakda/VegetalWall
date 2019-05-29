@@ -4,7 +4,6 @@ WALL PAGE
 .wall-body{
   width: 100%;
   height: 100%;
-  overflow: auto;
   background-color:rgb(53, 50, 50);
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, auto));
@@ -17,25 +16,27 @@ WALL PAGE
 
 .wall-block{
   min-width: 300px;
-  padding: 10px;
   border-radius: 10px;
   margin: 5px;
   background-color: rgb(53, 50, 50);
   justify-self: center;
   align-self: flex-start;
   text-align: center;
-}
-
-.wall-block img{
-  width: 50%;
+  border-width: 4px;
+  border-style: solid;
+  border-color : rgb(100, 185, 79);
 }
 
 .wall-text{
   color : aliceblue;
 }
 
-.wall-text:hover{
-  color : rgb(100, 185, 79);
+/***************************************************************************************
+WALL IMAGE
+****************************************************************************************/
+
+.wall-block img{
+  width: 50%;
 }
 
 .wall-info{
@@ -44,17 +45,7 @@ WALL PAGE
   flex-flow: row wrap;
 }
 
-.wall-body:first-of-type>div:nth-child(1){
-  border-width: 4px;
-  border-style: solid;
-  border-color : rgb(100, 185, 79);
-}
-
-
 .wall-graph img{
-  background-color: rgb(100, 185, 79);
-  padding: 5px;
-  width: 95%;
-  height: 95%;
-  border-radius: 10px;
+  width: 100%;
+  height: 100%;
 }

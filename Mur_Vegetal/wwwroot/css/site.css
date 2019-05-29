@@ -35,6 +35,7 @@ body {
 
 .main-body{
   display: flex;
+  overflow: auto;
   height: calc(100% - 30px);
 }
 
