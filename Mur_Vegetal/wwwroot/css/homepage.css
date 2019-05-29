@@ -64,27 +64,28 @@ Wall box
 News box  
 -------------------------------------------*/
 .news-box{
-  background-color: rgb(53, 50, 50);
   min-width: 300px;
-  text-align: center;
-  padding: 10px;
   border-radius: 10px;
   margin: 5px;
-  justify-self: center; 
+  background-color: rgb(53, 50, 50);
+  display: flex;
+  flex-direction: column ;
+  align-items: center;
+  text-align: center;
 }
 
 .news-image img{
   background-color: rgb(100, 185, 79);
   padding:5px;
-  border-radius : 10px;
   width: 70%;
-	height: auto;
+  height: auto;
+  border-radius : 10px;
 }
 
 .news-text{
+  width: 50%;
   background-color: rgb(100, 185, 79);
   overflow-wrap: normal;
-  align-content: center;
   padding: 5px;
   border-radius : 10px;
 }
