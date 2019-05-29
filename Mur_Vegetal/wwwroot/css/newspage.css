@@ -2,17 +2,17 @@
 NEWS PAGE  
 --------------------------------------------------------------------------------------*/
 .news-body{
+    width: 100%;
+    height: auto;
     background-color:rgb(53, 50, 50);
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, auto));
-    padding: 10px;
-    width: 100%;
-    height: 100%;
-    justify-content: space-around;
-    align-content: start;
     grid-gap: 50px 100px;
-    overflow: auto;
-    
+    grid-auto-flow: row;
+    align-content: start;
+    justify-content: space-around;
+    padding: 10px;
+    overflow: inherit;
 }
 
 
