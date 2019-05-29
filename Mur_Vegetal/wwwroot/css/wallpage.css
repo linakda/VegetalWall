@@ -3,7 +3,7 @@ WALL PAGE
 --------------------------------------------------------------------------------------*/
 .wall-body{
   width: 100%;
-  height: auto;
+  height: 100%;
   background-color:rgb(53, 50, 50);
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, auto));
@@ -12,7 +12,6 @@ WALL PAGE
   align-content: start;
   justify-content: space-around;
   padding: 10px;
-  overflow: inherit;
 }
 
 .wall-block{
@@ -36,8 +35,7 @@ WALL PAGE
 WALL IMAGE
 ****************************************************************************************/
 
-.wall-icon img{
-  margin-top: 2px;
+.wall-block img{
   width: 50%;
 }
 
@@ -49,6 +47,5 @@ WALL IMAGE
 
 .wall-graph img{
   width: 100%;
-  vertical-align: middle;
-  border-radius: 5px;
+  height: 100%;
 }
