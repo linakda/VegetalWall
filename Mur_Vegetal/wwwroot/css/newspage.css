@@ -15,7 +15,7 @@ NEWS PAGE
     overflow: inherit;
     }
     
-    .news-block{
+.news-block{
     background-color: rgb(53, 50, 50);
     /*max-width: 25%;*/
     min-width: 300px;
@@ -24,23 +24,22 @@ NEWS PAGE
     border-radius: 10px;
     margin: 5px;
     justify-self: center;
-    }
+}
     
-    .news-image img{
+.news-image img{
     background-color: rgb(100, 185, 79);
     padding:5px;
     width: 95%;
     height: 95%;
     border-radius : 10px;
-    flex-shrink: 0;
-    }
+}
     
-    .news-text{
+.news-text{
     background-color: rgb(100, 185, 79);
     overflow-wrap: normal;
     align-content: center;
     padding: 5px;
     border-radius : 10px;
-    }
+}
     
     
