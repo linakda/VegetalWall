@@ -41,7 +41,7 @@ body {
 
 /* navbar */
 .navbar {
-  background-color: #333;
+  background-color: rgb(85, 85, 85);
   overflow: hidden;
   height: 30px;
   font-family: Raleway-Bold, sans-serif;
