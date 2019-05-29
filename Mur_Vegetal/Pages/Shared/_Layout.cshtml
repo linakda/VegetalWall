@@ -8,16 +8,16 @@
     @RenderSection("heads", required: false)
 </head>
 <body>
-    <div class="navbar">
-            <a asp-page="/Index">Accueil</a>
-            <a asp-page="/Wall">Mur Vegetal</a>
-            <a asp-page="/News">Informations</a>
-            <a asp-page="/Medias">Photos/Vidéos</a>
-            <a asp-page="/Countdown">Compte à rebours</a>
-            <a asp-page="/Socialnetworks">Réseaux Sociaux</a>
-            <a asp-page="/About">À Propos</a>
-            <a style="float:right" asp-page="/Admin">Admin</a>
-    </div>
+  <ul class="topnav">
+        <li><a asp-page="/Index">Accueil</a></li>
+        <li><a asp-page="/Wall">Mur Vegetal</a></li>
+        <li><a asp-page="/News">Informations</a></li>
+        <li><a asp-page="/Medias">Photos/Vidéos</a></li>
+        <li><a asp-page="/Countdown">Compte à rebours</a></li>
+        <li><a asp-page="/Socialnetworks">Réseaux Sociaux</a></li>
+        <li><a asp-page="/About">À Propos</a></li>
+        <li class="right"><a  asp-page="/Admin">Admin</a></li>
+</ul>
     <div class="main-body">
         @RenderBody()
     </div>
