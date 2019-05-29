@@ -2,7 +2,6 @@
 MEDIAS PAGE 
 --------------------------------------------------------------------------------------*/
 .mediaspage-body{
-    background-color: rgb(53, 50, 50);
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(450px, auto));
     padding: 10px;
