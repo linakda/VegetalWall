@@ -15,8 +15,6 @@ HOME PAGE
   overflow: inherit;
 }
 
-
-
 a {
   text-decoration:none;
   color:rgb(53, 50, 50);
@@ -40,8 +38,6 @@ Wall box
   border-style: solid;
   border-color : rgb(100, 185, 79);
 }
-
-
 
 .wall-icon img{
   margin-top: 5px;
@@ -68,14 +64,13 @@ Wall box
 News box  
 -------------------------------------------*/
 .news-box{
-  background-color: rgb(85, 85, 85);
-  /*max-width: 25%;*/
+  background-color: rgb(53, 50, 50);
   min-width: 300px;
   text-align: center;
   padding: 10px;
   border-radius: 10px;
   margin: 5px;
-  justify-self: center;
+  justify-self: center; 
 }
 
 .news-image img{
@@ -100,21 +95,24 @@ News box
 Social Networks box  
 -------------------------------------------*/
 .socialnetworks-box{
-  background-color: rgb(85, 85, 85);
-  /*max-width: 25%;*/
   min-width: 300px;
-  text-align: center;
-  padding: 10px;
   border-radius: 10px;
   margin: 5px;
+  background-color: rgb(53, 50, 50);
   justify-self: center;
+  align-self: flex-start;
+  text-align: center;
+  border-width: 4px;
+  border-style: solid;
+  border-color : rgb(100, 185, 79);
+  color :  aliceblue;
 }
 
 /* -------------------------------------------
 Countdown box  
 -------------------------------------------*/
 .countdown-box{
-  background-color: rgb(85, 85, 85);
+  background-color: rgb(53, 50, 50);
   /*max-width: 25%;*/
   min-width: 300px;
   text-align: center;
@@ -122,6 +120,9 @@ Countdown box
   border-radius: 10px;
   margin: 5px;
   justify-self: center;
+  border-width: 4px;
+  border-style: solid;
+  border-color : rgb(100, 185, 79);
 }
 
 .countdown-text{
