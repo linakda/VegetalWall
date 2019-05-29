@@ -1,20 +1,20 @@
 /* --------------------------------------------------------------------------------------
-MEDIAS PAGE  
+MEDIAS PAGE 
 --------------------------------------------------------------------------------------*/
 .mediaspage-body{
     background-color: rgb(53, 50, 50);
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, auto));
+    grid-template-columns: repeat(auto-fit, minmax(450px, auto));
     padding: 10px;
     width: 100%;
-    height: 100%;
+    height: auto;
     justify-content: space-around;
     align-content: start;
     grid-gap: 50px 100px;
-    overflow: auto;
-}
-
-.medias-block{
+    overflow: inherit;
+    }
+    
+    .medias-block{
     background-color: rgb(53, 50, 50);
     min-width: 300px;
     text-align: center;
@@ -24,9 +24,9 @@ MEDIAS PAGE
     justify-self: center;
     justify-content: space-around;
     text-align: center;
-}
-
-.medias-image img{
+    }
+    
+    .medias-image img{
     width: 100%;
     background-color: rgb(100, 185, 79);
     padding:5px;
@@ -34,9 +34,9 @@ MEDIAS PAGE
     height: 95%;
     border-radius : 10px;
     flex-shrink: 0;
-}
-
-.medias-video video{
+    }
+    
+    .medias-video video{
     width: 100%;
     background-color: rgb(100, 185, 79);
     padding:5px;
@@ -44,31 +44,32 @@ MEDIAS PAGE
     height: 95%;
     border-radius : 10px;
     flex-shrink: 0;
-}
-
-.mediaspage-body a /* Liens par défaut (non survolés) */
-{
-   text-decoration: none;
-   color:rgb(0, 9, 128);
-   font-style: italic;
-}
-
-.mediaspage-body a:hover /* Au survol des liens */
-{
-   text-decoration: underline;
-   color:blue;
-}
-
-.mediaspage-body a:active /* Quand clique sur le lien */
-{
+    }
+    
+    .mediaspage-body a /* Liens par défaut (non survolés) */
+    {
+    text-decoration: none;
+    color:rgb(0, 9, 128);
+    font-style: italic;
+    }
+    
+    .mediaspage-body a:hover /* Au survol des liens */
+    {
+    text-decoration: underline;
+    color:blue;
+    }
+    
+    .mediaspage-body a:active /* Quand clique sur le lien */
+    {
     background-color: #FFCC66;
-}
-
-.mediaspage-body a:focus /* Quand sélectionne le lien */
-{
+    }
+    
+    .mediaspage-body a:focus /* Quand sélectionne le lien */
+    {
     background-color: rgb(176, 255, 102);
-}
-
-video{
+    }
+    
+    video{
     outline: none;
-  }
+    }
+    
