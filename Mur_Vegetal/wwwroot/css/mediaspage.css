@@ -2,73 +2,40 @@
 MEDIAS PAGE 
 --------------------------------------------------------------------------------------*/
 .mediaspage-body{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(450px, auto));
-    padding: 10px;
     width: 100%;
     height: auto;
-    justify-content: space-around;
-    align-content: start;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, auto));
     grid-gap: 50px 100px;
-    overflow: inherit;
-    }
-    
-    .medias-block{
-    background-color: rgb(53, 50, 50);
-    min-width: 300px;
-    text-align: center;
+    grid-auto-flow: row;
     padding: 10px;
+    overflow: inherit;
+}
+    
+.medias-block{
+    min-width: 300px;
     border-radius: 10px;
     margin: 5px;
-    justify-self: center;
-    justify-content: space-around;
+    display: flex;
+    flex-direction: column ;
     text-align: center;
-    }
+}
     
-    .medias-image img{
-    width: 100%;
-    background-color: rgb(100, 185, 79);
-    padding:5px;
-    width: 95%;
-    height: 95%;
-    border-radius : 10px;
-    flex-shrink: 0;
-    }
+.medias-image img{
+    width: 40%;
+    min-width: 300px;
+    border-radius: 10px;
+    border-width: 4px;
+    border-style: solid;
+    border-color : rgb(100, 185, 79);
+}
     
-    .medias-video video{
-    width: 100%;
-    background-color: rgb(100, 185, 79);
-    padding:5px;
-    width: 95%;
-    height: 95%;
-    border-radius : 10px;
-    flex-shrink: 0;
-    }
-    
-    .mediaspage-body a /* Liens par défaut (non survolés) */
-    {
-    text-decoration: none;
-    color:rgb(0, 9, 128);
-    font-style: italic;
-    }
-    
-    .mediaspage-body a:hover /* Au survol des liens */
-    {
-    text-decoration: underline;
-    color:blue;
-    }
-    
-    .mediaspage-body a:active /* Quand clique sur le lien */
-    {
-    background-color: #FFCC66;
-    }
-    
-    .mediaspage-body a:focus /* Quand sélectionne le lien */
-    {
-    background-color: rgb(176, 255, 102);
-    }
-    
-    video{
-    outline: none;
-    }
+.medias-video video{
+    width: 70%;
+    min-width: 300px;
+    border-radius: 10px;
+    border-width: 4px;
+    border-style: solid;
+    border-color : rgb(100, 185, 79);
+}
     
