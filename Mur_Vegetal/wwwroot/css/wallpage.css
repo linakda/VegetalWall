@@ -4,13 +4,10 @@ WALL PAGE
 .wall-body{
   width: 100%;
   height: auto;
-  background-color:rgb(53, 50, 50);
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, auto));
+  grid-template-columns: repeat(auto-fit, minmax(450px, auto));
   grid-gap: 50px 100px;
   grid-auto-flow: row;
-  align-content: start;
-  justify-content: space-around;
   padding: 10px;
   overflow: inherit;
 }
@@ -19,22 +16,30 @@ WALL PAGE
   min-width: 300px;
   border-radius: 10px;
   margin: 5px;
-  background-color: rgb(53, 50, 50);
-  justify-self: center;
-  align-self: flex-start;
+  display: flex;
+  flex-direction: column ;
+  align-items: center;
   text-align: center;
-  border-width: 4px;
-  border-style: solid;
-  border-color : rgb(100, 185, 79);
 }
   
 .wall-text{
   color : aliceblue;
 }
+
+.wall-body:first-of-type>div:nth-child(1){
+  min-width: 300px;
+  border-radius: 10px;
+  margin: 5px;
+  justify-self: center;
+  align-self: flex-start;
+  border-width: 4px;
+  border-style: solid;
+  border-color : rgb(100, 185, 79);
+}
   
-  /***************************************************************************************
-  WALL IMAGE
-  ****************************************************************************************/
+/***************************************************************************************
+WALL IMAGE
+****************************************************************************************/
   
 .wall-icon img{
   margin-top: 5px;
@@ -48,8 +53,11 @@ WALL PAGE
 }
   
 .wall-graph img{
-  width: 100%;
-  vertical-align: middle;
-  border-radius: 5px;
+  width: 40%;
+  min-width: 300px;
+  border-radius: 10px;
+  border-width: 4px;
+  border-style: solid;
+  border-color : rgb(100, 185, 79);
 }
   

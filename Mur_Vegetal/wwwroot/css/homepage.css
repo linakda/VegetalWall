@@ -8,8 +8,6 @@ HOME PAGE
   grid-template-columns: repeat(auto-fit, minmax(450px, auto));
   grid-gap: 50px 100px;
   grid-auto-flow: row;
-  align-content: start;
-  justify-content: space-around;
   padding: 10px;
   overflow: inherit;
 }
