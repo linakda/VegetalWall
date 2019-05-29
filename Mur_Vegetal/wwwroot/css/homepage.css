@@ -112,17 +112,18 @@ Social Networks box
 Countdown box  
 -------------------------------------------*/
 .countdown-box{
-  background-color: rgb(53, 50, 50);
-  /*max-width: 25%;*/
+  padding: 2%;
   min-width: 300px;
-  text-align: center;
-  padding: 10px;
   border-radius: 10px;
   margin: 5px;
+  background-color: rgb(53, 50, 50);
   justify-self: center;
+  align-self: flex-start;
+  text-align: center;
   border-width: 4px;
   border-style: solid;
   border-color : rgb(100, 185, 79);
+  color :  aliceblue;
 }
 
 .countdown-text{
