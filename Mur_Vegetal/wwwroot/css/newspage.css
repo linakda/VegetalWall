@@ -32,7 +32,6 @@ NEWS PAGE
     width: 95%;
     height: 95%;
     border-radius : 10px;
-    flex-shrink: 0;
 }
     
 .news-text{
