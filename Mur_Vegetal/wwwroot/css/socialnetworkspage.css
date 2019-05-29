@@ -5,10 +5,18 @@ SOCIALNETWORKS PAGE
 .socialnetworks-body{
     width: 100%;
     height: auto;
-    background-color:white;
+    background-color:rgb(53, 50, 50);
     padding: 10px;
     overflow: inherit;
+    color:white;
+    
 }
+.snapwidget-widget{
+    border:solid; 
+    border-color: rgb(100, 185, 79);
+   
+}
+
 
 .caption {
     color: white;
