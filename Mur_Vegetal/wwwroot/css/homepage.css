@@ -14,11 +14,7 @@ HOME PAGE
 
 a {
   text-decoration:none;
-  color:rgb(53, 50, 50);
-}
-a:hover{
-  text-decoration:none;
-  color:white;
+  color:inherit;
 }
 /* -------------------------------------------
 Wall box  
