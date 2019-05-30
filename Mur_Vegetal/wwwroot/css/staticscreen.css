@@ -32,6 +32,6 @@ body {
   .staticscreen-body {
     max-width: 500px;
     margin: auto;
-    background: white;
+    background:#333;
     padding: 10px;
   }
