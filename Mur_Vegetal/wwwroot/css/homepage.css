@@ -1,34 +1,38 @@
 /* --------------------------------------------------------------------------------------
 HOME PAGE  
 --------------------------------------------------------------------------------------*/
-.frontpage-body{
-  background-color:rgb(53, 50, 50);
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, auto));
-  padding: 10px;
+.home-body{
   width: 100%;
-  height: 100%;
-  justify-content: space-around;
-  align-content: start;
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, auto));
   grid-gap: 50px 100px;
-  overflow: auto;
+  grid-auto-flow: row;
+  padding: 10px;
+  overflow: inherit;
 }
 
-
+a {
+  text-decoration:none;
+  color:inherit;
+}
 /* -------------------------------------------
 Wall box  
 -------------------------------------------*/
 .wall-box{
-  background-color: rgb(85, 85, 85);
-  /*max-width: 25%;*/
   min-width: 300px;
-  text-align: center;
-  padding: 10px;
   border-radius: 10px;
   margin: 5px;
   justify-self: center;
+  align-self: flex-start;
+  text-align: center;
+  border-width: 4px;
+  border-style: solid;
+  border-color : rgb(100, 185, 79);
 }
+
 .wall-icon img{
+  margin-top: 5px;
   width: 50%;
 }
 .wall-info{
@@ -38,65 +42,60 @@ Wall box
   flex-flow: row wrap;
 }
 
+.wall-box a {
+  text-decoration:none;
+  color:white;
+}
+.wall-box a:hover {
+  text-decoration:none;
+  color:rgb(100, 185, 79);
+}
+
 
 /* -------------------------------------------
 News box  
 -------------------------------------------*/
 .news-box{
-  background-color: rgb(85, 85, 85);
-  /*max-width: 25%;*/
   min-width: 300px;
-  text-align: center;
-  padding: 10px;
   border-radius: 10px;
   margin: 5px;
-  justify-self: center;
+  display: flex;
+  flex-direction: column ;
+  align-items: center;
+  text-align: center;
 }
 
 .news-image img{
   background-color: rgb(100, 185, 79);
   padding:5px;
-  width: 95%;
-  height: 95%;
+  width: 70%;
+  height: auto;
   border-radius : 10px;
-  flex-shrink: 0;
 }
 
 .news-text{
+  width: 50%;
   background-color: rgb(100, 185, 79);
   overflow-wrap: normal;
-  align-content: center;
   padding: 5px;
   border-radius : 10px;
 }
 
 
 /* -------------------------------------------
-Social Networks box  
--------------------------------------------*/
-.socialnetworks-box{
-  background-color: rgb(85, 85, 85);
-  /*max-width: 25%;*/
-  min-width: 300px;
-  text-align: center;
-  padding: 10px;
-  border-radius: 10px;
-  margin: 5px;
-  justify-self: center;
-}
-
-/* -------------------------------------------
 Countdown box  
 -------------------------------------------*/
 .countdown-box{
-  background-color: rgb(85, 85, 85);
-  /*max-width: 25%;*/
+  padding: 2%;
   min-width: 300px;
-  text-align: center;
-  padding: 10px;
   border-radius: 10px;
   margin: 5px;
   justify-self: center;
+  align-self: flex-start;
+  border-width: 4px;
+  border-style: solid;
+  border-color : rgb(100, 185, 79);
+  color :  aliceblue;
 }
 
 .countdown-text{
@@ -106,3 +105,27 @@ Countdown box
   padding: 5px;
   border-radius : 10px;
 }
+
+/* -------------------------------------------
+Social Networks box  
+-------------------------------------------*/
+.socialnetworks-box{
+  width: 33%;
+  min-width: 300px;
+  border-radius: 10px;
+  margin : 5px;
+  justify-self: center;
+  align-self: flex-start;
+  text-align: center;
+  border-width: 4px;
+  border-style: solid;
+  border-color : rgb(100, 185, 79);
+  color :  aliceblue;
+}
+
+.snapwidget-widget{
+  vertical-align: middle;
+  width: 100%;
+  border:none;
+}
+

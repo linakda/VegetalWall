@@ -1,46 +1,51 @@
 /* --------------------------------------------------------------------------------------
-NEWS PAGE  
+NEWS PAGE 
 --------------------------------------------------------------------------------------*/
-.newspage-body{
-    background-color:rgb(53, 50, 50);
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, auto));
-    padding: 10px;
+.news-body{
     width: 100%;
-    height: 100%;
-    justify-content: space-around;
-    align-content: start;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, auto));
     grid-gap: 50px 100px;
-    overflow: auto;
-    
-}
-
-
-.news-block{
-    background-color: rgb(53, 50, 50);
-    /*max-width: 25%;*/
-    min-width: 300px;
-    text-align: center;
+    grid-auto-flow: row;
     padding: 10px;
+    overflow: inherit;
+}
+    
+.news-block{
+    min-width: 300px;
     border-radius: 10px;
     margin: 5px;
-    justify-self: center;
+    display: flex;
+    flex-direction: column ;
+    align-items: center;
+    text-align: center;
 }
+    
+/* --------------------------------------------------------------------------------------
+NEWS IMAGE 
+--------------------------------------------------------------------------------------*/
 
 .news-image img{
-    background-color: rgb(100, 185, 79);
-    padding:5px;
-    width: 95%;
-    height: 95%;
-    border-radius : 10px;
-    flex-shrink: 0;
+    width: 33%;
+    min-width: 300px;
+    border-radius: 10px;
+    margin : 5px;
+    border-width: 4px;
+    border-style: solid;
+    border-color : rgb(100, 185, 79);
 }
 
+/* --------------------------------------------------------------------------------------
+NEWS TEXT
+--------------------------------------------------------------------------------------*/
+
 .news-text{
+    width: 70%;
     background-color: rgb(100, 185, 79);
     overflow-wrap: normal;
-    align-content: center;
     padding: 5px;
     border-radius : 10px;
 }
-
+    
+    
