@@ -7,7 +7,7 @@ b.style.display = "none";
 c.style.display = "none";
 elements.push(a, b, c);
 
-async function myFunction() {
+async function defile() {
 
   for (let i = 0; i < elements.length; i++) {
     if (i - 1 < 0) {
@@ -31,6 +31,6 @@ function wait1Second(x) {
 }
 
 setInterval(() => {
-  myFunction();
+  defile();
 }, 3000);
 
