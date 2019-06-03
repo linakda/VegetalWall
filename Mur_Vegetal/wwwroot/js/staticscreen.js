@@ -1,11 +1,16 @@
 var elements = [];
+var displayTimer = 1000;
 var a = document.getElementById("a");
 var b = document.getElementById("b");
 var c = document.getElementById("c");
+var d = document.getElementById("d");
+var e = document.getElementById("e");
 a.style.display = "none";
 b.style.display = "none";
 c.style.display = "none";
-elements.push(a, b, c);
+d.style.display = "none";
+e.style.display = "none";
+elements.push(a, b, c, d, e);
 
 async function defile() {
 
@@ -26,11 +31,11 @@ function wait1Second(x) {
   return new Promise(resolve => {
     setTimeout(() => {
       resolve(x);
-    }, 1000);
+    }, displayTimer);
   });
 }
 
 setInterval(() => {
   defile();
-}, 3000);
+}, elements.length*displayTimer);
 

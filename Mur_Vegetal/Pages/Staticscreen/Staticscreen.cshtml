@@ -9,6 +9,9 @@
   <link href="@Url.Content("~/css/countdownpage.css")" rel="stylesheet" type="text/css" />
   <link href="@Url.Content("~/css/wallpage.css")" rel="stylesheet" type="text/css" />
   <link href="@Url.Content("~/css/newspage.css")" rel="stylesheet" type="text/css" />
+  <link href="@Url.Content("~/css/mediaspage.css")" rel="stylesheet" type="text/css" />
+  <link href="@Url.Content("~/css/socialnetworkspage.css")" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="@Url.Content("~/lib/jquery/dist/jquery.js")"></script>
   <script type="text/javascript" src="@Url.Content("~/js/countdown.js")"></script>
 
 }
@@ -137,21 +140,93 @@
     </div>
 </div>
 
-<div class="countdownpage-body" id="c">
 
-<div class="countdownpage-block">
-    <div class="countdownpage-text">
-      <h1>Journée portes ouvertes</h1>
+<div class="countdown-body" id = "c">
+    <div class="countdown-block">
+        <div class="countdown-text">
+            Journée Portes Ouvertes
+            <div id="countdown-display">
+            </div>
+            <script>
+                countDown("May 30 11:00:00 2019","countdown-display");
+            </script>
+        </div>
     </div>
-    <div id="countdown-display">
+</div>
+
+<div class="mediaspage-body" id = "d">
+    
+    <div class="medias-block">
+      <div class="medias-image">
+        <img src="/images/mur-resized.jpg" alt="mur"/>
+      </div>
     </div>
-    <script> countDown("May 30 11:00:00 2019","countdown-display");
-    </script> 
+
+    <div class="medias-block">
+      <div class="medias-image">
+        <img src="/images/news1.jpg" alt="news1">
+      </div>
+    </div>
+
+    <div class="medias-block">
+        <div class="medias-image">
+          <img src="/images/news2.jpg" alt="news2">
+        </div>
+    </div>
+
+    <div class="medias-block">
+        <div class="medias-image">
+          <img src="/images/news3.jpg" alt="news3">
+        </div>
+    </div>
+
+    <div class="medias-block">
+        <div class="medias-image">
+          <img src="/images/news4.jpg" alt="news4">
+        </div>
+    </div>
+
+    <div class="medias-block">
+        <div class="medias-image">
+          <img src="/images/graph1.jpg" alt="graph1">
+        </div>
+    </div>
+
+    <div class="medias-block">
+        <div class="medias-image">
+          <img src="/images/murvege.jpg" alt="murvege">
+        </div>
+    </div>
+
+    <div class="medias-block">
+        <div class="medias-video"> 
+          <video src="/images/test.mp4" controls width="600">
+          </video>
+        </div>
+    </div>
+
+</div>
+
+
+<div class="socialnetworks-body" id ="e">
+    <!-- SnapWidget -->
+    <script src="https://snapwidget.com/js/snapwidget.js"></script>
+    <iframe src="https://snapwidget.com/embed/698344" class="snapwidget-widget" allowtransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:100%;"></iframe>
+    <script>
+        
+        window.onload = function () { setTimeout( function(){
+
+            
+            
+        }, 4000);
+            
+        }
+        
+    </script>
 </div>
 
 </div>
-</div>
 
 
-  <script type="text/javascript" src="@Url.Content("~/js/staticscreen.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/js/staticscreen.js")"></script>
   
