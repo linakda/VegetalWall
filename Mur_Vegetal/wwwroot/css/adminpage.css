@@ -3,6 +3,21 @@ ADMIN PAGE
 --------------------------------------------------------------------------------------*/
 
 .login-body{
-    
-    
-}
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, auto));
+    grid-gap: 50px 100px;
+    grid-auto-flow: row;
+    padding: 10px;
+    overflow: inherit;
+  }
+
+  .login-body :nth-of-type(n) {
+    width: 40%;
+    min-width: 300px;
+    border-radius: 10px;
+    border-width: 4px;
+    border-style: solid;
+    border-color : rgb(100, 185, 79);
+  }
