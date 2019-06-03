@@ -42,3 +42,15 @@ input[type="text"]{
 input[type="text"]:focus{
   width: auto;
 }
+
+.bouton{
+  margin: 10px;
+}
+
+.table-form>button{
+  float: right;
+}
+
+textarea{
+  align-items: flex-start;
+}
