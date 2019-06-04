@@ -1,0 +1,59 @@
+/* --------------------------------------------------------------------------------------
+ADMIN PAGE  
+--------------------------------------------------------------------------------------*/
+
+.admin-body{
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, auto));
+  grid-gap: 50px 100px;
+  grid-auto-flow: row;
+  padding: 10px;
+  overflow: inherit;
+}
+
+.admin-body > fieldset:nth-child(n) {
+  min-width: 300px;
+  border-radius: 10px;
+  margin: 5px;
+  padding: 10px;
+  justify-self: center;
+  align-self: flex-start;
+  border-width: 4px;
+  border-style: solid;
+  border-color : rgb(100, 185, 79);
+  color : aliceblue;
+}
+
+legend{
+  text-transform: uppercase;
+}
+
+fieldset>div:nth-child(n){
+  padding: 10px;
+}
+
+input[type="text"]{
+  width: 35%;
+  padding: 5px;
+}
+
+input[type="text"]:focus{
+  width: auto;
+}
+
+.bouton{
+  margin: 10px;
+  float: right;
+}
+
+textarea{
+  resize:none;
+}
+
+.bloc{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}

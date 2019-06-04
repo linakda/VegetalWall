@@ -4,12 +4,20 @@
     ViewData["Title"] = "Accueil";
 }
 @section heads{
-  <link href="@Url.Content("~/css/homepage.css")" rel="stylesheet" type="text/css" />
+  <link href="@Url.Content("~/css/usersite/homepage.css")" rel="stylesheet" type="text/css" />
   <script type="text/javascript" src="@Url.Content("~/js/countdown.js")"></script>
+  <script type="text/javascript" src="@Url.Content("~/lib/jquery/dist/jquery.js")"></script>
+  <script type="text/javascript" src="@Url.Content("~/lib/tilt/tilt.jquery.js")"></script>
 }
 
 <div class="home-body">
-    <div class="wall-box">
+    <script>
+        $('.js-tilt').tilt({
+    glare: true,
+    maxGlare: .5
+})
+    </script>
+    <div class="wall-box js-tilt">
         <div class="wall-info">
             <div class="wall-icon"><a href="/Wall"> <img class="i1" src="images/icones/thermo.png"/> </a></div>
             <div class="wall-text"><a href="/Wall"> info1 </a></div> 
