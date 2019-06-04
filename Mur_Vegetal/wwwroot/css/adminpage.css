@@ -45,9 +45,6 @@ input[type="text"]:focus{
 
 .bouton{
   margin: 10px;
-}
-
-.table-form>button{
   float: right;
 }
 
