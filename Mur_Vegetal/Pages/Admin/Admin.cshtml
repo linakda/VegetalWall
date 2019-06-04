@@ -73,25 +73,18 @@
 <fieldset class="carrousel-form">
   <legend>Carrousel informations</legend>
     <div class="bloc">
-      <label for="Texte">Texte:</label>
+      <label for="Texte">Texte : </label>
       <textarea rows="5" cols="60" placeholder="Entrez votre texte">
       </textarea>
+      <button class="bouton"> Valider </button>
     </div>
     <div>
-      <label for="Texte">Image:</label>
+      <label for="Texte">Image : </label>
       <input type="file" accept="image/png, image/jpeg">
-    </div>
-    <button class="bouton"> Valider </button>
-</fieldset>
-
-<fieldset class="media-form">
-  <legend>Carrousel medias</legend>
-    <div>
-      <label for="Texte">Image:</label>
-      <input type="file" accept="image/png, image/jpeg">
+      <button class="bouton"> Valider </button>
     </div>
     <div>
-      <label for="Texte">Temps d'affichage:</label>
+      <label for="Texte">Temps d'affichage : </label>
         <input list="Sec" type="text" id="Temps" placeholder="En secondes">
         <datalist id="Sec">
         <option value="5"></option>
@@ -99,23 +92,49 @@
         <option value="15"></option>
         <option value="20"></option>
         </datalist>
+        <button class="bouton"> Valider </button>
     </div>
-    <button class="bouton"> Valider </button>
+</fieldset>
+
+<fieldset class="media-form">
+  <legend>Carrousel medias</legend>
+    <div>
+      <label for="Texte">Image : </label>
+      <input type="file" accept="image/png, image/jpeg">
+      <button class="bouton"> Valider </button>
+    </div>
+    <div>
+      <label for="Texte">Vidéo : </label>
+      <input type="text" id="vid" placeholder="ex: https://www.youtube.com/watch?v=WIIAbl7pBnI">
+      <button class="bouton"> Valider </button>
+    </div>
+    <div>
+      <label for="Texte">Temps d'affichage : </label>
+        <input list="Sec" type="text" id="Temps" placeholder="En secondes">
+        <datalist id="Sec">
+        <option value="5"></option>
+        <option value="10"></option>
+        <option value="15"></option>
+        <option value="20"></option>
+        </datalist>
+        <button class="bouton"> Valider </button>
+    </div>
+    
 </fieldset>
 
 <fieldset class="coutdown-form">
   <legend>Compte à rebours</legend>
     <div class="bloc">
-      <label for="Texte">Texte:</label>
+      <label for="Texte">Texte : </label>
       <textarea rows="5" cols="60" placeholder="Entrez votre texte">
       </textarea>
     </div>
     <div>
-      <label for="Date">Date:</label>
+      <label for="Date">Date : </label>
       <input type="date" name="countdown-date">
     </div>
     <div>
-      <label for="Date">Heure:</label>
+      <label for="Date">Heure : </label>
       <input type="time" name="countdown-hour">
     </div>
     <button class="bouton"> Valider </button>
@@ -124,7 +143,7 @@
 <fieldset class="rs-form">
   <legend>Instagram</legend>
     <div>
-      <label for="Nom">Nom d'utilisateur:</label>
+      <label for="Nom">Nom d'utilisateur : </label>
         <input list="Compte" type="text" id="ID" placeholder="ex:ISEN.Lille">
         <datalist id="Compte">
         <option value="ISEN.Lille"></option>
