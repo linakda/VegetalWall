@@ -57,3 +57,8 @@ textarea{
   flex-direction: row;
   align-items: flex-start;
 }
+
+.display{
+  margin-top : 15px;
+  border-top: 4px solid rgb(100, 185, 79);
+}
