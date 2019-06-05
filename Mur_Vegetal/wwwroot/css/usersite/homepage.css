@@ -23,6 +23,7 @@ a {
   min-width: 500px;
   max-width: 30%;
   margin: 5px;
+  font-size: 1.5em;
 }
 
 /* -------------------------------------------
@@ -71,12 +72,6 @@ News box
   width: 100%;
 }
 
-.news-text{
-  width: 50%;
-  overflow-wrap: normal;
-  padding: 5px;
-}
-
 
 /* -------------------------------------------
 Countdown box  
@@ -94,6 +89,8 @@ Countdown box
   align-content: center;
   padding: 5px;
   border-radius : 10px;
+  font-size: 2em;
+  text-transform: uppercase;
 }
 
 /* -------------------------------------------
