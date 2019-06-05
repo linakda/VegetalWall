@@ -11,7 +11,13 @@
 <div class="news-body">
     @{ Html.RenderPartial("_News"); }
 </div>
-
+<script type="text/javascript" src="@Url.Content("~/lib/tilt/tilt.jquery.js")"></script>
+<script>
+    $('.box').tilt({
+    perspective: 2000,
+    easing:         "cubic-bezier(.03,.98,.52,.99)"
+    })
+</script>
 
     
 
