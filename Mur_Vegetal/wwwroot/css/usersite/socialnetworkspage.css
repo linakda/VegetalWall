@@ -9,11 +9,8 @@ SOCIALNETWORKS PAGE
     color:white;
     margin: 10px;
     padding: 10px;
-    border-radius: 10px;
-    border-width: 4px;
-    border-style: solid;
-    border-color : rgb(100, 185, 79);
-    background-color: white;
+    background-color: #F4F3F2;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 
