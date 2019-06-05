@@ -26,9 +26,6 @@ Wall box
   justify-self: center;
   align-self: flex-start;
   text-align: center;
-  border-width: 4px;
-  border-style: solid;
-  border-color : rgb(100, 185, 79);
 }
 
 .wall-icon img{
@@ -44,11 +41,11 @@ Wall box
 
 .wall-box a {
   text-decoration:none;
-  color:white;
+  color:#393E41;
 }
 .wall-box a:hover {
   text-decoration:none;
-  color:rgb(100, 185, 79);
+  color:#629460;
 }
 
 
@@ -66,7 +63,6 @@ News box
 }
 
 .news-image img{
-  background-color: rgb(100, 185, 79);
   padding:5px;
   width: 70%;
   height: auto;
@@ -75,7 +71,6 @@ News box
 
 .news-text{
   width: 50%;
-  background-color: rgb(100, 185, 79);
   overflow-wrap: normal;
   padding: 5px;
   border-radius : 10px;
@@ -93,13 +88,9 @@ Countdown box
   justify-self: center;
   align-self: flex-start;
   border-width: 4px;
-  border-style: solid;
-  border-color : rgb(100, 185, 79);
-  color :  aliceblue;
 }
 
 .countdown-text{
-  background-color: rgb(100, 185, 79);
   overflow-wrap: normal;
   align-content: center;
   padding: 5px;
@@ -117,10 +108,6 @@ Social Networks box
   justify-self: center;
   align-self: flex-start;
   text-align: center;
-  border-width: 4px;
-  border-style: solid;
-  border-color : rgb(100, 185, 79);
-  color :  aliceblue;
 }
 
 .snapwidget-widget{
