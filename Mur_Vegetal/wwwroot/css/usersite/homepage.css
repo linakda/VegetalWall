@@ -84,6 +84,7 @@ Countdown box
 .countdown-box{
   padding: 2%;
   justify-self: center;
+  text-align: center;
   align-self: flex-start;
   border-width: 4px;
 }
