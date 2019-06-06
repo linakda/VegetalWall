@@ -4,7 +4,7 @@
     ViewData["Title"] = "Espace Administrateur";
 }
 @section heads{
-  <link href="@Url.Content("~/css/adminpage.css")" rel="stylesheet" type="text/css" />
+  <link href="@Url.Content("~/css/usersite/adminpage.css")" rel="stylesheet" type="text/css" />
 }
 
 
@@ -197,11 +197,19 @@
     <fieldset class="news-param">
       <legend class="news-name">JPO</legend>
 
-        <label>Nom de l'événement : </label>
-        <input type="text" placeholder="Ex: JPO">
+        <div class="param-name">
+          <label class="param-name">Nom de l'événement : </label>
+          <input type="text" class="param-name" placeholder="Ex: JPO">
+        </div>
 
-        <label>Texte : </label>
-        <textarea rows="5" cols="60" placeholder="Entrez votre texte"></textarea>
+        <div class="param_text">
+        <label class="param-text">Texte : </label>
+        <textarea class="param-text" rows="5" cols="60" placeholder="Entrez votre texte"></textarea>
+        </div>
+
+        <div class="param-img">
+           <img class="param-img" src="">
+        </div>
     </fieldset>
 
   </fieldset>
