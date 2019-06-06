@@ -10,148 +10,200 @@
 
 <div class="admin-body">
 
-<fieldset class="table-form">
-  <legend>Affichage</legend>
-    <div>
-      <label for="Mur">Mur</label>
-      <input type="checkbox" id="Mur" name="Mur">
-      <input list="Sec" type="text" id="Temps" placeholder="En secondes">
-        <datalist id="Sec">
-        <option value="5"></option>
-        <option value="10"></option>
-        <option value="15"></option>
-        <option value="20"></option>
-        </datalist>
-    </div>
-    <div>
-      <label for="Infos">Infos</label>
-      <input type="checkbox" id="Infos" name="Infos">
-        <input list="Sec" type="text" id="Temps" placeholder="En secondes">
-        <datalist id="Sec">
-        <option value="5"></option>
-        <option value="10"></option>
-        <option value="15"></option>
-        <option value="20"></option>
-        </datalist>
-    </div>
-    <div>
-      <label for="Medias">Medias</label>
-      <input type="checkbox" id="Medias" name="Medias">
-        <input list="Sec" type="text" id="Temps" placeholder="En secondes">
-        <datalist id="Sec">
-        <option value="5"></option>
-        <option value="10"></option>
-        <option value="15"></option>
-        <option value="20"></option>
-        </datalist>
-    </div>
-    <div>
-      <label for="Countdown">Compte à rebours</label>
-      <input type="checkbox" id="Countdown" name="Countdown">
-        <input list="Sec" type="text" id="Temps" placeholder="En secondes">
-        <datalist id="Sec">
-        <option value="5"></option>
-        <option value="10"></option>
-        <option value="15"></option>
-        <option value="20"></option>
-        </datalist>
-    </div>
-    <div>
-      <label for="RS">Réseaux sociaux</label>
-      <input type="checkbox" id="RS" name="RS">
-        <input list="Sec" type="text" id="Temps" placeholder="En secondes">
-        <datalist id="Sec">
-        <option value="5"></option>
-        <option value="10"></option>
-        <option value="15"></option>
-        <option value="20"></option>
-        </datalist>
-    </div>
-    <button class="bouton"> Valider </button>
-</fieldset>
+<!--FIELDSET PRINCIPALE CONTENANT LES DIFFERRENTS FIELDSET ENFANTS-->
+  <fieldset class="frame-box">
+    <legend>Frame</legend>
 
-<fieldset class="carrousel-form">
-  <legend>Carrousel informations</legend>
-    <div class="bloc">
-      <label for="Texte">Texte : </label>
-      <textarea rows="5" cols="60" placeholder="Entrez votre texte">
-      </textarea>
-      <button class="bouton"> Valider </button>
-    </div>
-    <div>
-      <label for="Texte">Image : </label>
-      <input type="file" accept="image/png, image/jpeg">
-      <button class="bouton"> Valider </button>
-    </div>
-    <div class="display">
-      <label for="Texte">Temps d'affichage : </label>
-        <input list="Sec" type="text" id="Temps" placeholder="En secondes">
-        <datalist id="Sec">
-        <option value="5"></option>
-        <option value="10"></option>
-        <option value="15"></option>
-        <option value="20"></option>
-        </datalist>
-        <button class="bouton"> Valider </button>
-    </div>
-</fieldset>
+<!-------------------------------------------FIELDSET MUR---------------------------------------------->
+    <fieldset class="frame-param">
+      <legend class="frame-name">Mur</legend>
 
-<fieldset class="media-form">
-  <legend>Carrousel medias</legend>
-    <div>
-      <label for="Texte">Image : </label>
-      <input type="file" accept="image/png, image/jpeg">
-      <button class="bouton"> Valider </button>
-    </div>
-    <div>
-      <label for="Texte">Vidéo : </label>
-      <input type="text" id="vid" placeholder="ex: https://www.youtube.com/watch?v=WIIAbl7pBnI">
-      <button class="bouton"> Valider </button>
-    </div>
-    <div class="display">
-      <label for="Texte">Temps d'affichage : </label>
-        <input list="Sec" type="text" id="Temps" placeholder="En secondes">
-        <datalist id="Sec">
-        <option value="5"></option>
-        <option value="10"></option>
-        <option value="15"></option>
-        <option value="20"></option>
-        </datalist>
-        <button class="bouton"> Valider </button>
-    </div>
-    
-</fieldset>
+        <div class="param-disp">
+          <label class="param-disp">Affichage </label>
+          <input type="checkbox" class="param-disp">
+        </div>
 
-<fieldset class="coutdown-form">
-  <legend>Compte à rebours</legend>
-    <div class="bloc">
-      <label for="Texte">Texte : </label>
-      <textarea rows="5" cols="60" placeholder="Entrez votre texte">
-      </textarea>
-    </div>
-    <div>
-      <label for="Date">Date : </label>
-      <input type="date" name="countdown-date">
-    </div>
-    <div>
-      <label for="Date">Heure : </label>
-      <input type="time" name="countdown-hour">
-    </div>
-    <button class="bouton"> Valider </button>
-</fieldset>
+        <div class="param-disptime">
+          <label class="param-disptime">Temps d'affichage : </label>
+          <input list="Sec" type="text" class="param-disptime" placeholder="En secondes">
+             <datalist id="Sec">
+              <option value="5"></option>
+              <option value="10"></option>
+              <option value="15"></option>
+              <option value="20"></option>
+            </datalist>
+        </div>
 
-<fieldset class="rs-form">
-  <legend>Instagram</legend>
-    <div>
-      <label for="Nom">Nom d'utilisateur : </label>
-        <input list="Compte" type="text" id="ID" placeholder="ex:ISEN.Lille">
-        <datalist id="Compte">
-        <option value="ISEN.Lille"></option>
-        </datalist>
-    </div>
-    <button class="bouton"> Valider </button>
-</fieldset>
+        <div class="param-carroussel">
+          <label class="param-carroussel">Temps d'affichage du carroussel : </label>
+          <input list="Sec" type="text" class="param-carroussel" placeholder="En secondes">
+             <datalist id="Sec">
+              <option value="5"></option>
+              <option value="10"></option>
+              <option value="15"></option>
+              <option value="20"></option>
+            </datalist>
+        </div>   
 
+        <button class="button"> Valider </button>
+    </fieldset>
+<!-----------------------------------------FIN FIELDSET MUR-------------------------------------------->    
 
+<!-------------------------------------------FIELDSET INFORMATIONS---------------------------------------------->
+    <fieldset class="frame-param">
+      <legend class="frame-name">Informations</legend>
+
+        <div class="param-disp">
+          <label class="param-disp">Affichage </label>
+          <input type="checkbox" class="param-disp">
+        </div>
+
+        <div class="param-disptime">
+          <label class="param-disptime">Temps d'affichage : </label>
+          <input list="Sec" type="text" class="param-disptime" placeholder="En secondes">
+             <datalist id="Sec">
+              <option value="5"></option>
+              <option value="10"></option>
+              <option value="15"></option>
+              <option value="20"></option>
+            </datalist>
+        </div>
+
+        <div class="param-carroussel">
+          <label class="param-carroussel">Temps d'affichage du carroussel : </label>
+          <input list="Sec" type="text" class="param-carroussel" placeholder="En secondes">
+             <datalist id="Sec">
+              <option value="5"></option>
+              <option value="10"></option>
+              <option value="15"></option>
+              <option value="20"></option>
+            </datalist>
+        </div>   
+
+        <button class="button"> Valider </button>
+    </fieldset>
+<!-----------------------------------------FIN FIELDSET INFORMATIONS-------------------------------------------->   
+
+<!-------------------------------------------FIELDSET PHOTOS/VIDEOS---------------------------------------------->
+    <fieldset class="frame-param">
+      <legend class="frame-name">Photos/Vidéos</legend>
+
+        <div class="param-disp">
+          <label class="param-disp">Affichage </label>
+          <input type="checkbox" class="param-disp">
+        </div>
+
+        <div class="param-disptime">
+          <label class="param-disptime">Temps d'affichage : </label>
+          <input list="Sec" type="text" class="param-disptime" placeholder="En secondes">
+             <datalist id="Sec">
+              <option value="5"></option>
+              <option value="10"></option>
+              <option value="15"></option>
+              <option value="20"></option>
+            </datalist>
+        </div>
+
+        <div class="param-carroussel">
+          <label class="param-carroussel">Temps d'affichage du carroussel : </label>
+          <input list="Sec" type="text" class="param-carroussel" placeholder="En secondes">
+             <datalist id="Sec">
+              <option value="5"></option>
+              <option value="10"></option>
+              <option value="15"></option>
+              <option value="20"></option>
+            </datalist>
+        </div>   
+
+        <button class="button"> Valider </button>
+    </fieldset>
+<!-----------------------------------------FIN FIELDSET PHOTOS/VIDEOS-------------------------------------------->  
+
+<!-------------------------------------------FIELDSET COMPTES A REBOURS---------------------------------------------->
+    <fieldset class="frame-param">
+      <legend class="frame-name">Comptes à rebours</legend>
+
+        <div class="param-disp">
+          <label class="param-disp">Affichage </label>
+          <input type="checkbox" class="param-disp">
+        </div>
+
+        <div class="param-disptime">
+          <label class="param-disptime">Temps d'affichage : </label>
+          <input list="Sec" type="text" class="param-disptime" placeholder="En secondes">
+             <datalist id="Sec">
+              <option value="5"></option>
+              <option value="10"></option>
+              <option value="15"></option>
+              <option value="20"></option>
+            </datalist>
+        </div>
+
+        <div class="param-carroussel">
+          <label class="param-carroussel">Temps d'affichage du carroussel : </label>
+          <input list="Sec" type="text" class="param-carroussel" placeholder="En secondes">
+             <datalist id="Sec">
+              <option value="5"></option>
+              <option value="10"></option>
+              <option value="15"></option>
+              <option value="20"></option>
+            </datalist>
+        </div>   
+
+        <button class="button"> Valider </button>
+    </fieldset>
+<!-----------------------------------------FIN FIELDSET COMPTES A REBOURS-------------------------------------------->  
+
+<!-------------------------------------------FIELDSET RESEAUX SOCIAUX---------------------------------------------->
+    <fieldset class="frame-param">
+      <legend class="frame-name">Réseaux sociaux</legend>
+
+        <div class="param-disp">
+          <label class="param-disp">Affichage </label>
+          <input type="checkbox" class="param-disp">
+        </div>
+
+        <div class="param-disptime">
+          <label class="param-disptime">Temps d'affichage : </label>
+          <input list="Sec" type="text" class="param-disptime" placeholder="En secondes">
+             <datalist id="Sec">
+              <option value="5"></option>
+              <option value="10"></option>
+              <option value="15"></option>
+              <option value="20"></option>
+            </datalist>
+        </div>
+
+        <div class="param-carroussel">
+          <label class="param-carroussel">Temps d'affichage du carroussel : </label>
+          <input list="Sec" type="text" class="param-carroussel" placeholder="En secondes">
+             <datalist id="Sec">
+              <option value="5"></option>
+              <option value="10"></option>
+              <option value="15"></option>
+              <option value="20"></option>
+            </datalist>
+        </div>   
+
+        <button class="button"> Valider </button>
+    </fieldset>
+<!-----------------------------------------FIN FIELDSET RESEAUX SOCIAUX-------------------------------------------->   
+
+  </fieldset>
+
+  <fieldset class="news-box">
+    <legend>News</legend>
+
+    <fieldset class="news-param">
+      <legend class="news-name">JPO</legend>
+
+        <label>Nom de l'événement : </label>
+        <input type="text" placeholder="Ex: JPO">
+
+        <label>Texte : </label>
+        <textarea rows="5" cols="60" placeholder="Entrez votre texte"></textarea>
+    </fieldset>
+
+  </fieldset>
 
 </div> 
