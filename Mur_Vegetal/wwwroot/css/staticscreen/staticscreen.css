@@ -2,26 +2,34 @@
 Static screen  
 --------------------------------------------------------------------------------------*/
 @font-face{
-    font-family: 'Raleway-Bold'; 
-    src: url('/fonts/Raleway/Raleway-Bold.ttf'); 
-  }
-  @font-face{
-    font-family: 'Raleway-Black'; 
-    src: url('/fonts/Raleway/Raleway-Black.ttf'); 
-  }
-  @font-face{
-    font-family: 'Raleway-Light'; 
-    src: url('/fonts/Raleway/Raleway-Light.ttf'); 
-  }
-  @font-face{
-    font-family: 'Raleway-Regular'; 
-    src: url('/fonts/Raleway/Raleway-Regular.ttf'); 
-  }
-  @font-face{
-    font-family: 'Raleway-SemiBold'; 
-    src: url('/fonts/Raleway/Raleway-SemiBold.ttf'); 
+  font-family: 'Mukta-Bold'; 
+  src: url('/fonts/Mukta/Mukta-Bold.ttf'); 
+}
+@font-face{
+  font-family: 'Mukta-ExtraBold'; 
+  src: url('/fonts/Mukta/Mukta-ExtraBold.ttf'); 
+}
+@font-face{
+  font-family: 'Mukta-ExtraLight'; 
+  src: url('/fonts/Mukta/Mukta-ExtraLight.ttf'); 
+}
+@font-face{
+  font-family: 'Mukta-Light'; 
+  src: url('/fonts/Mukta/Mukta-Light.ttf'); 
+}
+@font-face{
+  font-family: 'Mukta-Medium'; 
+  src: url('/fonts/Mukta/Mukta-Medium.ttf'); 
+}
+@font-face{
+  font-family: 'Mukta-Regular'; 
+  src: url('/fonts/Mukta/Mukta-Regular.ttf'); 
+}
+@font-face{
+  font-family: 'Mukta-SemiBold'; 
+  src: url('/fonts/Mukta/Mukta-SemiBold.ttf'); 
+}
 
-  }
 .navbar{
     display: none;
 }
@@ -29,9 +37,9 @@ body {
     background: #333;
   }
   
-  .staticscreen-body {
-    max-width: 500px;
-    margin: auto;
-    background:#333;
-    padding: 10px;
-  }
+.staticscreen-body {
+  max-width: 500px;
+  margin: auto;
+  background:#333;
+  padding: 10px;
+}
