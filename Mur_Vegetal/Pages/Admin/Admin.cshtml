@@ -193,6 +193,38 @@
 <!--FIELDSET PRINCIPALE CONTENANT LES DIFFERRENTES NEWS FIELDSET ENFANTS-->
   <fieldset class="news-box">
     <legend>News</legend>
+<!-----------------------------------------AJOUT D'EVENT--------------------------------------------> 
+    <fieldset class="news-addnew">
+      <legend class="news-name">Ajouter</legend>
+
+        <div class="addnew-name">
+          <label class="addnew-name">Nom de l'événement : </label>
+          <input type="text" class="addnew-name" placeholder="Ex: JPO">
+        </div>
+
+        <div class="addnew-text">
+        <label class="addnew-text">Texte : </label>
+        <textarea class="addnew-text" rows="5" cols="60" placeholder="Entrez votre texte"></textarea>
+        </div>
+
+        <div class="addnew-img">
+          <label class="addnew-img">Image : </label>
+          <input class="addnew-img" type="file" accept="image/png, image/jpeg">
+        </div>
+
+        <div class="addnew-start-date">
+          <label class="addnew-start-date">Date de début : </label>
+          <input class="addnew-start-date" type="date">
+        </div>
+
+        <div class="addnew-end-date">
+          <label class="addnew-end-date">Date de fin : </label>
+          <input class="addnew-end-date" type="date">
+        </div>
+
+        <button class="button"> Valider </button>
+    </fieldset>
+<!-----------------------------------------FIN AJOUT D'EVENT--------------------------------------------> 
 <!-----------------------------------------EVENT 1--------------------------------------------> 
     <fieldset class="news-param">
       <legend class="news-name">JPO</legend>
@@ -321,38 +353,6 @@
         <button class="button"> Valider </button>
     </fieldset>
 <!-----------------------------------------FIN EVENT 4--------------------------------------------> 
-<!-----------------------------------------AJOUT D'EVENT--------------------------------------------> 
-    <fieldset class="news-addnew">
-      <legend class="news-name">Ajouter</legend>
-
-        <div class="addnew-name">
-          <label class="addnew-name">Nom de l'événement : </label>
-          <input type="text" class="addnew-name" placeholder="Ex: JPO">
-        </div>
-
-        <div class="addnew-text">
-        <label class="addnew-text">Texte : </label>
-        <textarea class="addnew-text" rows="5" cols="60" placeholder="Entrez votre texte"></textarea>
-        </div>
-
-        <div class="addnew-img">
-          <label class="addnew-img">Image : </label>
-          <input class="addnew-img" type="file" accept="image/png, image/jpeg">
-        </div>
-
-        <div class="addnew-start-date">
-          <label class="addnew-start-date">Date de début : </label>
-          <input class="addnew-start-date" type="date">
-        </div>
-
-        <div class="addnew-end-date">
-          <label class="addnew-end-date">Date de fin : </label>
-          <input class="addnew-end-date" type="date">
-        </div>
-
-        <button class="button"> Valider </button>
-    </fieldset>
-<!-----------------------------------------FIN AJOUT D'EVENT--------------------------------------------> 
   </fieldset>
 
 </div> 
