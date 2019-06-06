@@ -1,17 +1,21 @@
 var elements = [];
 var displayTimer = 1000;
 var a = document.getElementById("a");
+var a1 = a.getElementsByClassName("wall-block")
 var b = document.getElementById("b");
-var c = document.getElementById("c");
-var d = document.getElementById("d");
-var e = document.getElementById("e");
-a.style.display = "none";
-b.style.display = "none";
-c.style.display = "none";
-d.style.display = "none";
-e.style.display = "none";
-elements.push(a, b, c, d, e);
+var b1 = b.getElementsByClassName("news-block");
+//var c = document.getElementById("c");
+//var d = document.getElementById("d");
+//var e = document.getElementById("e");
+//a.style.display = "block";
+//b.style.display = "block";
+//c.style.display = "none";
+//d.style.display = "none";
+//e.style.display = "none";
 
+
+//elements.push(a, c, d, e);
+fillElments();  
 async function defile() {
 
   for (let i = 0; i < elements.length; i++) {
@@ -20,7 +24,8 @@ async function defile() {
     } else {
       elements[i - 1].style.display = 'none';
     }
-    elements[i].style.display = 'block';
+    elements[i].style.display = 'flex';
+   
     await wait1Second();
 
   }
@@ -39,3 +44,14 @@ setInterval(() => {
   defile();
 }, elements.length*displayTimer);
 
+function fillElments(){
+    for (let index = 0; index < b1.length; index++) {
+      b1[index].style.display = "none";
+      elements.push(b1[index]);
+    }
+    for (let index = 0; index < a1.length; index++) {
+      a1[index].style.display = "none";
+      elements.push(a1[index]);
+    }
+}
+ 
