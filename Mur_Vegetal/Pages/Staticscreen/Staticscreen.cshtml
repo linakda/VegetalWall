@@ -5,12 +5,13 @@
   
 }
 @section heads{
-  <link href="@Url.Content("~/css2/staticscreen.css")" rel="stylesheet" type="text/css" />
-   <link href="@Url.Content("~/css2/countdownpage.css")" rel="stylesheet" type="text/css" />
-   <link href="@Url.Content("~/css2/mediaspage.css")" rel="stylesheet" type="text/css" />
-   <link href="@Url.Content("~/css2/newspage.css")" rel="stylesheet" type="text/css" />
-   <link href="@Url.Content("~/css2/socialnetworkspage.css")" rel="stylesheet" type="text/css" />
-  <link href="@Url.Content("~/css2/wallpage.css")" rel="stylesheet" type="text/css" />
+  <link href="@Url.Content("~/css/staticscreen/countdownframe.css")" rel="stylesheet" type="text/css" />
+  <link href="@Url.Content("~/css/staticscreen/mediasframe.css")" rel="stylesheet" type="text/css" />
+  <link href="@Url.Content("~/css/staticscreen/newsframe.css")" rel="stylesheet" type="text/css" />
+  <link href="@Url.Content("~/css/staticscreen/newsframe.css")" rel="stylesheet" type="text/css" />
+  <link href="@Url.Content("~/css/staticscreen/socialnetworksframe.css")" rel="stylesheet" type="text/css" />
+  <link href="@Url.Content("~/css/staticscreen/staticscreen.css")" rel="stylesheet" type="text/css" />
+  <link href="@Url.Content("~/css/staticscreen/wallframe.css")" rel="stylesheet" type="text/css" />
   <script type="text/javascript" src="@Url.Content("~/lib/jquery/dist/jquery.js")"></script>
 
 }
@@ -18,121 +19,45 @@
 <div class="staticscreen-body" id="aa" >
 <div class="wall-body" id="a">
 
-  <div class="wall-block">
-    <div class="wall-info">
-      <div class="wall-icon"><img class="i1" src="/images/icones/thermo.png"/></div>
-      <div class="wall-text">info1</div>
-    </div>
-
-    <div class="wall-info">
-      <div class="wall-icon"><img class="i2" src="/images/icones/hydro.png"/></div>
-      <div class="wall-text">info2</div>
-    </div>
-
-    <div class="wall-info">
-      <div class="wall-icon"><img class="i3" src="/images/icones/mouvement.png"/></div>
-      <div class="wall-text">info3</div>
-    </div>
-
-    <div class="wall-info">
-      <div class="wall-icon"><img class="i4" src="/images/icones/lumiere.png"/></div>
-      <div class="wall-text">info4</div>
-    </div>
-
-    <div class="wall-info">
-      <div class="wall-icon"><img class="i5" src="/images/icones/pression.png"/></div>
-      <div class="wall-text">info5</div>
-    </div>
-
-    <div class="wall-info">
-      <div class="wall-icon"><img class="i6" src="/images/icones/batterie.png"/></div>
-      <div class="wall-text">info6</div>
-    </div>
+  <div class="wallpage-frame" id="a">
+    @{ Html.RenderPartial("_Wall"); }
   </div>
 
 
-  <div class="wall-block">
-    <div class="wall-graph">
-      <img src="/images/graph1.jpg"/>
-    </div>  
-  </div>
-
-  <div class="wall-block">
-    <div class="wall-graph">
-      <img src="/images/murvege.jpg"/>
-    </div>  
-  </div>
-
-  <div class="wall-block">
-    <div class="wall-graph">
-      <img src="/images/mur.jpg"/>
-    </div>  
-  </div>
-
-  <div class="wall-block">
-    <div class="wall-graph">
-      <img src="/images/graph1.jpg"/>
-    </div>  
-  </div>
-
-</div> 
-<div class="news-body" id="b">
-    <div class="news-block">
-        <div class="news-image">
-          <img src="/images/mur.jpg"/>
-        </div>
-        <div class="news-text">
-          Le Lorem Ipsum est simplement du faux texte employé dans la 
-          composition et la mise en page avant impression. Le Lorem Ipsum
-           est le faux texte standard de l'imprimerie depuis les années 1500
-           quand un imprimeur anonyme assembla   
-        </div>
-    </div>
-    <div class="news-block">
-        <div class="news-image">
-          <img src="/images/news1.jpg"/>
-        </div>
-        <div class="news-text">
-          On sait depuis longtemps que travailler avec du texte lisible et 
-          contenant du sens est source de distractions, et empêche de se 
-          concentrer sur la mise en page elle-même.
-          L'avantage du Lorem Ipsum sur un texte générique comme 'Du texte.
-        </div>
-    </div>
-    <div class="news-block">
-        <div class="news-image">
-          <img src="/images/news2.jpg"/>
-        </div>
-        <div class="news-text">
-          Du texte. Du texte.' est qu'il possède une distribution de lettres 
-          plus ou moins 
-          normale, et en tout cas comparable avec celle du français standard. 
-        </div>
-    </div>
-    <div class="news-block">
-        <div class="news-image">
-          <img src="/images/news3.jpg"/>
-        </div>
-        <div class="news-text">
-          Il a été popularisé dans les années 1960 grâce à la vente de feuilles
-           Letraset contenant des passages du Lorem Ipsum, et, plus récemment, 
-           par son inclusion 
-          dans des applications de mise en page de texte, comme Aldus PageMaker.
-        </div>
-    </div>
-    <div class="news-block">
-        <div class="news-image">
-          <img src="/images/news4.jpg"/>
-        </div>
-        <div class="news-text">
-          Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté 
-          à la bureautique informatique, sans que son contenu n'en soit modifié.
-        </div>
-    </div>
+<div class="newspage-frame" id="b">
+    @{ Html.RenderPartial("_News"); }
 </div>
 
 
+<div class="countdown-frame" id = "c">
+    @{ Html.RenderPartial("_Countdown"); }
 </div>
+
+<div class="mediaspage-frame" id = "d">
+    @{ Html.RenderPartial("_Medias"); }
+</div>
+
+
+<div class="socialnetworks-frame" id ="e">
+    <!-- SnapWidget -->
+    <script src="https://snapwidget.com/js/snapwidget.js"></script>
+    <iframe src="https://snapwidget.com/embed/698344" class="snapwidget-widget" allowtransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:100%;"></iframe>
+    <script>
+        
+        window.onload = function () { setTimeout( function(){
+
+            
+            
+        }, 4000);
+            
+        }
+        
+    </script>
+</div>
+
+</div>
+
+
 
 <script type="text/javascript" src="@Url.Content("~/js/staticscreen.js")"></script>
 

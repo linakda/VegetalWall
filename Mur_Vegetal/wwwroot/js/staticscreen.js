@@ -25,7 +25,7 @@ async function defile() {
       elements[i - 1].style.display = 'none';
     }
     elements[i].style.display = 'flex';
-   
+   f
     await wait1Second();
 
   }

@@ -49,16 +49,11 @@ input[type="text"]:focus{
 }
 
 textarea{
-  width: 65%;
+  resize:none;
 }
 
 .bloc{
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-}
-
-.display{
-  margin-top : 15px;
-  border-top: 4px solid rgb(100, 185, 79);
 }
