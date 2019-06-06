@@ -9,11 +9,25 @@ MEDIAS PAGE
     grid-gap: 50px 100px;
     grid-auto-flow: row;
     padding: 10px;
-    overflow: inherit;    
+    overflow: inherit;  
+}
+
+.medias-block{
+    display: flex;
+    flex-direction: column ;
+    align-items: center;
+    text-align: center;
 }
 
 .box{
     background-color: #F4F3F2;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    
+    min-width: 450px;
+    max-width: 30%;
+    margin: 5px;
+}
+
+.medias-image img{
+    display: block;
+    width: 100%;
 }
