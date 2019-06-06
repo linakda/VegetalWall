@@ -37,6 +37,7 @@ body {
   padding:0;
   background-color: #EFEDEC;
   font-family: Mukta-Regular, sans-serif;
+  overflow: hidden;
 }
   
 .staticscreen-body {
