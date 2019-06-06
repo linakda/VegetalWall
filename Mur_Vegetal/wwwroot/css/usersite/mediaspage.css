@@ -13,29 +13,26 @@ MEDIAS PAGE
 }
     
 .medias-block{
-    min-width: 300px;
-    border-radius: 10px;
-    margin: 5px;
     display: flex;
-    flex-direction: column ;
-    text-align: center;
+    flex-direction: column;
+    align-self: flex-start;
+}
+
+.box{
+    background-color: #F4F3F2;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    min-width: 500px;
+    max-width: 30%;
+    margin: 5px;
 }
     
 .medias-image img{
-    width: 40%;
-    min-width: 300px;
-    border-radius: 10px;
-    border-width: 4px;
-    border-style: solid;
-    border-color : rgb(100, 185, 79);
+    display: block;
+    width: 100%;
 }
     
 .medias-video video{
-    width: 70%;
-    min-width: 300px;
-    border-radius: 10px;
-    border-width: 4px;
-    border-style: solid;
-    border-color : rgb(100, 185, 79);
+    display: block;
+    width: 100%;
 }
     
