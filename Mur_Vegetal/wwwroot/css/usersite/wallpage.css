@@ -19,11 +19,9 @@ WALL PAGE
   display: flex;
   flex-direction: column ;
   text-align: center;
+  font-size: 1.25em;
 }
   
-.wall-text{
-  color : aliceblue;
-}
 
 .wall-body:first-of-type>div:nth-child(1){
   min-width: 300px;
