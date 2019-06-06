@@ -19,10 +19,10 @@ WALL PAGE
   max-width: 30%;
   margin: 5px;
   font-size: 1.25em;
-  justify-self: center;
 }
   
 .wall-block{
+  justify-self: center;
   display: flex;
   flex-direction: column ;
   text-align: center;
