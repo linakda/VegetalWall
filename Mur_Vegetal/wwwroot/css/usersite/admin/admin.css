@@ -1,32 +1,7 @@
 /* --------------------------------------------------------------------------------------
 ADMIN PAGE  
 --------------------------------------------------------------------------------------*/
-.admin-body{
-  width: 100%;
-  height: auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(450px, auto));
-  grid-gap: 50px 100px;
-  grid-auto-flow: row;
-  padding: 10px;
-  overflow: inherit;  
-}
 
-fieldset{
-  display: flex;
-  flex-direction: column ;
-  align-self: flex-start;
-}
-
-.box{
-  border: 3px solid black;
-}
-
-.bordure{
-  margin-top: 25px;
-  margin-bottom: 15px;
-  border-bottom: 3px solid black;
-}
 
 /* --------------------------------------------------------------------------------------
 ADMIN PHOTO  
@@ -91,12 +66,6 @@ textarea{
 /* --------------------------------------------------------------------------------------
 ADMIN TEXT
 --------------------------------------------------------------------------------------*/
-.name{
-  text-transform: uppercase;
-  font-size: 1.25em;
-  font-weight: bold;
-  color: #629460;
-}
 
 legend{
   text-transform: uppercase;
