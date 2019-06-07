@@ -17,6 +17,7 @@ e.style.display = "none";
 
 elements.push(c, e);
 fillElments();  
+defile();
 async function defile() {
 
   for (let i = 0; i < elements.length; i++) {
@@ -58,4 +59,3 @@ function fillElments(){
       elements.push(d1[index]);
     }
 }
- 
