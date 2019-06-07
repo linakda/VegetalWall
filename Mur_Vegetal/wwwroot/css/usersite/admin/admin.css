@@ -167,6 +167,8 @@ ADMIN BOUTON
 }
 
 .main-body button{
+  width: 25%;
+  font-size: 18px;
   border: 0.2px solid #333;
   border-radius : 5px;
   font-family: Mukta-Bold;
