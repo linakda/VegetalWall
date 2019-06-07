@@ -1,5 +1,5 @@
 var elements = [];
-var displayTimer = 1000;
+var displayTimer = 5000;
 var a = document.getElementById("a");
 var a1 = a.getElementsByClassName("wall-block");
 var b = document.getElementById("b");
@@ -17,6 +17,8 @@ e.style.display = "none";
 
 elements.push(c, e);
 fillElments();  
+defile();
+launchIntervail();
 async function defile() {
 
   for (let i = 0; i < elements.length; i++) {
@@ -26,7 +28,7 @@ async function defile() {
       elements[i - 1].style.display = 'none';
     }
     elements[i].style.display = 'flex';
-    console.log(i);
+    animate(elements[i]);
     await wait1Second();
 
   }
@@ -40,10 +42,12 @@ function wait1Second(x) {
     }, displayTimer);
   });
 }
-
-setInterval(() => {
-  defile();
-}, elements.length*displayTimer);
+function launchIntervail(){
+  setInterval(() => {
+    defile();
+  }, elements.length*displayTimer);
+  
+}
 
 function fillElments(){
     for (let index = 0; index < b1.length; index++) {
@@ -59,4 +63,6 @@ function fillElments(){
       elements.push(d1[index]);
     }
 }
- 
+function animate(element) {
+  transition.begin(element, ["opacity 0 1 1s", "transform translateX(-200px) translateX(0px) 1s ease-in-out"]);
+}
