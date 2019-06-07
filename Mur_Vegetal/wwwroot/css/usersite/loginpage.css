@@ -52,14 +52,14 @@ LOGIN PAGE
     margin:20px;
   }
 
-  .bouton{
+  .button{
     background-color: rgb(100, 185, 79);
     border: 2px solid #333;
     border-radius : 5px;
     
     font-family: Raleway-Bold, sans-serif;
   }
-  .bouton:hover {
+  .button:hover {
     background-color: #333; /* Green */
     border: 2px solid rgb(100, 185, 79);
     color: white;
