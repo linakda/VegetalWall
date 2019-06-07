@@ -2,6 +2,7 @@
 @model LoginModel
 @{
     ViewData["Title"] = "Espace Administrateur - Login";
+    Layout = "~/Pages/Shared/_AdminLayout.cshtml";
 }
 @section heads{
   <link href="@Url.Content("~/css/usersite/loginpage.css")" rel="stylesheet" type="text/css" />
@@ -15,7 +16,7 @@
             <input type="password" name="password">
         </div>
         <div class="connexion">
-            <button class="button"> connexion </button>
+            <button> connexion </button>
         </div>
     </div>
 
