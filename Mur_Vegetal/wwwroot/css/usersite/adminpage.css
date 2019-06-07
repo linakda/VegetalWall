@@ -16,7 +16,10 @@ fieldset{
   display: flex;
   flex-direction: column ;
   align-self: flex-start;
-  font-size: 1.15em;
+}
+
+.box{
+  border: 3px solid black;
 }
 
 .bordure{
