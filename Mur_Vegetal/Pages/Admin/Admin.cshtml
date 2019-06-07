@@ -13,7 +13,7 @@
 <!----------------------------------------------------------------------------------------------------------------------------->
 <!----------------------------------------------------------------------------------------------------------------------------->
 <!--FIELDSET PRINCIPALE CONTENANT LES DIFFERRENTS AFFICHAGES FIELDSET ENFANTS-->
-  <fieldset class="frame-box">
+  <fieldset class="frame-box box">
     <legend class="name">Frame</legend>
 
 <!-------------------------------------------FIELDSET MUR---------------------------------------------->
@@ -243,7 +243,7 @@
 <!----------------------------------------------------------------------------------------------------------------------------->
 <!----------------------------------------------------------------------------------------------------------------------------->
 <!--FIELDSET PRINCIPALE CONTENANT LES DIFFERRENTES NEWS FIELDSET ENFANTS-->
-  <fieldset class="news-box">
+  <fieldset class="news-box box">
     <legend class="name">News</legend>
 <!-----------------------------------------AJOUT D'EVENT--------------------------------------------> 
     <fieldset class="news-addnew">
@@ -434,7 +434,7 @@
 <!----------------------------------------------------------------------------------------------------------------------------->
 <!----------------------------------------------------------------------------------------------------------------------------->
 <!--FIELDSET PRINCIPALE CONTENANT LES DIFFERRENTES MEDIAS FIELDSET ENFANTS-->
-  <fieldset class="media-box">
+  <fieldset class="media-box box">
     <legend class="name">Medias</legend>
 <!-----------------------------------------AJOUT DE MEDIA--------------------------------------------> 
     <fieldset class="medias-addnew">
@@ -623,7 +623,7 @@
 
 <!----------------------------------------------------------------------------------------------------------------------------->
 <!----------------------------------------------------------------------------------------------------------------------------->
-  <fieldset class="countdown-box">
+  <fieldset class="countdown-box box">
     <legend class="name">Compte à rebours</legend>
 <!-----------------------------------------AJOUT DE COUNTDOWN--------------------------------------------> 
     <fieldset class="countdown-addnew">
@@ -752,7 +752,7 @@
   </fieldset>
 <!----------------------------------------------------------------------------------------------------------------------------->
 <!----------------------------------------------------------------------------------------------------------------------------->
-  <fieldset class="socialnetworks-box">
+  <fieldset class="socialnetworks-box box">
     <legend class="name">Réseaux sociaux</legend>
 
     <div class="username-param"> 
@@ -767,11 +767,13 @@
       <legend class="home-name">Page d'accueil</legend>
 
       <div class="page-param">
-        <label class="page-param">Page : </label>
+        <label class="page-param">Nom de page : </label>
+        <input type="text" class="page-param" placeholder="ex:Accueil">
       </div>
       
       <div class="widget-param">
-        <label class="widget-param">Widget : </label>
+        <label class="widget-param">Lien widget : </label>
+        <input list="Compte" type="text" class="widget-param" placeholder="ex:">
       </div>
 
       <div class=button>
