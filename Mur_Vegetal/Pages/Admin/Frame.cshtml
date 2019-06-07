@@ -1,0 +1,233 @@
+@page
+@model FrameAdminModel
+@{
+    ViewData["Title"] = "Admin - Frame";
+}
+@section heads{
+  <link href="@Url.Content("~/css/usersite/admin/frameadmin.css")" rel="stylesheet" type="text/css" />
+}
+
+<!--FIELDSET PRINCIPALE CONTENANT LES DIFFERRENTS AFFICHAGES FIELDSET ENFANTS-->
+  <fieldset class="frame-box box">
+    <legend class="name">Frame</legend>
+
+<!-------------------------------------------FIELDSET MUR---------------------------------------------->
+    <fieldset class="frame-param">
+      <legend class="frame-name">Mur</legend>
+
+        <div class="param-disp">
+          <label class="param-disp">Affichage </label>
+          <input type="checkbox" class="param-disp">
+        </div>
+
+        <div class="param-disptime">
+          <label class="param-disptime">Temps d'affichage : </label>
+          <input list="Sec" type="text" class="param-disptime" placeholder="En secondes">
+             <datalist id="Sec">
+              <option value="10"></option>
+              <option value="20"></option>
+              <option value="30"></option>
+              <option value="40"></option>
+              <option value="50"></option>
+              <option value="60"></option>
+              <option value="120"></option>
+            </datalist>
+        </div>
+
+        <div class="param-carroussel">
+          <label class="param-carroussel">Temps d'affichage du carroussel : </label>
+          <input list="Sec" type="text" class="param-carroussel" placeholder="En secondes">
+             <datalist id="Sec">
+              <option value="10"></option>
+              <option value="20"></option>
+              <option value="30"></option>
+              <option value="40"></option>
+              <option value="50"></option>
+              <option value="60"></option>
+              <option value="120"></option>
+            </datalist>
+        </div>   
+
+        <div class=button>
+         <button class="button-delete"> Supprimer </button>
+         <button class="button-apply"> Valider </button>
+        </div>
+      
+    </fieldset>
+<!-----------------------------------------FIN FIELDSET MUR-------------------------------------------->    
+
+<!-------------------------------------------FIELDSET INFORMATIONS---------------------------------------------->
+    <fieldset class="frame-param">
+      <legend class="frame-name">Informations</legend>
+
+        <div class="param-disp">
+          <label class="param-disp">Affichage </label>
+          <input type="checkbox" class="param-disp">
+        </div>
+
+        <div class="param-disptime">
+          <label class="param-disptime">Temps d'affichage : </label>
+          <input list="Sec" type="text" class="param-disptime" placeholder="En secondes">
+             <datalist id="Sec">
+              <option value="10"></option>
+              <option value="20"></option>
+              <option value="30"></option>
+              <option value="40"></option>
+              <option value="50"></option>
+              <option value="60"></option>
+              <option value="120"></option>
+            </datalist>
+        </div>
+
+        <div class="param-carroussel">
+          <label class="param-carroussel">Temps d'affichage du carroussel : </label>
+          <input list="Sec" type="text" class="param-carroussel" placeholder="En secondes">
+             <datalist id="Sec">
+              <option value="10"></option>
+              <option value="20"></option>
+              <option value="30"></option>
+              <option value="40"></option>
+              <option value="50"></option>
+              <option value="60"></option>
+              <option value="120"></option>
+            </datalist>
+        </div>   
+
+        <div class=button>
+         <button class="button-delete"> Supprimer </button>
+         <button class="button-apply"> Valider </button>
+        </div>
+      
+    </fieldset>
+<!-----------------------------------------FIN FIELDSET INFORMATIONS-------------------------------------------->   
+
+<!-------------------------------------------FIELDSET PHOTOS/VIDEOS---------------------------------------------->
+    <fieldset class="frame-param">
+      <legend class="frame-name">Photos/Vidéos</legend>
+
+        <div class="param-disp">
+          <label class="param-disp">Affichage </label>
+          <input type="checkbox" class="param-disp">
+        </div>
+
+        <div class="param-disptime">
+          <label class="param-disptime">Temps d'affichage : </label>
+          <input list="Sec" type="text" class="param-disptime" placeholder="En secondes">
+             <datalist id="Sec">
+              <option value="10"></option>
+              <option value="20"></option>
+              <option value="30"></option>
+              <option value="40"></option>
+              <option value="50"></option>
+              <option value="60"></option>
+              <option value="120"></option>
+            </datalist>
+        </div>
+
+        <div class="param-carroussel">
+          <label class="param-carroussel">Temps d'affichage du carroussel : </label>
+          <input list="Sec" type="text" class="param-carroussel" placeholder="En secondes">
+             <datalist id="Sec">
+              <option value="10"></option>
+              <option value="20"></option>
+              <option value="30"></option>
+              <option value="40"></option>
+              <option value="50"></option>
+              <option value="60"></option>
+              <option value="120"></option>
+            </datalist>
+        </div>   
+
+        <div class=button>
+         <button class="button-delete"> Supprimer </button>
+         <button class="button-apply"> Valider </button>
+        </div>
+      
+    </fieldset>
+<!-----------------------------------------FIN FIELDSET PHOTOS/VIDEOS-------------------------------------------->  
+
+<!-------------------------------------------FIELDSET COMPTES A REBOURS---------------------------------------------->
+    <fieldset class="frame-param">
+      <legend class="frame-name">Comptes à rebours</legend>
+
+        <div class="param-disp">
+          <label class="param-disp">Affichage </label>
+          <input type="checkbox" class="param-disp">
+        </div>
+
+        <div class="param-disptime">
+          <label class="param-disptime">Temps d'affichage : </label>
+          <input list="Sec" type="text" class="param-disptime" placeholder="En secondes">
+             <datalist id="Sec">
+              <option value="10"></option>
+              <option value="20"></option>
+              <option value="30"></option>
+              <option value="40"></option>
+              <option value="50"></option>
+              <option value="60"></option>
+              <option value="120"></option>
+            </datalist>
+        </div>
+
+        <div class="param-carroussel">
+          <label class="param-carroussel">Temps d'affichage du carroussel : </label>
+          <input list="Sec" type="text" class="param-carroussel" placeholder="En secondes">
+             <datalist id="Sec">
+              <option value="10"></option>
+              <option value="20"></option>
+              <option value="30"></option>
+              <option value="40"></option>
+              <option value="50"></option>
+              <option value="60"></option>
+              <option value="120"></option>
+            </datalist>
+        </div>   
+
+        <div class=button>
+         <button class="button-delete"> Supprimer </button>
+         <button class="button-apply"> Valider </button>
+        </div>
+      
+    </fieldset>
+<!-----------------------------------------FIN FIELDSET COMPTES A REBOURS-------------------------------------------->  
+
+<!-------------------------------------------FIELDSET RESEAUX SOCIAUX---------------------------------------------->
+    <fieldset class="frame-param">
+      <legend class="frame-name">Réseaux sociaux</legend>
+
+        <div class="param-disp">
+          <label class="param-disp">Affichage </label>
+          <input type="checkbox" class="param-disp">
+        </div>
+
+        <div class="param-disptime">
+          <label class="param-disptime">Temps d'affichage : </label>
+          <input list="Sec" type="text" class="param-disptime" placeholder="En secondes">
+             <datalist id="Sec">
+              <option value="5"></option>
+              <option value="10"></option>
+              <option value="15"></option>
+              <option value="20"></option>
+            </datalist>
+        </div>
+
+        <div class="param-carroussel">
+          <label class="param-carroussel">Temps d'affichage du carroussel : </label>
+          <input list="Sec" type="text" class="param-carroussel" placeholder="En secondes">
+             <datalist id="Sec">
+              <option value="5"></option>
+              <option value="10"></option>
+              <option value="15"></option>
+              <option value="20"></option>
+            </datalist>
+        </div>   
+
+        <div class=button>
+         <button class="button-delete"> Supprimer </button>
+         <button class="button-apply"> Valider </button>
+        </div>
+      
+    </fieldset>
+<!-----------------------------------------FIN FIELDSET RESEAUX SOCIAUX-------------------------------------------->   
+
+  </fieldset>
