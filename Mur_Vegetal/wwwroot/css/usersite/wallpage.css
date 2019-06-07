@@ -5,7 +5,7 @@ WALL PAGE
   width: 100%;
   height: auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(450px, auto));
+  grid-template-columns: repeat(1);
   grid-gap: 50px 100px;
   grid-auto-flow: row;
   padding: 10px;
@@ -23,7 +23,7 @@ WALL PAGE
   
 .wall-block{
   display: flex;
-  flex-direction: column ;
+  flex-direction: row ;
   text-align: center;
   justify-self: center;
   align-self: flex-start;
