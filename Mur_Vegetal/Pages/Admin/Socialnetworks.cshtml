@@ -4,5 +4,60 @@
     ViewData["Title"] = "Admin - Socialnetworks";
 }
 @section heads{
-  <link href="@Url.Content("~/css/usersite/adminpage.css")" rel="stylesheet" type="text/css" />
+  <link href="@Url.Content("~/css/usersite/admin/socialnetworksadmin.css")" rel="stylesheet" type="text/css" />
 }
+
+<!----------------------------------------------------------------------------------------------------------------------------->
+<!----------------------------------------------------------------------------------------------------------------------------->
+  <fieldset class="socialnetworks-box box">
+    <legend class="name">Réseaux sociaux</legend>
+
+    <div class="username-param"> 
+      <label class="username-param">Nom du compte : </label>
+      <input list="Compte" type="text" class="username-param" placeholder="ex:ISEN.Lille">
+       <datalist id="Compte">
+        <option value="ISEN.Lille"></option>
+       </datalist>
+    </div>
+
+    <fieldset class="home-param">
+      <legend class="home-name">Page d'accueil</legend>
+
+      <div class="page-param">
+        <label class="page-param">Nom de page : </label>
+        <input type="text" class="page-param" placeholder="ex:Accueil">
+      </div>
+      
+      <div class="widget-param">
+        <label class="widget-param">Lien widget : </label>
+        <input type="text" class="widget-param" placeholder="ex:https://snapwidget.com/js/snapwidget.js">
+      </div>
+
+      <div class=button>
+        <button class="button-delete"> Supprimer </button>
+        <button class="button-apply"> Valider </button>
+      </div>
+
+    </fieldset>
+
+    <fieldset class="home-param">
+      <legend class="home-name">Page réseaux sociaux</legend>
+
+      <div class="page-param">
+        <label class="page-param">Nom de page : </label>
+        <input type="text" class="page-param" placeholder="ex:Accueil">
+      </div>
+      
+      <div class="widget-param">
+        <label class="widget-param">Lien widget : </label>
+        <input type="text" class="widget-param" placeholder="ex:https://snapwidget.com/js/snapwidget.js">
+      </div>
+
+      <div class=button>
+        <button class="button-delete"> Supprimer </button>
+        <button class="button-apply"> Valider </button>
+      </div>
+
+    </fieldset>
+<!----------------------------------------------------------------------------------------------------------------------------->
+<!----------------------------------------------------------------------------------------------------------------------------->
