@@ -4,22 +4,18 @@
     ViewData["Title"] = "Espace Administrateur - Login";
 }
 @section heads{
-  <link href="@Url.Content("~/css/loginpage.css")" rel="stylesheet" type="text/css" />
+  <link href="@Url.Content("~/css/usersite/loginpage.css")" rel="stylesheet" type="text/css" />
 }
 
 
 <div class="login-body">
-
-    <div class="passblock">
-        <div class="pass">
-            <div class="mdp">
-            <label for="pass">Mot de passe: </label>
-            </div>
-            <input type="password" class="password" name="password">
-            
+    <div class="login-block box">
+        <div class="password">
+            <label for="password">Mot de passe</label>
+            <input type="password" name="password">
         </div>
         <div class="connexion">
-            <button class="bouton"> connexion </button>
+            <button class="button"> connexion </button>
         </div>
     </div>
 
