@@ -56,6 +56,28 @@ ADMIN BOUTON
   margin-top: 10px;
 }
 
+button{
+  border: 0.2px solid #333;
+  border-radius : 5px;
+  font-family: Mukta-Bold;
+  color: white;
+
+}
+
+button:hover{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.button-apply{
+  background-color: #629460;
+}
+
+.button-delete{
+  background-color: #f04646;
+}
+
+
+
 /* --------------------------------------------------------------------------------------
 ADMIN TEXTAREA
 --------------------------------------------------------------------------------------*/
@@ -71,12 +93,14 @@ ADMIN TEXT
 --------------------------------------------------------------------------------------*/
 .name{
   text-transform: uppercase;
+  font-size: 1.25em;
   font-weight: bold;
   color: #629460;
 }
 
 legend{
   text-transform: uppercase;
+  font-size: 1.25em;
   color: #629460;
 }
 
@@ -94,29 +118,4 @@ div[class="param-text"]{
   flex-direction: row;
 }
 
-.button-apply{
-  background-color: rgb(122, 238, 93);
-  border: 2px solid #333;
-  border-radius : 5px;
-  
-  font-family: Raleway-Bold, sans-serif;
-}
-.button-apply:hover {
-  background-color: #333; /* Green */
-  border: 2px solid rgb(87, 165, 68);
-  color: white;
-}
-
-.button-delete{
-  background-color: rgb(238, 93, 93);
-  border: 2px solid #333;
-  border-radius : 5px;
-  
-  font-family: Raleway-Bold, sans-serif;
-}
-.button-delete:hover {
-  background-color: #333; /* Green */
-  border: 2px solid rgb(165, 68, 68);
-  color: white;
-}
 
