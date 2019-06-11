@@ -18,7 +18,7 @@ medias.style.display = "block";
 insta.style.display = "none";
 
 
-modifyTime(3000,12000,7000);
+modifyTime(1,12000,1);
 fillElments();  
 defile();
 launchIntervail();
@@ -76,9 +76,9 @@ function animate(element) {
 }
 
 function modifyTime(timerCountdown,timerInsta,timerWall){
-  
-    this.timerCountdown = (timerCountdown === 0) ? 0 : timerCountdown ; 
-    this.timerInsta = (timerInsta === 0) ? 0 : timerInsta ; 
-    this.timerWall = (timerWall === 0) ? 0 : timerWall ; 
+    /* si 1 c'est le temps / défaut   donc si vous voulez modifier que wall / exp 
+    on met modifyTime(1,1, x )   */
+    this.timerCountdown = (timerCountdown === 1) ? displayTimer : timerCountdown ; 
+    this.timerInsta = (timerInsta === 1) ? displayTimer : timerInsta ; 
+    this.timerWall = (timerWall === 1) ? displayTimer : timerWall ; 
 }
-
