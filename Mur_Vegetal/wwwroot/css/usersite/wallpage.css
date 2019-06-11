@@ -5,7 +5,7 @@ WALL PAGE
   width: 100%;
   height: auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(450px, auto));
+  grid-template-columns: repeat(auto-fit , minmax(450px, auto));
   grid-gap: 50px 100px;
   grid-auto-flow: row;
   padding: 10px;
@@ -18,42 +18,32 @@ WALL PAGE
   min-width: 450px;
   width: auto-fit;
   margin: 5px;
-  font-size: 1.25em;
 }
   
 .wall-block{
   display: flex;
   flex-direction: column ;
-  text-align: center;
   justify-self: center;
-  align-self: flex-start;
   font-size: 1.25em;
+  align-items: center;
+  padding: 10px;
 }
-  
 
-.wall-body:first-of-type>div:nth-child(1){
-  min-width: 300px;
+.info{
+  display: flex;
+  flex-direction: row;
+  justify-self: center;
+  align-items: center;
+}
+
+.info img{
+  padding: 5px;
 }
   
 /***************************************************************************************
 WALL IMAGE
 ****************************************************************************************/
   
-.wall-icon img{
-  margin-top: 5px;
-  width: 50%;
-}
-.wall-info{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  flex-flow: row wrap;
-}
-  
-.wall-graph img{
-  display: block;
-  width: 100%;
-}
 
 img{
   max-width: 450px;

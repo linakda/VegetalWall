@@ -14,10 +14,6 @@ LOGIN PAGE
   align-items: center; 
 }
 
-.login-block{
-  
-}
-
 .box{
   background-color: #F4F3F2;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -29,7 +25,7 @@ LOGIN PAGE
   color: #629460;
 }
 
-button{
+.login-body button{
   border: 0.2px solid #333;
   border-radius : 5px;
   font-family: Mukta-Bold;
@@ -38,6 +34,6 @@ button{
   color: #629460;
 }
 
-button:hover{
+.login-body button:hover{
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }

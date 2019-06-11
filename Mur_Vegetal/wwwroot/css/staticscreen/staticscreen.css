@@ -43,6 +43,10 @@ body {
 .staticscreen-body {
   max-width: 500px;
   margin: auto;
+<<<<<<< HEAD
   background:#EFEDEC;
+=======
+  background-color:  #EFEDEC;
+>>>>>>> de7f8676af0f38154747c5ea7dd1e1c09bd06e94
   padding: 10px;
 }
