@@ -18,7 +18,7 @@ medias.style.display = "block";
 insta.style.display = "none";
 
 
-
+modifyTime(3000,12000,7000);
 fillElments();  
 defile();
 launchIntervail();
@@ -33,7 +33,7 @@ async function defile() {
       }
       elements[i].style.display = 'flex';
       animate(elements[i]);
-      await wait1Second(timer[i]);
+      await wait1Second(timers[i]);
   
     }
    
@@ -52,7 +52,7 @@ function wait1Second(displayTimer) {
 function launchIntervail(){
   setInterval(() => {
     defile();
-  }, elements.length*displayTimer);
+  },  timers.reduce((a,b) => a + b, 0));
   
 }
 
@@ -76,8 +76,9 @@ function animate(element) {
 }
 
 function modifyTime(timerCountdown,timerInsta,timerWall){
-    this.timerCountdown = timerCountdown ; 
-    this.timerInsta = timerInsta ; 
-    this.timerWall = timerWall ; 
+  
+    this.timerCountdown = (timerCountdown === 0) ? 0 : timerCountdown ; 
+    this.timerInsta = (timerInsta === 0) ? 0 : timerInsta ; 
+    this.timerWall = (timerWall === 0) ? 0 : timerWall ; 
 }
 
