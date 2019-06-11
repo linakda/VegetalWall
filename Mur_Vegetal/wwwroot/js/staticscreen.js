@@ -15,7 +15,7 @@ d.style.display = "block";
 e.style.display = "none";
 
 
-elements.push(c, e);
+elements.push(c,e);
 fillElments();  
 defile();
 async function defile() {
