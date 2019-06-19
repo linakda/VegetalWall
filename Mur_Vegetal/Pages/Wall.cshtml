@@ -4,130 +4,85 @@
     ViewData["Title"] = "Mur Vegetal";
 }
 @section heads{
-  <link href="@Url.Content("~/css/usersite/wallpage.css")" rel="stylesheet" type="text/css" />
-  <script src="//www.amcharts.com/lib/4/core.js"></script>
-  <script src="//www.amcharts.com/lib/4/charts.js"></script>
+  <link href="@Url.Content("css/usersite/wallpage.css")" rel="stylesheet" type="text/css" />
+  <script src="https://www.amcharts.com/lib/4/core.js"></script>
+  <script src="https://www.amcharts.com/lib/4/charts.js"></script>
+  <script src="https://www.amcharts.com/lib/4/themes/spiritedaway.js"></script>
+  <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+  <script type="text/javascript" src="@Url.Content("js/graph.js")"></script>
 }
 
 <div class="wall-body">
 
   <div class="wall-block box">
     <div class="info">
-      <div class="temp-icon"><img class="i1" src="~/images/icones/thermo.png"/></div>
+      <div class="temp-icon"><img class="i1" src="images/icones/thermo.png"/></div>
       <div class="temp-text">Température : 15°C </div>
     </div>
-      <style>
-#chartdiv {
-  width: 100%;
-  height: 500px;
-}
-
-</style>
-
-<!-- Resources -->
-<script src="https://www.amcharts.com/lib/4/core.js"></script>
-<script src="https://www.amcharts.com/lib/4/charts.js"></script>
-<script src="https://www.amcharts.com/lib/4/themes/spiritedaway.js"></script>
-<script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
-
-<!-- Chart code -->
-<script>
-am4core.ready(function() {
-
-// Themes begin
-am4core.useTheme(am4themes_spiritedaway);
-am4core.useTheme(am4themes_animated);
-// Themes end
-
-var chart = am4core.create("chartdiv", am4charts.XYChart);
-
-var data = [];
-var value = 50;
-for(let i = 0; i < 300; i++){
-  let date = new Date();
-  date.setHours(0,0,0,0);
-  date.setDate(i);
-  value -= Math.round((Math.random() < 0.5 ? 1 : -1) * Math.random() * 10);
-  data.push({date:date, value: value});
-}
-
-chart.data = data;
-
-// Create axes
-var dateAxis = chart.xAxes.push(new am4charts.DateAxis());
-dateAxis.renderer.minGridDistance = 60;
-
-var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
-
-// Create series
-var series = chart.series.push(new am4charts.LineSeries());
-series.dataFields.valueY = "value";
-series.dataFields.dateX = "date";
-series.tooltipText = "{value}"
-
-series.tooltip.pointerOrientation = "vertical";
-
-chart.cursor = new am4charts.XYCursor();
-chart.cursor.snapToSeries = series;
-chart.cursor.xAxis = dateAxis;
-
-//chart.scrollbarY = new am4core.Scrollbar();
-chart.scrollbarX = new am4core.Scrollbar();
-
-}); // end am4core.ready()
-</script>
-
-<!-- HTML -->
-<div id="chartdiv"></div>
+    <div class="chart temp-chart"> 
+      <script>graph("temp-chart");</script>
+    </div>
   </div>
 
 
   <div class="wall-block box">
     <div class="info">
-      <div class="temp-icon"><img class="i1" src="~/images/icones/air.png"/></div>
-      <div class="temp-text">Qualité de l'air : 20% </div>
+      <div class="air-icon"><img class="i1" src="images/icones/air.png"/></div>
+      <div class="air-text">Qualité de l'air : 20% </div>
     </div>
-      <div class="temp-graph"><img src="~/images/graphique.jpg"/></div>
+    <div class="chart air-chart"> 
+      <script>graph("air-chart");</script>
+    </div>
   </div>
 
   <div class="wall-block box">
     <div class="info">
-      <div class="temp-icon"><img class="i1" src="~/images/icones/pression.png"/></div>
-      <div class="temp-text">Commande pompe : ? </div>
+      <div class="pression-icon"><img class="i1" src="images/icones/pression.png"/></div>
+      <div class="pression-text">Commande pompe : ? </div>
     </div>
-      <div class="temp-graph"><img src="~/images/graphique.jpg"/></div>
+    <div class="chart pression-chart"> 
+      <script>graph("pression-chart");</script>
+    </div>
   </div>
 
   <div class="wall-block box">
     <div class="info">
-      <div class="temp-icon"><img class="i1" src="~/images/icones/hydro.png"/></div>
-      <div class="temp-text">Humidité : 20% </div>
+      <div class="hydro-icon"><img class="i1" src="images/icones/hydro.png"/></div>
+      <div class="hydro-text">Humidité : 20% </div>
     </div>
-      <div class="temp-graph"><img src="~/images/graphique.jpg"/></div>
+    <div class="chart hydro-chart"> 
+      <script>graph("hydro-chart");</script>
+    </div>
   </div>
 
   <div class="wall-block box">
     <div class="info">
-      <div class="temp-icon"><img class="i1" src="~/images/icones/mouvement.png"/></div>
-      <div class="temp-text">Flux entrant/sortant : ? </div>
+      <div class="mouv-icon"><img class="i1" src="images/icones/mouvement.png"/></div>
+      <div class="mouv-text">Flux entrant/sortant : ? </div>
     </div>
-      <div class="temp-graph"><img src="~/images/graphique.jpg"/></div>
+    <div class="chart mouv-chart"> 
+      <script>graph("mouv-chart");</script>
+    </div>
   </div>
 
   <div class="wall-block box">
     <div class="info">
-      <div class="temp-icon"><img class="i1" src="~/images/icones/pression_ruche.png"/></div>
-      <div class="temp-text">Pression ruche : ? </div>
+      <div class="pr-icon"><img class="i1" src="images/icones/pression_ruche.png"/></div>
+      <div class="pr-text">Pression ruche : ? </div>
     </div>
-      <div class="temp-graph"><img src="~/images/graphique.jpg"/></div>
+    <div class="chart pr-chart"> 
+      <script>graph("pr-chart");</script>
     </div>
+  </div>
 
   <div class="wall-block box">
     <div class="info">
-      <div class="temp-icon"><img class="i1" src="~/images/icones/thermo_ruche.png"/></div>
-      <div class="temp-text">Température ruche : 22°C </div>
+      <div class="tr-icon"><img class="i1" src="images/icones/thermo_ruche.png"/></div>
+      <div class="tr-text">Température ruche : 22°C </div>
     </div>
-      <div class="temp-graph"><img src="~/images/graphique.jpg"/></div>
+    <div class="chart tr-chart"> 
+      <script>graph("tr-chart");</script>
+    </div>
   </div>
 
 </div> 

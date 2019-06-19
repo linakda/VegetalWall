@@ -1,14 +1,14 @@
 
 
 
-am4core.ready(function() {
+function graph(divname) {
 
 // Themes begin
 am4core.useTheme(am4themes_spiritedaway);
 am4core.useTheme(am4themes_animated);
 // Themes end
 
-var chart = am4core.create("chartdiv", am4charts.XYChart);
+var chart = am4core.create(divname, am4charts.XYChart);
 
 var data = [];
 var value = 50;
@@ -40,7 +40,12 @@ chart.cursor = new am4charts.XYCursor();
 chart.cursor.snapToSeries = series;
 chart.cursor.xAxis = dateAxis;
 
-//chart.scrollbarY = new am4core.Scrollbar();
 chart.scrollbarX = new am4core.Scrollbar();
+chart.hideCredits = true;
 
-}); // end am4core.ready()
+$(document).ready(function(){
+  $("g[aria-labelledby]").hide();
+})
+
+}; // end am4core.ready()
+
