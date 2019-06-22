@@ -36,21 +36,16 @@ var frame = {
     },
 
     start(){
-        console.log('start');
         let thisFrame = Array.from(frameDiv)[currentFrameIndex][1]; //Get current frame html element
         let timing = frameTimers.get(Array.from(frameDiv)[currentFrameIndex][0]); //Get current frame timer
-        console.log('frame index ', currentFrameIndex);
-        console.log('frame name ', Array.from(frameDiv)[currentFrameIndex][0]);
-        console.log('this timing ', timing);
+        console.log('frame index ', currentFrameIndex, ' frame name ', Array.from(frameDiv)[currentFrameIndex][0], ' frame timoing ', timing);
 
-        //frame.animateIn(thisFrame);
         thisFrame.css("display","grid"); //Display current frame element
 
         currentFrameIndex++;
 
         if(currentFrameIndex>lastFrameIndex){ //Check if its the last frame element
             currentFrameIndex=0;
-            console.log('loop ended');
         }
 
         frameTimer = setTimeout(function(){
@@ -61,7 +56,6 @@ var frame = {
                 previousFrameIndex = lastFrameIndex;
             }
 
-            //frame.animateOut(Array.from(frameDiv)[previousFrameIndex][1]);
             Array.from(frameDiv)[previousFrameIndex][1].css("display","none"); //Remove previous frame
             frame.animateIn(Array.from(frameDiv)[currentFrameIndex][1]);
 
