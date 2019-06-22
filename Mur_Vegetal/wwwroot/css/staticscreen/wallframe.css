@@ -4,15 +4,14 @@ WALL FRAME
 
 .wall-frame {
     width: 100%;
-    height: 100vh;
+    height: inherit;
     grid-template-columns: repeat(1, minmax(700px, auto));
     grid-template-rows: repeat(7, 12%);
     grid-gap: 50px 50px;
     grid-auto-flow: row;
     justify-items: center;
-    padding: 10px;
     overflow: inherit;
-    align-content: space-around;
+    align-content: space-evenly;
 }
 
 .box {
