@@ -51,7 +51,7 @@ var frame = {
             console.log('Nothing to display');
         }
         else {
-            console.log('Starting frames display');
+            console.log('Starting frames display. ',triggerStart,' frames to display');
             frame.start(); //Start frame animation
         }
     },
