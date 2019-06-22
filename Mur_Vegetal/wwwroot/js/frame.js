@@ -33,12 +33,32 @@ var frame = {
         };
 
         lastFrameIndex = frameDiv.size -1;
+
+        let triggerStart = 0;
+        let tempNameTrigger = "";
+        for (const [key, value] of frameTimers.entries()) { //check how many null timers there is
+            if (!isNaN(value) && value != null && value != 0){ //if its a number
+                triggerStart++;
+                tempNameTrigger = key;
+            }
+        };
+
+        if (triggerStart == 1){
+            console.log('Only 1 frame to display. No animation.');
+            frameDiv.get(tempNameTrigger).css("display","grid");
+        }
+        else if (triggerStart < 1){
+            console.log('Nothing to display');
+        }
+        else {
+            console.log('Starting frames display');
+            frame.start(); //Start frame animation
+        }
     },
 
     start(){
         let thisFrame = Array.from(frameDiv)[currentFrameIndex][1]; //Get current frame html element
         let timing = frameTimers.get(Array.from(frameDiv)[currentFrameIndex][0]); //Get current frame timer
-        console.log('frame index ', currentFrameIndex, ' frame name ', Array.from(frameDiv)[currentFrameIndex][0], ' frame timoing ', timing);
 
         thisFrame.css("display","grid"); //Display current frame element
 
@@ -57,7 +77,6 @@ var frame = {
             }
 
             Array.from(frameDiv)[previousFrameIndex][1].css("display","none"); //Remove previous frame
-            frame.animateIn(Array.from(frameDiv)[currentFrameIndex][1]);
 
             frame.start();
         }, timing*1000);
@@ -65,9 +84,9 @@ var frame = {
     },
 
     animateIn(element) {
-        element.toggle('slide', { direction: "left" }, 1000);
+        
     },
     animateOut(element) {
-        element.toggle('slide', { direction: "right" }, 1000);
+        
     }
 }
