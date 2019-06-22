@@ -26,7 +26,7 @@
       <script src="https://www.amcharts.com/lib/4/themes/spiritedaway.js"></script>
       <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
       <script type="text/javascript" src="@Url.Content("~/js/graph.js")"></script>
-      <script type="text/javascript" src="@Url.Content("~/js/_frameproti.js")"></script>
+      <script type="text/javascript" src="@Url.Content("~/js/frame.js")"></script>
   </head>
   <body>
     <div class="staticscreen-body" id="aa" >
@@ -63,11 +63,11 @@
 
 
     <script>
-        $(document).ready(function(){
-      $("g[aria-labelledby]").hide();
+      $(document).ready(function(){ //Hide credits on charts
+        $("g[aria-labelledby]").hide();
       });
-      frame.init(5,10,5,10,5);
-      frame.start();
+      frame.init(5,10,5,10,5); //Init frame animation with right timers
+      frame.start(); //Start frame animation
     </script>
   </body>
 </html>
