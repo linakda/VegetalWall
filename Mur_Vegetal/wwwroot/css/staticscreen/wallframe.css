@@ -12,6 +12,7 @@ WALL FRAME
     justify-items: center;
     overflow: inherit;
     align-content: space-evenly;
+    margin: 10px;
 }
 
 .box {
