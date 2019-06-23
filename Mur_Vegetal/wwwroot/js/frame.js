@@ -40,10 +40,10 @@ var frame = {
         };
 
         lastFrameIndex = frameValidDiv.size -1;
-        frame.start(); //Start frame animation
+        frame.roll(); //Start frame animation
     },
 
-    start(){
+    roll(){
         let thisFrame = Array.from(frameValidDiv)[currentFrameIndex][1]; //Get current frame html element
         let thisFrameName = Array.from(frameValidDiv)[currentFrameIndex][0];
         let timing = frameTimers.get(thisFrameName); //Get current frame timer
@@ -56,6 +56,10 @@ var frame = {
             currentFrameIndex=0;
         }
 
+        if (thisFrameName == "news" || thisFrameName == "medias"){
+            console.log('caroussel');
+        }
+
         frameTimer = setTimeout(function(){
             let previousFrameIndex = currentFrameIndex-1; //Get previous frame
     
@@ -66,7 +70,7 @@ var frame = {
 
             Array.from(frameValidDiv)[previousFrameIndex][1].css("display","none"); //Remove previous frame
 
-            frame.start();
+            frame.roll();
         }, timing*1000);
 
     },
