@@ -54,9 +54,7 @@ var frame = {
         let thisFrame = Array.from(frameValidDiv)[currentFrameIndex][1]; //Get current frame html element
         let thisFrameName = Array.from(frameValidDiv)[currentFrameIndex][0];
         let timing = frameTimers.get(thisFrameName); //Get current frame timer
-        thisFrame.removeClass('animated fadeOutRight');
-        thisFrame.addClass('animated fadeInLeft').delay(1000).show(0); //Display current frame element
-        //thisFrame.addClass('animated slideInRight');
+
         currentFrameIndex++;
 
         if(currentFrameIndex>lastFrameIndex){ //Check if its the last frame element
@@ -64,10 +62,14 @@ var frame = {
         }
 
         if (thisFrameName == "news" || thisFrameName == "medias"){
+            thisFrame.removeClass('animated fadeOutRight');
+            thisFrame.addClass('animated fadeInLeft').delay(0).show(0); //Faster animation
             clearTimeout(frameTimer);
             frame.initSlideshow(thisFrameName); //initslideshow
         }
         else {
+            thisFrame.removeClass('animated fadeOutRight');
+            thisFrame.addClass('animated fadeInLeft').delay(1000).show(0); //Display current frame element
             frameTimer = setTimeout(function(){
                 let previousFrameIndex = currentFrameIndex-1; //Get previous frame
         
@@ -75,7 +77,6 @@ var frame = {
                 if(previousFrameIndex == -1){
                     previousFrameIndex = lastFrameIndex;
                 }
-                //Array.from(frameValidDiv)[previousFrameIndex][1].addClass('animated slideOutRight');
                 Array.from(frameValidDiv)[previousFrameIndex][1].removeClass('animated fadeInLeft');
                 Array.from(frameValidDiv)[previousFrameIndex][1].addClass('animated fadeOutRight').delay(1000).hide(0); //Remove this frame
     
@@ -112,20 +113,25 @@ var frame = {
         }
     
         let timing = frameTimers.get(blockName) * thoseBlocks.length; //Get current block timer * number of elements to display
-        thoseBlocks.show(); //Display current blocks elements
+
+        thoseBlocks.removeClass('animated fadeOutDown');
+        thoseBlocks.addClass('animated fadeInDown').delay(1000).show(0); //Display current frame element
 
         if(blockPassIndex >lastBlockPassIndex){ //check if it's the last pass
             blockPassIndex=0;
             clearTimeout(blockTimer);
-            blockDiv.hide();
-            frameValidDiv.get(blockName).hide();
+            thoseBlocks.removeClass('animated fadeInDown');
+            thoseBlocks.addClass('animated fadeOutDown').delay(1000).hide(0); //Remove this frame
+            frameValidDiv.get(blockName).removeClass('animated fadeInLeft');
+            frameValidDiv.get(blockName).delay(1000).hide(0); //Remove this frame
             frame.roll();
         }
         else {
             blockPassIndex++;
 
             blockTimer = setTimeout(function(){ 
-                thoseBlocks.hide(); //Remove previous blocks
+                thoseBlocks.removeClass('animated fadeInDown');
+                thoseBlocks.addClass('animated fadeOutDown').delay(1000).hide(0); //Remove this frame
                 frame.rollSlideshow(); //start again
             }, timing*1000);
         }
