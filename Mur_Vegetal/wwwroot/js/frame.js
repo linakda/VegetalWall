@@ -5,6 +5,12 @@ var frameTimer;
 var currentFrameIndex = 0;
 var lastFrameIndex;
 
+var blockDiv;
+var blockTimer;
+var blockPassIndex = 0;
+var lastBlockPassIndex;
+var lastBlockPassNbr;
+
 var frame = {
     init(walltime, newstime, countdowntime, mediastime, socialnetworkstime){
         let wall = $(".wall-frame:first");
@@ -58,6 +64,7 @@ var frame = {
 
         if (thisFrameName == "news" || thisFrameName == "medias"){
             console.log('caroussel');
+            frame.initSlideshow(thisFrameName); //initslideshow
         }
 
         frameTimer = setTimeout(function(){
@@ -73,6 +80,49 @@ var frame = {
             frame.roll();
         }, timing*1000);
 
+    },
+
+    initSlideshow(blockName){
+        console.log('init');
+        if (typeof blockTimer !== 'undefined') {//Clear blockTimer
+            clearTimeout(blockTimer);
+        };
+        blockDiv = $("."+blockName+"-block"); //get all div
+        blockDiv.css('display','none');
+        lastBlockPassIndex = Math.trunc (blockDiv.length/3); //To display blocks 3 by 3
+        lastBlockPassNbr =  blockDiv.length%3; //How many blocks on the last display (reste)
+        if (lastBlockPassNbr == 0){ //if r = 0, remove on pass
+            lastBlockPassIndex--;
+        }
+        frame.rollSlideshow(); //Start display of block
+    },
+    
+    rollSlideshow(){
+        console.log('roll');
+        let thoseBlocks;
+        
+        if (blockPassIndex == lastBlockPassIndex && lastBlockPassNbr != 0 ){ //check if its the last pass
+            thoseBlocks =   blockDiv.slice(blockPassIndex*3,blockPassIndex*3+lastBlockPassNbr); //in those blocks put elements between x and y index
+        }
+        else {
+            thoseBlocks =   blockDiv.slice(blockPassIndex*3,blockPassIndex*3+2);
+        }
+    
+        let timing = frameTimers.get(Array.from(frameDiv)[currentFrameIndex][0]) * thoseBlocks.length; //Get current block timer * number of elements to display
+    
+        thoseBlocks.css("display","grid"); //Display current blocks elements
+    
+        blockPassIndex++;
+    
+        if(blockPassIndex>lastBlockPassIndex){ //check if it's the last pass
+            blockPassIndex=0;
+            frame.roll();
+        }
+    
+        blockTimer = setTimeout(function(){ 
+            thoseBlocks.css("display","none"); //Remove previous blocks
+            frame.rollSlideshow(); //start again
+        }, timing*1000);
     },
 
     animateIn(element) {
