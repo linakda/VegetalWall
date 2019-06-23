@@ -1,4 +1,5 @@
 var frameDiv = new Map();
+var frameValidDiv = new Map();
 var frameTimers = new Map();
 var frameTimer;
 var currentFrameIndex = 0;
@@ -32,33 +33,20 @@ var frame = {
             clearTimeout(frameTimer);
         };
 
-        lastFrameIndex = frameDiv.size -1;
-
-        let triggerStart = 0;
-        let tempNameTrigger = "";
         for (const [key, value] of frameTimers.entries()) { //check how many null timers there is
             if (!isNaN(value) && value != null && value != 0){ //if its a number
-                triggerStart++;
-                tempNameTrigger = key;
+                frameValidDiv.set(key,frameDiv.get(key));
             }
         };
 
-        if (triggerStart == 1){
-            console.log('Only 1 frame to display. No animation.');
-            frameDiv.get(tempNameTrigger).css("display","grid");
-        }
-        else if (triggerStart < 1){
-            console.log('Nothing to display');
-        }
-        else {
-            console.log('Starting frames display. ',triggerStart,' frames to display');
-            frame.start(); //Start frame animation
-        }
+        lastFrameIndex = frameValidDiv.size -1;
+        frame.start(); //Start frame animation
     },
 
     start(){
-        let thisFrame = Array.from(frameDiv)[currentFrameIndex][1]; //Get current frame html element
-        let timing = frameTimers.get(Array.from(frameDiv)[currentFrameIndex][0]); //Get current frame timer
+        let thisFrame = Array.from(frameValidDiv)[currentFrameIndex][1]; //Get current frame html element
+        let thisFrameName = Array.from(frameValidDiv)[currentFrameIndex][0];
+        let timing = frameTimers.get(thisFrameName); //Get current frame timer
 
         thisFrame.css("display","grid"); //Display current frame element
 
@@ -76,7 +64,7 @@ var frame = {
                 previousFrameIndex = lastFrameIndex;
             }
 
-            Array.from(frameDiv)[previousFrameIndex][1].css("display","none"); //Remove previous frame
+            Array.from(frameValidDiv)[previousFrameIndex][1].css("display","none"); //Remove previous frame
 
             frame.start();
         }, timing*1000);
