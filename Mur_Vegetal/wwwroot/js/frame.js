@@ -33,7 +33,7 @@ var frame = {
         frameTimers.set('socialnetworks', socialnetworkstime);
 
         for (const [key, value] of frameDiv.entries()) {
-            value.css("display","none");
+            value.hide();
         };
 
         if (typeof frameTimer !== 'undefined') {
@@ -54,9 +54,9 @@ var frame = {
         let thisFrame = Array.from(frameValidDiv)[currentFrameIndex][1]; //Get current frame html element
         let thisFrameName = Array.from(frameValidDiv)[currentFrameIndex][0];
         let timing = frameTimers.get(thisFrameName); //Get current frame timer
-
-        thisFrame.css("display","grid"); //Display current frame element
-
+        thisFrame.removeClass('animated fadeOutRight');
+        thisFrame.addClass('animated fadeInLeft').delay(1000).show(0); //Display current frame element
+        //thisFrame.addClass('animated slideInRight');
         currentFrameIndex++;
 
         if(currentFrameIndex>lastFrameIndex){ //Check if its the last frame element
@@ -75,7 +75,9 @@ var frame = {
                 if(previousFrameIndex == -1){
                     previousFrameIndex = lastFrameIndex;
                 }
-                Array.from(frameValidDiv)[previousFrameIndex][1].css("display","none"); //Remove this frame
+                //Array.from(frameValidDiv)[previousFrameIndex][1].addClass('animated slideOutRight');
+                Array.from(frameValidDiv)[previousFrameIndex][1].removeClass('animated fadeInLeft');
+                Array.from(frameValidDiv)[previousFrameIndex][1].addClass('animated fadeOutRight').delay(1000).hide(0); //Remove this frame
     
                 frame.roll();
             }, timing*1000);
@@ -89,7 +91,7 @@ var frame = {
         };
         blockName = arg;
         blockDiv = $("."+arg+"-block"); //get all div
-        blockDiv.css('display','none');
+        blockDiv.hide();
         lastBlockPassIndex = Math.trunc (blockDiv.length/3); //To display blocks 3 by 3
         lastBlockPassNbr =  blockDiv.length%3; //How many blocks on the last display (reste)
         if (lastBlockPassNbr == 0){ //if r = 0, remove on pass
@@ -110,20 +112,20 @@ var frame = {
         }
     
         let timing = frameTimers.get(blockName) * thoseBlocks.length; //Get current block timer * number of elements to display
-        thoseBlocks.css("display","grid"); //Display current blocks elements
+        thoseBlocks.show(); //Display current blocks elements
 
         if(blockPassIndex >lastBlockPassIndex){ //check if it's the last pass
             blockPassIndex=0;
             clearTimeout(blockTimer);
-            blockDiv.css("display","none");
-            frameValidDiv.get(blockName).css("display","none");
+            blockDiv.hide();
+            frameValidDiv.get(blockName).hide();
             frame.roll();
         }
         else {
             blockPassIndex++;
 
             blockTimer = setTimeout(function(){ 
-                thoseBlocks.css("display","none"); //Remove previous blocks
+                thoseBlocks.hide(); //Remove previous blocks
                 frame.rollSlideshow(); //start again
             }, timing*1000);
         }

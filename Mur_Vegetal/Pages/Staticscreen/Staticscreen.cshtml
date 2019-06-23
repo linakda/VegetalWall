@@ -18,9 +18,9 @@
       <link href="@Url.Content("~/css/staticscreen/socialnetworksframe.css")" rel="stylesheet" type="text/css" />
       <link href="@Url.Content("~/css/staticscreen/staticscreen.css")" rel="stylesheet" type="text/css" />
       <link href="@Url.Content("~/css/staticscreen/wallframe.css")" rel="stylesheet" type="text/css" />
+      <link href="@Url.Content("~/css/staticscreen/animate.min.css")" rel="stylesheet" type="text/css" />
       <script type="text/javascript" src="@Url.Content("~/js/countdown.js")"></script>
       <script type="text/javascript" src="@Url.Content("~/lib/jquery/dist/jquery.js")"></script>
-      <script type="text/javascript" src="@Url.Content("~/lib/jquery-ui.min.js")"></script>
       <script src="https://www.amcharts.com/lib/4/core.js"></script>
       <script src="https://www.amcharts.com/lib/4/charts.js"></script>
       <script src="https://www.amcharts.com/lib/4/themes/spiritedaway.js"></script>
@@ -64,7 +64,7 @@
       $(document).ready(function(){ //Hide credits on charts
         $("g[aria-labelledby]").hide();
       });
-      frame.init(5,2, 5 ,2,5); //Init frame animation with right timers
+      frame.init(5,0, 5,0,5); //Init frame animation with right timers
     </script>
   </body>
 </html>
