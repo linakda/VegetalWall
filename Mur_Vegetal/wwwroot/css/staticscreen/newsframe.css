@@ -11,6 +11,7 @@ NEWS FRAME
     grid-auto-flow: row;
     overflow: inherit;
     align-content: space-evenly;
+    align-items: center;
 }
 
 .news-block {
@@ -24,8 +25,6 @@ NEWS FRAME
 .box {
     background-color: #F4F3F2;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    min-width: 700px;
-    margin: 20px;
 }
 
 
@@ -39,7 +38,16 @@ NEWS IMAGE
     max-height: 400px;
 }
 
+.news-image {
+    margin: 10px;
+}
+
 
 /* --------------------------------------------------------------------------------------
 NEWS TEXT
 --------------------------------------------------------------------------------------*/
+
+.news-text {
+    max-width: 70%;
+    margin: 10px;
+}
