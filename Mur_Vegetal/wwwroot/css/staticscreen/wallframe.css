@@ -8,7 +8,7 @@ WALL FRAME
     display: grid;
     grid-template-columns: repeat(1, minmax(700px, auto));
     grid-template-rows: repeat(7, 12%);
-    grid-gap: 50px 50px;
+    grid-gap: 5px 50px;
     grid-auto-flow: row;
     justify-items: center;
     overflow: inherit;
@@ -18,9 +18,6 @@ WALL FRAME
 .box {
     background-color: #F4F3F2;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    min-width: 700px;
-    max-height: 300px;
-    margin: 20px;
 }
 
 .wall-block {
@@ -29,6 +26,9 @@ WALL FRAME
     font-size: 1.25em;
     align-items: center;
     padding: 10px;
+    max-height: 300px;
+    min-width: 700px;
+    margin: 0px;
 }
 
 .info {
@@ -45,14 +45,11 @@ WALL FRAME
 
 .info img {
     padding: 5px;
-}
-
-img {
     display: block;
 }
 
 .chart {
     display: block;
     width: 100%;
-    min-height: 180px;
+    min-height: 200px;
 }
