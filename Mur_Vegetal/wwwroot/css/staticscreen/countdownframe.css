@@ -1,0 +1,15 @@
+/*--------COUNTDOWN FRAME------------------*/
+
+.countdown-block {
+    height: calc(100vh - 50px);
+    display: grid;
+    grid-gap: 50px 50px;
+    align-content: space-evenly;
+    text-align: center;
+}
+  
+.countdown-text {
+    font-family: Mukta-Bold, sans-serif;
+    color: #629460;
+    padding: 20px;
+}

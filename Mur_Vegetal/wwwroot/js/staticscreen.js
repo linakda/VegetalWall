@@ -38,7 +38,7 @@ async function defile() {
         }
 
     } else {
-        document.write("<H1>WESH C4EST pas la même taille</H1>");
+        document.write("<H1>c'est pas la même taille</H1>");
     }
 }
 
