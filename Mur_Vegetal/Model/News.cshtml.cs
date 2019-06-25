@@ -1,20 +1,13 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using static Query;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;	
-using System.Linq;
+using System;
 
 namespace Mur_Vegetal.Pages
 {
     public class NewsModel : PageModel{
 
-        public class News
-        {
+        public class News{
             public string name { get; set; }
             public int eventDate { get; set; }
             public int beginningDate { get; set; }
@@ -25,9 +18,23 @@ namespace Mur_Vegetal.Pages
             public string id { get; set; }
         }
         public string Answer { get; private set; }
+
+        public string _ResultViewNews { get; private set; }
         public void OnGet(){
-            Answer = Query.Get("http://iotdata.yhdf.fr/api/web/events");
-            var result = JsonConvert.DeserializeObject<List<News>>(Answer);
+            //Answer = Query.Get("http://iotdata.yhdf.fr/api/web/events");
+            var result = JsonConvert.DeserializeObject<List<News>>(Query.Get("http://iotdata.yhdf.fr/api/web/events"));
+            _ResultViewNews = "";
+            var currentTimeStamp = DateTimeOffset.Now.ToUnixTimeSeconds();
+            foreach(var e in result){
+                /* if (){
+
+                }
+                else {
+
+                }*/
+                _ResultViewNews += "<div class=\"news-block\"><div class=\"news-image box\"><img src=\"data:image;base64, "+e.eventImage+"\"/></div><div class=\"news-text box\">"+e.text+"</div></div>";
+            }
+            _ResultViewNews = currentTimeStamp.ToString();;
         }
     }
 }
