@@ -25,12 +25,6 @@ namespace Mur_Vegetal.Pages
         {
             Answer = Query.Get("http://10.34.160.10:4001/api/web/socials");
             var result = JsonConvert.DeserializeObject<List<Social>>(Answer);
-            foreach(var elts in result){
-                Console.Write("IdSensors : " + elts.username);
-                Console.Write("Type : " + elts.pageWidget);
-                Console.Write("projet : " + elts.widget);
-                Console.Write("Name : " + elts.id);
-            }
         }
     }
 }
