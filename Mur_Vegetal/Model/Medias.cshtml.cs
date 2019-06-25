@@ -22,9 +22,21 @@ namespace Mur_Vegetal.Pages
             public string id { get; set; }
         }
         public string Answer { get; private set; }
+        public string _ResultViewMedias {get; private set;}
         public void OnGet(){
             Answer = Query.Get("http://iotdata.yhdf.fr/api/web/medias");
             var result = JsonConvert.DeserializeObject<List<Medias>>(Answer);
+            _ResultViewMedias = "";
+            foreach(var e in result){
+                if(e.image != ""){
+                    _ResultViewMedias += "<div class=\"medias-block\"> <div class=\"medias-image box\"> <img src=\"data:image/png;base64, " +e.image + "\" alt=" + e.name + " > </div> </div>";
+                }
+                else if(e.video !=""){
+                    _ResultViewMedias += "<div class=\"medias-block\"> <div class=\"medias-video box\"> <iframe src=\" " + e.video + " \" width=\"100%\" frameborder=\"0\" allowfullscreen></iframe> </div> </div>";
+                }
+                else{}
+            }
         }
+
     }
 }
