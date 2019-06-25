@@ -5,6 +5,9 @@ public partial class Query{
     public static string Get(string uri){
         HttpWebRequest request = (HttpWebRequest)WebRequest.Create(uri);
         request.AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate;
+        //request.ContentType = "application/json";
+        //request.UserAgent = "Mozilla";
+        //request.Credentials = new NetworkCredential("UserName", "PassWord");
             try{
                 using(HttpWebResponse response = (HttpWebResponse)request.GetResponse())
                 using(Stream stream = response.GetResponseStream())
