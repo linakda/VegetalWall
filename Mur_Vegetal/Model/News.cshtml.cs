@@ -25,7 +25,7 @@ namespace Mur_Vegetal.Pages
             var currentTimeStamp = (Int32)(DateTime.Now.Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
             foreach(var e in result){
                 if (e.beginningDate <= currentTimeStamp && e.endingDate >= currentTimeStamp){
-                    if(e.text==" " || e.text==""){
+                    if(String.IsNullOrEmpty(e.text)){
                         _ResultViewNews += "<div class=\"news-block\"><div class=\"news-image box\"><img src=\"data:image;base64, "+e.eventImage+"\"/></div></div>";
                     }
                     else {
