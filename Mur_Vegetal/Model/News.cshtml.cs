@@ -24,7 +24,7 @@ namespace Mur_Vegetal.Pages
             //Answer = Query.Get("http://iotdata.yhdf.fr/api/web/events");
             var result = JsonConvert.DeserializeObject<List<News>>(Query.Get("http://iotdata.yhdf.fr/api/web/events"));
             _ResultViewNews = "";
-            var currentTimeStamp = DateTimeOffset.Now.ToUnixTimeSeconds();
+            var currentTimeStamp = (Int32)(DateTime.Now.Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
             foreach(var e in result){
                 /* if (){
 
