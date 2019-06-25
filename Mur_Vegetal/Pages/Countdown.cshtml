@@ -9,6 +9,5 @@
 }
 
 <div class="countdown-body">
-  @Model.Answer
-    @{ Html.RenderPartial("_Countdown"); }
+  @Html.Raw(Model._ResultViewCountdown)
 </div>

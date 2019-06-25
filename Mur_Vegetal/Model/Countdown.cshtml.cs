@@ -16,16 +16,26 @@ namespace Mur_Vegetal.Pages
 
         public class CountDown
         {
-            public string type { get; set; }
-            public string title { get; set; }
-            public int status { get; set; }
-            public string traceId { get; set; }
+            public string text { get; set; }
+            public string name { get; set; }
+            public int endingDateEvent { get; set; }
+            public int beginningDateEvent { get; set; }
+            public int endingDateCountdown { get; set; }
+            public int position { get; set; }
+            public object image { get; set; }
+            public string id { get; set; }
         }
         public string Answer { get; private set; }
+        public string _ResultViewCountdown {get; private set;}
         public void OnGet()
         {
-            Answer = Query.Get("http://iotdata.yhdf.fr/api/web/countdown");
+            Answer = Query.Get("http://iotdata.yhdf.fr/api/web/countdowns");
             var result = JsonConvert.DeserializeObject<List<CountDown>>(Answer);
+            _ResultViewCountdown = "";
+            foreach(var e in result){
+                _ResultViewCountdown = "<div class=\"countdown-block\"> <div class=\"countdown-image box\"> <img class=\"mur\" src=\"data:image/png;base64, " +e.image + "\" alt=" + e.name + " >   </div>  <div class=\"countdown-text box\"> " +e.text+ "<div id=\"countdown-display\"> </div> <script> countDown(\" " + e.endingDateEvent + "  \",\"countdown-display\"); </script> </div> </div>";
+            }
+
         }
     }
 }
