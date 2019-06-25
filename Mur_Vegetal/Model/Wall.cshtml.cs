@@ -37,25 +37,8 @@ namespace Mur_Vegetal.Pages
 
         public void OnGet()
         {
-            Answer = Query.Get("http://10.34.160.10:4001/api/web/sensors");
+            Answer = Query.Get("http://iotdata.yhdf.fr/api/web/sensors");
             var result = JsonConvert.DeserializeObject<List<Sensors>>(Answer);
-            foreach(var elts in result){
-                Console.Write("IdSensors : " + elts.idSensor);
-                Console.Write("Type : " + elts.idSensorType);
-                Console.Write("projet : " + elts.project);
-                Console.Write("Name : " + elts.name);
-                Console.Write("description : " + elts.description);
-                Console.Write("date : " + elts.sensorDate);
-                Console.Write("detnier truc : " + elts.lastSampleDate);
-                Console.Write("état batterie : " + elts.batteryLevel[0]);
-                Console.Write("batterie : " + elts.battery);
-                Console.Write("sleepTime : " + elts.sleepTime);
-                Console.Write("Action : " + elts.action);
-                Console.Write("Version : " + elts.version);
-                Console.Write("TimeOUt : " + elts.timeOut);
-                Console.Write("Fonctionne : " + elts.isWorking);
-                Console.Write("id : " + elts.id);
-            }
         }
     }
 }

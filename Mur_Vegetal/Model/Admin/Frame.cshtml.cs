@@ -24,7 +24,7 @@ namespace Mur_Vegetal.Pages
         public string Answer { get; private set; }
         public void OnGet()
         {
-            Answer = Query.Get("http://10.34.160.10:4001/api/web/tables");
+            Answer = Query.Get("http://iotdata.yhdf.fr/api/web/tables");
             var result = JsonConvert.DeserializeObject<List<Frame>>(Answer);
         }
     }
