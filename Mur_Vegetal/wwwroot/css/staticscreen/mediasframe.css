@@ -44,8 +44,12 @@ MEDIA IMAGE
 MEDIA VIDEO
 --------------------------------------------------------------------------------------*/
 
-.medias-video video {
+.medias-video iframe {
     display: block;
-    min-width: 700px;
-    max-height: 500px;
+    width: 100%;
+    min-width: 250px;
+    max-width: 450px;
+    min-height: 255px;
 }
+
+

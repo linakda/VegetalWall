@@ -44,11 +44,12 @@ MEDIAS IMAGE AND VIDEO
     min-width: 250px;
 }
 
-.medias-video video {
+.medias-video iframe {
     display: block;
     width: 100%;
     max-width: 450px;
     min-width: 250px;
+    min-height: 255px;
 }
 
 @media screen and (max-width:500px) {
