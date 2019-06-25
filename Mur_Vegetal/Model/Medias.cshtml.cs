@@ -7,11 +7,8 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Mur_Vegetal.Pages
 {
-    public class NewsModel : PageModel
-    {
-        public void OnGet()
-        {
-
+    public class MediasModel : PageModel{
+        public void OnGet(){
         }
     }
 }
