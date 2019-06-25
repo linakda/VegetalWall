@@ -1,13 +1,9 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using static Query;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;	
-using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace Mur_Vegetal.Pages
 {
@@ -32,7 +28,13 @@ namespace Mur_Vegetal.Pages
                         _ResultViewMedias += "<div class=\"medias-block\"> <div class=\"medias-image box\"> <img src=\"data:image/png;base64, " +e.image + "\" alt=" + e.name + " > </div> </div>";
                     }
                     else if(e.video !=""){
-                        _ResultViewMedias += "<div class=\"medias-block\"> <div class=\"medias-video box\"> <iframe src=\" " + e.video + " \" width=\"100%\" frameborder=\"0\" allowfullscreen></iframe> </div> </div>";
+                        string pattern = @"([a-zA-Z0-9]+)\z";
+                        Match m = Regex.Match(e.video, pattern, RegexOptions.IgnoreCase);
+                        if (m.Success){
+                            _ResultViewMedias += "<div class=\"medias-block\"> <div class=\"medias-video box\"> <iframe src=\"https://www.youtube.com/embed/" + m.Groups[1].Value + " \" width=\"100%\" frameborder=\"0\" allowfullscreen></iframe> </div> </div>";
+                        }
+                        else {
+                        }
                     }
                     else{}
                 }
