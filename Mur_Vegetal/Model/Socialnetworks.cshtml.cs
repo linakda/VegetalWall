@@ -21,10 +21,18 @@ namespace Mur_Vegetal.Pages
             public string id { get; set; }
         }
         public string Answer { get; private set; }
+        public string _ResultViewSocialnetworks {get; private set;}
         public void OnGet()
         {
             Answer = Query.Get("http://iotdata.yhdf.fr/api/web/socials");
             var result = JsonConvert.DeserializeObject<List<Social>>(Answer);
+            _ResultViewSocialnetworks = "";
+            foreach(var e in result){
+                if(e.pageWidget == "Socialnetworks"){
+                    _ResultViewSocialnetworks += "<script src=\"https://snapwidget.com/js/snapwidget.js\"></script> <iframe src=\" " + e.widget + " \" class=\"snapwidget-widget\" allowtransparency=\"true\" frameborder=\"0\" scrolling=\"no\" style=\"border:none; overflow:hidden; width:100%;\"></iframe>";
+
+                }
+            }
         }
     }
 }
