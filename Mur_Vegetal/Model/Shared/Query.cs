@@ -7,7 +7,7 @@ public partial class Query{
         request.AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate;
         //request.ContentType = "application/json";
         //request.UserAgent = "Mozilla";
-        //request.Credentials = new NetworkCredential("UserName", "PassWord");
+        request.Headers["Authorization"]="Basic aW50ZXJmYWNlV2ViOlRoM0wwdTE1VjF2MTNy";
             try{
                 using(HttpWebResponse response = (HttpWebResponse)request.GetResponse())
                 using(Stream stream = response.GetResponseStream())
