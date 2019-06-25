@@ -30,7 +30,7 @@ namespace Mur_Vegetal.Pages
             var currentTimeStamp = (Int32)(DateTime.Now.Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
             foreach(var e in result){
                 if (e.beginningDateEvent <= currentTimeStamp && e.endingDateEvent >= currentTimeStamp){
-                    _ResultViewCountdown = "<div class=\"countdown-block\"> <div class=\"countdown-image box\"> <img class=\"mur\" src=\"data:image/png;base64, " +e.image + "\" alt=" + e.name + " >   </div>  <div class=\"countdown-text box\"> " +e.text+ "<div id=\"countdown-display\"> </div> <script> countDown(\" " + e.endingDateEvent + "  \",\"countdown-display\"); </script> </div> </div>";
+                    _ResultViewCountdown = "<div class=\"countdown-block\"> <div class=\"countdown-image box\"> <img class=\"mur\" src=\"data:image/png;base64, " +e.image + "\" alt=" + e.name + " >   </div>  <div class=\"countdown-text box\"> " +e.text+ "<div id=\"countdown-display\"> </div> <script> countDown(\" " + e.endingDateCountdown + "  \",\"countdown-display\"); </script> </div> </div>";
                 }
                 else {
                 }            
