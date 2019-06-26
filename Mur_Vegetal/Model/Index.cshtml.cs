@@ -61,6 +61,8 @@ namespace Mur_Vegetal.Pages
 
         public void OnGet()
         {
+            var currentTimeStamp = (Int32)(DateTime.Now.Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
+
             //Call request
             var requestWall = Query.Get("http://iotdata.yhdf.fr/api/web/sensors");
             if(requestWall == "Error" || String.IsNullOrEmpty(requestWall)){
@@ -93,56 +95,69 @@ namespace Mur_Vegetal.Pages
                     }
                 }
             }
-            
-            var resultSocial = JsonConvert.DeserializeObject<List<Social>>(Query.Get("http://iotdata.yhdf.fr/api/web/socials"));
-            var resultCountdown = JsonConvert.DeserializeObject<List<CountDown>>(Query.Get("http://iotdata.yhdf.fr/api/web/countdowns"));
-            var resultNew = JsonConvert.DeserializeObject<List<News>>(Query.Get("http://iotdata.yhdf.fr/api/web/events"));
 
-            var currentTimeStamp = (Int32)(DateTime.Now.Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
-
-
-            //Answer traitement 
-            _ResultViewSocialnetworks = "";
-            foreach(var e in resultSocial){
-                if(e.pageWidget == "accueil"){
-                    _ResultViewSocialnetworks += "<div class=\"socialnetworks-box box\"> <a href=\"~/Socialnetworks\"> <script src=\"https://snapwidget.com/js/snapwidget.js\"></script> <iframe src=\" " + e.widget + " \" class=\"snapwidget-widget\"></iframe> </a></div>";
+            var requestSocial = Query.Get("http://iotdata.yhdf.fr/api/web/socials");
+            if(requestSocial == "Error" || String.IsNullOrEmpty(requestSocial)){
+                _ResultViewSocialnetworks = "<div>Error API</div>";
+            }
+            else {
+                _ResultViewSocialnetworks = "";
+                var resultSocial = JsonConvert.DeserializeObject<List<Social>>(requestSocial);
+                foreach(var e in resultSocial){
+                    if(e.pageWidget == "accueil"){
+                        _ResultViewSocialnetworks += "<div class=\"socialnetworks-box box\"> <a href=\"~/Socialnetworks\"> <script src=\"https://snapwidget.com/js/snapwidget.js\"></script> <iframe src=\" " + e.widget + " \" class=\"snapwidget-widget\"></iframe> </a></div>";
+                    }
                 }
             }
 
-            _ResultViewNews = "";
-            News lastNews;
-            foreach(var e in resultNew){
-                lastNews = e;
-                if(lastNews.eventDate > e.eventDate){
-                    lastNews = e;
-                }
-                if (lastNews.beginningDate <= currentTimeStamp && lastNews.endingDate >= currentTimeStamp){
-                    if(String.IsNullOrEmpty(lastNews.text)){
-                        _ResultViewNews = "<a href=\"~/News\"><div class=\"news-box\"> <div class=\"news-image box\"> <img src=\"data:image/png;base64, " +lastNews.eventImage + " \" alt=\" " + lastNews.name + " \"> </div></div></a>";
+
+            var requestCountdown = Query.Get("http://iotdata.yhdf.fr/api/web/countdowns");
+            if(requestCountdown=="Error" || String.IsNullOrEmpty(requestCountdown)){
+                _ResultViewCountdown = "<div>Error Api</div>";
+            }
+            else {
+                var resultCountdown = JsonConvert.DeserializeObject<List<CountDown>>(requestCountdown);
+                _ResultViewCountdown = "";
+                CountDown lastCountdown;
+                foreach(var e in resultCountdown){
+                    lastCountdown = e;
+                    if(lastCountdown.endingDateEvent > e.endingDateEvent){
+                        lastCountdown = e;
+                    }
+                    if (lastCountdown.beginningDateEvent <= currentTimeStamp && lastCountdown.endingDateEvent >= currentTimeStamp){
+                        _ResultViewCountdown = "<div class=\"countdown-box \"> <a href=\"~/Countdown\"> <div class=\"countdown-image box\"> <img src=\" data:image/png;base64, " + lastCountdown.image + "  \"/> </div> <div class=\"countdown-text box \"> " + lastCountdown.text + " <div id=\"countdown-display\"> </div> <script> countDown(\" " + lastCountdown.endingDateCountdown + "  \",\"countdown-display\"); </script> </div> </a> </div> ";
                     }
                     else {
-                        _ResultViewNews = "<a href=\"~/News\"><div class=\"news-box\"> <div class=\"news-image box\"> <img src=\"data:image/png;base64, " +lastNews.eventImage + " \" alt=\" " + lastNews.name + " \"> </div><div class=\"news-text box\"> </div> </div></a> ";
+                    }            
+                }
+            }
+            
+
+            var requestNews = Query.Get("http://iotdata.yhdf.fr/api/web/events");
+            if(requestNews=="Error" || String.IsNullOrEmpty(requestNews)){
+                _ResultViewNews = "<div>Error Api</div>";
+            }
+            else {
+                _ResultViewNews = "";
+                var resultNew = JsonConvert.DeserializeObject<List<News>>(requestNews);            
+                News lastNews;
+                foreach(var e in resultNew){
+                    lastNews = e;
+                    if(lastNews.eventDate > e.eventDate){
+                        lastNews = e;
+                    }
+                    if (lastNews.beginningDate <= currentTimeStamp && lastNews.endingDate >= currentTimeStamp){
+                        if(String.IsNullOrEmpty(lastNews.text)){
+                            _ResultViewNews = "<a href=\"~/News\"><div class=\"news-box\"> <div class=\"news-image box\"> <img src=\"data:image/png;base64, " +lastNews.eventImage + " \" alt=\" " + lastNews.name + " \"> </div></div></a>";
+                        }
+                        else {
+                            _ResultViewNews = "<a href=\"~/News\"><div class=\"news-box\"> <div class=\"news-image box\"> <img src=\"data:image/png;base64, " +lastNews.eventImage + " \" alt=\" " + lastNews.name + " \"> </div><div class=\"news-text box\"> </div> </div></a> ";
+                        }
+                    }
+                    else {
                     }
                 }
-                else {
-                }
             }
-
-            _ResultViewCountdown = "";
-            CountDown lastCountdown;
-            foreach(var e in resultCountdown){
-                lastCountdown = e;
-                if(lastCountdown.endingDateEvent > e.endingDateEvent){
-                    lastCountdown = e;
-                }
-                if (lastCountdown.beginningDateEvent <= currentTimeStamp && lastCountdown.endingDateEvent >= currentTimeStamp){
-                    _ResultViewCountdown = "<div class=\"countdown-box \"> <a href=\"~/Countdown\"> <div class=\"countdown-image box\"> <img src=\" data:image/png;base64, " + lastCountdown.image + "  \"/> </div> <div class=\"countdown-text box \"> " + lastCountdown.text + " <div id=\"countdown-display\"> </div> <script> countDown(\" " + lastCountdown.endingDateCountdown + "  \",\"countdown-display\"); </script> </div> </a> </div> ";
-                }
-                else {
-                }            
-            }
-
-            
 
         }
     }
