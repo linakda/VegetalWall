@@ -15,17 +15,17 @@ namespace Mur_Vegetal.Pages{
             public string id { get; set; }
         }
         public List <Medias> Result { get; private set; }
+        public bool IsError { get; private set; }
         public void OnGet(){
-
-            var requestMedia = Query.Get("http://iotdata.yhdf.fr/api/web/medias");
-            if(requestMedia == "Error" || String.IsNullOrEmpty(requestMedia)){
-                _ResultViewAdminMedias = "<div class=\"medias-param\"> Error Api </div>";
+            var requestMedias = Query.Get("http://iotdata.yhdf.fr/api/web/medias");
+            if(requestMedias == "Error" || String.IsNullOrEmpty(requestMedias)){
+                IsError = true;
             }
-            else {
-                Result = JsonConvert.DeserializeObject<List<Medias>>(requestMedia); 
+            else{
+                IsError = false;
+                Result = JsonConvert.DeserializeObject<List<Medias>>(requestMedias); 
             }
         }
-
         public void OnPost(){
             var emailAddress = Request.Form["name"];
             Console.WriteLine(emailAddress);
