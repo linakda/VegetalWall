@@ -22,9 +22,6 @@ a {
 .box {
     background-color: #F4F3F2;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    min-width: 450px;
-    margin: 5px;
-    font-size: 1.25em;
 }
 
 @media screen and (max-width:500px) {
@@ -47,6 +44,9 @@ Wall box
     text-align: center;
     min-width: 300px;
     padding: 10px;
+    min-width: 450px;
+    margin: 5px;
+    font-size: 1.25em;
 }
 
 .wall-icon img {
@@ -89,6 +89,15 @@ News box
     align-content: center;
     padding: 10px;
     width: 70%;
+    min-width: 450px;
+    margin: 5px;
+    font-size: 1.25em;
+}
+
+.news-image {
+    min-width: 450px;
+    margin: 5px;
+    font-size: 1.25em;
 }
 
 
@@ -101,7 +110,7 @@ Countdown box
     flex-direction: column;
     align-items: center;
     text-align: center;
-    font-size: 1.25em;
+    min-width: 450px;
 }
 
 .countdown-text {
@@ -109,6 +118,8 @@ Countdown box
     align-content: center;
     padding: 5px;
     text-transform: uppercase;
+    margin: 5px;
+    font-size: 1.25em;
 }
 
 
@@ -120,6 +131,9 @@ Social Networks box
     justify-self: center;
     align-self: flex-start;
     text-align: center;
+    min-width: 450px;
+    margin: 5px;
+    font-size: 1.25em;
 }
 
 .snapwidget-widget {

@@ -23,13 +23,13 @@ public partial class Query{
                     Console.WriteLine("Error code: {0} when trying to GET {1}", httpResponse.StatusCode, uri);
                     using (Stream data = response.GetResponseStream())
                     using (var reader = new StreamReader(data)){
-                        return reader.ReadToEnd();
+                        return "Error";
                     }
                 }
             }
             catch (Exception e) {  
                 Console.WriteLine("Error: {0} when trying to GET {1}", e.InnerException.Message, uri);
-                return e.InnerException.Message;
+                return "Error";
             }
     }
     public static string Post(string uri, string data){

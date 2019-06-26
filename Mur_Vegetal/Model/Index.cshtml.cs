@@ -62,7 +62,38 @@ namespace Mur_Vegetal.Pages
         public void OnGet()
         {
             //Call request
-            var resultWall = JsonConvert.DeserializeObject<List<Sensors>>(Query.Get("http://iotdata.yhdf.fr/api/web/sensors"));
+            var requestWall = Query.Get("http://iotdata.yhdf.fr/api/web/sensors");
+            if(requestWall == "Error" || String.IsNullOrEmpty(requestWall)){
+                _ResultViewWall = "<div>Error API</div>";
+            }
+            else {
+                var resultWall = JsonConvert.DeserializeObject<List<Sensors>>(requestWall);
+                _ResultViewWall = "";
+                foreach(var e in resultWall){
+                    if(e.idSensorType==0){
+                        _ResultViewWall += "<div class=\"wall-info\"> <div class=\"wall-icon\"><a href=\"~/Wall\"> <img src=\"/images/icones/air.png\"/> </a></div> <div class=\"wall-text\"><a href=\"~/Wall\"> Qualité d'air : </a></div> </div> ";
+                    }
+                    if(e.idSensorType==1){
+                        _ResultViewWall += "<div class=\"wall-info\"> <div class=\"wall-icon\"><a href=\"~/Wall\"> <img src=\"/images/icones/thermo.png\"/> </a></div> <div class=\"wall-text\"><a href=\"~/Wall\"> Température : </a></div> </div> ";
+                    }
+                    if(e.idSensorType==2){
+                        _ResultViewWall += "<div class=\"wall-info\"> <div class=\"wall-icon\"><a href=\"~/Wall\"> <img src=\"/images/icones/pression.png\"/> </a></div> <div class=\"wall-text\"><a href=\"~/Wall\"> Commande pompe : </a></div> </div> ";
+                    }
+                    if(e.idSensorType==3){
+                        _ResultViewWall += "<div class=\"wall-info\"> <div class=\"wall-icon\"><a href=\"~/Wall\"> <img src=\"/images/icones/hydro.png\"/> </a></div> <div class=\"wall-text\"><a href=\"~/Wall\"> Humidité : </a></div> </div> ";
+                    }
+                    if(e.idSensorType==4){
+                        _ResultViewWall += "<div class=\"wall-info\"> <div class=\"wall-icon\"><a href=\"~/Wall\"> <img src=\"/images/icones/pression_ruche.png\"/> </a></div> <div class=\"wall-text\"><a href=\"~/Wall\"> Pression ruche : </a></div> </div> ";
+                    }
+                    if(e.idSensorType==5){
+                        _ResultViewWall += "<div class=\"wall-info\"> <div class=\"wall-icon\"><a href=\"~/Wall\"> <img src=\"/images/icones/mouvement.png\"/> </a></div> <div class=\"wall-text\"><a href=\"~/Wall\"> Flux entrant/sortant : </a></div> </div> ";
+                    }
+                    if(e.idSensorType==6){
+                        _ResultViewWall += "<div class=\"wall-info\"> <div class=\"wall-icon\"><a href=\"~/Wall\"> <img src=\"/images/icones/thermo_ruche.png\"/> </a></div> <div class=\"wall-text\"><a href=\"~/Wall\"> Température ruche :  </a></div> </div> ";
+                    }
+                }
+            }
+            
             var resultSocial = JsonConvert.DeserializeObject<List<Social>>(Query.Get("http://iotdata.yhdf.fr/api/web/socials"));
             var resultCountdown = JsonConvert.DeserializeObject<List<CountDown>>(Query.Get("http://iotdata.yhdf.fr/api/web/countdowns"));
             var resultNew = JsonConvert.DeserializeObject<List<News>>(Query.Get("http://iotdata.yhdf.fr/api/web/events"));
@@ -78,36 +109,11 @@ namespace Mur_Vegetal.Pages
                 }
             }
 
-            _ResultViewWall = "";
-            foreach(var e in resultWall){
-                if(e.idSensorType==0){
-                    _ResultViewWall += "<div class=\"wall-info\"> <div class=\"wall-icon\"><a href=\"~/Wall\"> <img src=\"/images/icones/air.png\"/> </a></div> <div class=\"wall-text\"><a href=\"~/Wall\"> Qualité d'air : </a></div> </div> ";
-                }
-                if(e.idSensorType==1){
-                    _ResultViewWall += "<div class=\"wall-info\"> <div class=\"wall-icon\"><a href=\"~/Wall\"> <img src=\"/images/icones/thermo.png\"/> </a></div> <div class=\"wall-text\"><a href=\"~/Wall\"> Température : </a></div> </div> ";
-                }
-                if(e.idSensorType==2){
-                    _ResultViewWall += "<div class=\"wall-info\"> <div class=\"wall-icon\"><a href=\"~/Wall\"> <img src=\"/images/icones/pression.png\"/> </a></div> <div class=\"wall-text\"><a href=\"~/Wall\"> Commande pompe : </a></div> </div> ";
-                }
-                if(e.idSensorType==3){
-                    _ResultViewWall += "<div class=\"wall-info\"> <div class=\"wall-icon\"><a href=\"~/Wall\"> <img src=\"/images/icones/hydro.png\"/> </a></div> <div class=\"wall-text\"><a href=\"~/Wall\"> Humidité : </a></div> </div> ";
-                }
-                if(e.idSensorType==4){
-                    _ResultViewWall += "<div class=\"wall-info\"> <div class=\"wall-icon\"><a href=\"~/Wall\"> <img src=\"/images/icones/pression_ruche.png\"/> </a></div> <div class=\"wall-text\"><a href=\"~/Wall\"> Pression ruche : </a></div> </div> ";
-                }
-                if(e.idSensorType==5){
-                    _ResultViewWall += "<div class=\"wall-info\"> <div class=\"wall-icon\"><a href=\"~/Wall\"> <img src=\"/images/icones/mouvement.png\"/> </a></div> <div class=\"wall-text\"><a href=\"~/Wall\"> Flux entrant/sortant : </a></div> </div> ";
-                }
-                if(e.idSensorType==6){
-                    _ResultViewWall += "<div class=\"wall-info\"> <div class=\"wall-icon\"><a href=\"~/Wall\"> <img src=\"/images/icones/thermo_ruche.png\"/> </a></div> <div class=\"wall-text\"><a href=\"~/Wall\"> Température ruche :  </a></div> </div> ";
-                }
-            }
-
             _ResultViewNews = "";
             News lastNews;
             foreach(var e in resultNew){
                 lastNews = e;
-                if(lastNews.beginningDate > e.beginningDate){
+                if(lastNews.eventDate > e.eventDate){
                     lastNews = e;
                 }
                 if (lastNews.beginningDate <= currentTimeStamp && lastNews.endingDate >= currentTimeStamp){
@@ -130,7 +136,7 @@ namespace Mur_Vegetal.Pages
                     lastCountdown = e;
                 }
                 if (lastCountdown.beginningDateEvent <= currentTimeStamp && lastCountdown.endingDateEvent >= currentTimeStamp){
-                    _ResultViewCountdown = "<div class=\"countdown-box \"> <a href=\"~/Countdown\"> <div class=\"countdown-image \"> <img src=\" data:image/png;base64, " + lastCountdown.image + "  \"/> </div> <div class=\"countdown-text \"> " + lastCountdown.text + " <div id=\"countdown-display\"> </div> <script> countDown(\" " + lastCountdown.endingDateCountdown + "  \",\"countdown-display\"); </script> </div> </a> </div> ";
+                    _ResultViewCountdown = "<div class=\"countdown-box \"> <a href=\"~/Countdown\"> <div class=\"countdown-image box\"> <img src=\" data:image/png;base64, " + lastCountdown.image + "  \"/> </div> <div class=\"countdown-text box \"> " + lastCountdown.text + " <div id=\"countdown-display\"> </div> <script> countDown(\" " + lastCountdown.endingDateCountdown + "  \",\"countdown-display\"); </script> </div> </a> </div> ";
                 }
                 else {
                 }            
