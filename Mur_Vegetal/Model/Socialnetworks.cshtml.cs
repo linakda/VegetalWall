@@ -18,7 +18,7 @@ namespace Mur_Vegetal.Pages
         public string _ResultViewSocialnetworks {get; private set;}
         public void OnGet()
         {
-            var requestSocial = Query.Get("http://iotdata.yhdf.fr/api/web/social");
+            var requestSocial = Query.Get("http://iotdata.yhdf.fr/api/web/socials");
             if(requestSocial=="Error" || String.IsNullOrEmpty(requestSocial)){
                 _ResultViewSocialnetworks = "<div style=\"color:green; \"> Error Api </div>";
             }

@@ -18,26 +18,33 @@ namespace Mur_Vegetal.Pages
         }
         public string _ResultViewMedias {get; private set;}
         public void OnGet(){
-            var result = JsonConvert.DeserializeObject<List<Medias>>(Query.Get("http://iotdata.yhdf.fr/api/web/medias"));
-            _ResultViewMedias = "";
-            var currentTimeStamp = (Int32)(DateTime.Now.Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
-            foreach(var e in result){
-                if (e.beginningDate <= currentTimeStamp && e.endingDate >= currentTimeStamp){
-                    if(e.image != ""){
-                        _ResultViewMedias += "<div class=\"medias-block\"> <div class=\"medias-image box\"> <img src=\"data:image/png;base64, " +e.image + "\" alt=" + e.name + " > </div> </div>";
-                    }
-                    else if(e.video !=""){
-                        string pattern = @"([a-zA-Z0-9]+)\z";
-                        Match m = Regex.Match(e.video, pattern, RegexOptions.IgnoreCase);
-                        if (m.Success){
-                            _ResultViewMedias += "<div class=\"medias-block\"> <div class=\"medias-video box\"> <iframe src=\"https://www.youtube.com/embed/" + m.Groups[1].Value + " \" width=\"100%\" frameborder=\"0\" allowfullscreen></iframe> </div> </div>";
+
+            var requestMedia = Query.Get("http://iotdata.yhdf.fr/api/web/medias");
+            if(requestMedia == "Error" || String.IsNullOrEmpty(requestMedia)){
+                _ResultViewMedias = "<div class=\"media-block box \">Error Api</div> ";
+            }
+            else {
+                var result = JsonConvert.DeserializeObject<List<Medias>>(requestMedia);
+                _ResultViewMedias = "";
+                var currentTimeStamp = (Int32)(DateTime.Now.Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
+                foreach(var e in result){
+                    if (e.beginningDate <= currentTimeStamp && e.endingDate >= currentTimeStamp){
+                        if(e.image != ""){
+                            _ResultViewMedias += "<div class=\"medias-block\"> <div class=\"medias-image box\"> <img src=\"data:image/png;base64, " +e.image + "\" alt=" + e.name + " > </div> </div>";
                         }
-                        else {
+                        else if(e.video !=""){
+                            string pattern = @"([a-zA-Z0-9]+)\z";
+                            Match m = Regex.Match(e.video, pattern, RegexOptions.IgnoreCase);
+                            if (m.Success){
+                                _ResultViewMedias += "<div class=\"medias-block\"> <div class=\"medias-video box\"> <iframe src=\"https://www.youtube.com/embed/" + m.Groups[1].Value + " \" width=\"100%\" frameborder=\"0\" allowfullscreen></iframe> </div> </div>";
+                            }
+                            else {
+                            }
                         }
+                        else{}
                     }
-                    else{}
-                }
-                else {
+                    else {
+                    }
                 }
             }
         }
