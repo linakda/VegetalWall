@@ -32,27 +32,25 @@
     <div class="staticscreen-body">
 
       <div class="wall-frame">
-           @{ Html.RenderPartial("_Wall"); }
+           @Html.Raw(Model._ResultViewWall)
       </div>
 
 
       <div class="news-frame">
-          @{ Html.RenderPartial("_News"); }
+          @Html.Raw(Model._ResultViewNews)
       </div>
 
 
       <div class="countdown-frame">
-          @{ Html.RenderPartial("_Countdown"); }
+          @Html.Raw(Model._ResultViewCountdown)
       </div>
 
       <div class="medias-frame">
-          @{ Html.RenderPartial("_Medias"); }
+          @Html.Raw(Model._ResultViewMedias)
       </div>
 
       <div class="socialnetworks-frame">
-          <!-- SnapWidget -->
-          <script src="https://snapwidget.com/js/snapwidget.js"></script>
-          <iframe src="https://snapwidget.com/embed/706490" class="snapwidget-widget" allowtransparency="true" frameborder="0" scrolling="no"></iframe>
+          @Html.Raw(Model._ResultViewSocialnetworks)
       </div>
 
     </div>

@@ -14,7 +14,6 @@ namespace Mur_Vegetal.Pages
             public string widget { get; set; }
             public string id { get; set; }
         }
-        public string Answer { get; private set; }
         public string _ResultViewSocialnetworks {get; private set;}
         public void OnGet()
         {
