@@ -21,7 +21,7 @@ namespace Mur_Vegetal.Pages
             var result = JsonConvert.DeserializeObject<List<Social>>(Query.Get("http://iotdata.yhdf.fr/api/web/socials"));
             _ResultViewAdminSocialnetworks = "";
             foreach(var e in result){
-                _ResultViewAdminSocialnetworks += "<div class=\"home-param\"> <legend class=\"home-name\"> Page : " +e.pageWidget + "</legend> <div class=\"page-param\"> <label class=\"page-param\">Nom de page : </label> <input type=\"text\" class=\"page-param\" placeholder=\" " + e.pageWidget + "  \"> </div> <div class=\"widget-param\"> <label class=\"widget-param\">Lien widget : </label> <input type=\"text\" class=\"widget-param\" placeholder=\" " +e.widget + " \"> </div> <div class=button> <button class=\"button-apply\"> Valider </button> </div> </div>";
+                _ResultViewAdminSocialnetworks += "<div class=\"home-param\"> <legend class=\"home-name\"> Page : " +e.pageWidget + "</legend> <div class=\"page-param\"> <label class=\"page-param\">Nom de page : </label> <input type=\"text\" class=\"page-param\" placeholder=\"Nom de la page \" value=\" " + e.pageWidget + "  \"> </div> <div class=\"widget-param\"> <label class=\"widget-param\">Lien widget : </label> <input type=\"text\" class=\"widget-param\" placeholder=\"Lien du widget \" value=\" " +e.widget + " \"> </div> <div class=button> <button class=\"button-apply\"> Valider </button> </div> </div>";
             }
         }
     }
