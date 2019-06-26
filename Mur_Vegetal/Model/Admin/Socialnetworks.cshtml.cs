@@ -6,10 +6,8 @@ using System;
 
 namespace Mur_Vegetal.Pages
 {
-    public class SocialnetworksAdminModel : PageModel
-    {
-        public class Social
-        {
+    public class SocialnetworksAdminModel : PageModel{
+        public class Social{
             public string username { get; set; }
             public string pageWidget { get; set; }
             public string widget { get; set; }
