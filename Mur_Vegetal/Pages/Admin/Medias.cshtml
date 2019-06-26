@@ -10,18 +10,18 @@
 
   <div class="media-box ">
 
-    <form method="post">
+    <form method="post" enctype="multipart/form-data">
         <div class="medias-addnew">
           <legend class="medias-name">Ajouter média</legend>
 
             <div class="addnew-name">
               <label class="addnew-name">Nom de la photo : </label>
-              <input type="text" name="name" class="addnew-name" placeholder="Ex: JPO">
+              <input type="text" name="name" class="addnew-name" placeholder="Ex: JPO" required>
             </div>
 
             <div class="addnew-img">
               <label class="addnew-img">Image : </label>
-              <input class="addnew-img" name="image"type="file" accept="image/png, image/jpeg">
+              <input class="addnew-img" asp-for="ImageUpload" type="file" accept="image/png, image/jpeg">
             </div>
 
             <div class="addnew-video">
@@ -31,16 +31,16 @@
 
             <div class="addnew-start-date">
               <label class="addnew-start-date">Date de début : </label>
-              <input class="addnew-start-date" name="startdate" type="date">
+              <input class="addnew-start-date" name="startdate" type="date" required>
             </div>
 
             <div class="addnew-end-date">
               <label class="addnew-end-date">Date de fin : </label>
-              <input class="addnew-end-date" name="enddate" type="date">
+              <input class="addnew-end-date" name="enddate" type="date" required>
             </div>
 
             <div class=button>
-            <button class="button-apply" name="add"> Ajouter </button>
+            <button class="button-apply" name="submit" value="add"> Ajouter </button>
             </div>
           
         </div>
@@ -59,33 +59,35 @@
             <legend class="medias-name">@e.name</legend>
             <div class="param-name">
                 <label class="param-name">Nom de la photo : </label>
-                <input type="text" name="name" class="param-name" placeholder="Ex: JPO" value="@e.name">
+                <input type="text" name="name" class="param-name" placeholder="Ex: JPO" value="@e.name" required>
             </div>
 
-            @if (@e.image != ""){
+            @if (@e.image != "" && @e.image != null){
               <div class="param-img">
                 <label class="param-img">Image : </label>
-                <img class="param-img" name="image" src="data:image/png;base64,@e.image"><span><img src="data:image/png;base64,@e.image" alt="@e.name"></span>
+                <img class="param-img" src="data:image/png;base64,@e.image"><span><img src="data:image/png;base64,@e.image" alt="@e.name"></span>
+                <input type="hidden" name="image" value="@e.image">
               </div>
             }
-            else if (@e.video !=""){
+            else if (@e.video !="" && @e.video != null){
               <div class="param-video">
                 <label class="param-video">Video : </label>
-                <input type="text" name="video" class="param-video" placeholder="Ex: https://www.youtube.com/watch?v=WIIAbl7pBnI" value="@e.video">
+                <input type="text" name="video" class="param-video" placeholder="Ex: https://www.youtube.com/watch?v=WIIAbl7pBnI" value="@e.video" readonly>
               </div>
             }
             <div class="param-start-date">
                 <label class="param-start-date">Date de début : </label>
-                <input class="param-start-date" type="date" name="startdate" value="@beginningDate">
+                <input class="param-start-date" type="date" name="startdate" value="@beginningDate" required>
             </div>
             <div class="param-end-date">
                 <label class="param-end-date">Date de fin : </label>
-                <input class="param-end-date" type="date" name="enddate" value="@endingDate">
+                <input class="param-end-date" type="date" name="enddate" value="@endingDate" required>
             </div>
             <div class=button>
-                <button class="button-delete" value="delete" name="delete"> Supprimer </button>
-                <button class="button-apply" value ="edit" name="edit"> Modifier </button>
+                <button class="button-delete" value="delete" name="submit"> Supprimer </button>
+                <button class="button-apply" value ="edit" name="submit"> Modifier </button>
             </div>
+            <input type="hidden" name="id" value="@e.id">
             </div>
           </form>
       }
