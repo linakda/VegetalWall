@@ -109,12 +109,10 @@ public partial class Query{
                 return "Error";
             }
     }
-    public static string Delete(string uri, string data){
-        byte[] dataBytes = Encoding.UTF8.GetBytes(data);
+    public static string Delete(string uri){
 
         HttpWebRequest request = (HttpWebRequest)WebRequest.Create(uri);
         request.AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate;
-        request.ContentLength = dataBytes.Length;
         request.ContentType = "application/json";
         request.Method = "DELETE";
         //request.UserAgent = "Mozilla";
@@ -122,7 +120,6 @@ public partial class Query{
 
         try{
                 using(Stream requestBody = request.GetRequestStream()){
-                requestBody.Write(dataBytes, 0, dataBytes.Length);
                 }
 
                 using(HttpWebResponse response = (HttpWebResponse)request.GetResponse())
