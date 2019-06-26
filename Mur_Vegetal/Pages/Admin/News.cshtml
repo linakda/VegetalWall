@@ -7,15 +7,14 @@
 @section heads{
   <link href="@Url.Content("~/css/usersite/admin/newsadmin.css")" rel="stylesheet" type="text/css" />
 }
-
+<form method="post" enctype="multipart/form-data">
   <div class="news-box">
-<!-----------------------------------------AJOUT D'EVENT--------------------------------------------> 
     <div class="news-addnew">
       <legend class="news-name">Ajouter événement</legend>
 
         <div class="addnew-name">
           <label class="addnew-name">Nom de l'événement : </label>
-          <input type="text" name="name" class="addnew-name" placeholder="Ex: JPO">
+          <input type="text" name="name" class="addnew-name" placeholder="Ex: JPO" required>
         </div>
 
         <div class="addnew-text">
@@ -25,25 +24,25 @@
 
         <div class="addnew-img">
           <label class="addnew-img">Image : </label>
-          <input class="addnew-img" name="image" type="file" accept="image/png, image/jpeg">
+          <input class="addnew-img" asp-for="ImageUpload" type="file" accept="image/png, image/jpeg" required>
         </div>
 
         <div class="addnew-start-date">
           <label class="addnew-start-date">Date de début : </label>
-          <input class="addnew-start-date" name="startdate" type="date">
+          <input class="addnew-start-date" name="startdate" type="date" required>
         </div>
 
         <div class="addnew-end-date">
           <label class="addnew-end-date">Date de fin : </label>
-          <input class="addnew-end-date" name="enddate" type="date">
+          <input class="addnew-end-date" name="enddate" type="date" required>
         </div>
 
         <div class=button>
-         <button class="button-apply" name="add" value="add"> Ajouter </button>
+         <button class="button-apply" name="submit" value="add"> Ajouter </button>
         </div>
       
     </div>
-<!-----------------------------------------FIN AJOUT D'EVENT--------------------------------------------> 
+</form>
 
 @{
   //Traitement de la requête GET
@@ -58,7 +57,7 @@
               <legend class="news-name">@e.name</legend>
               <div class="param-name">
                 <label class="param-name">Nom de l'événement : </label>
-                <input type="text" name="name" class="param-name" placeholder="Ex: JPO" value="@e.name">
+                <input type="text" name="name" class="param-name" placeholder="Ex: JPO" value="@e.name" required>
               </div>
               <div class="param-text">
                 <label class="param-text">Texte : </label>
@@ -66,20 +65,22 @@
               </div>
               <div class="param-img">
                 <label class="param-img">Image : </label>
-                <img class="param-img" name="image" src="data:image/png;base64,@e.eventImage"><span><img src="data:image/png;base64,@e.eventImage" alt="@e.name"></span>
+                <img class="param-img" src="data:image/png;base64,@e.eventImage"><span><img src="data:image/png;base64,@e.eventImage" alt="@e.name"></span>
+                <input type="hidden" name="image" value="@e.eventImage">
               </div>
               <div class="param-start-date">
                 <label class="param-start-date">Date de début : </label>
-                <input class="param-start-date" name="startdate" type="date" value="@beginningDate">
+                <input class="param-start-date" name="startdate" type="date" value="@beginningDate" required>
               </div>
               <div class="param-end-date">
                 <label class="param-end-date">Date de fin : </label>
-                <input class="param-end-date" name="enddate" type="date" value="@endingDate">
+                <input class="param-end-date" name="enddate" type="date" value="@endingDate" required>
               </div>
               <div class=button>
-                <button class="button-delete" name="delete" value="delete"> Supprimer </button>
-                <button class="button-apply" name="edit" value="edit"> Modifier </button>
+                <button class="button-delete" name="submit" value="delete"> Supprimer </button>
+                <button class="button-apply" name="submit" value="edit"> Modifier </button>
               </div>
+              <input type="hidden" name="id" value="@e.id">
             </div>
           </form>
       }

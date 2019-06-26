@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Newtonsoft.Json;
+using Microsoft.AspNetCore.Http;
+using System.IO;
 
 namespace Mur_Vegetal.Pages
 {
@@ -18,6 +20,8 @@ namespace Mur_Vegetal.Pages
         }
 
         public List <News> Result { get; private set; }
+
+        public IFormFile ImageUpload { get; set; }
         public bool IsError { get; private set; }
         public void OnGet(){
             var requestNews = Query.Get("http://iotdata.yhdf.fr/api/web/events");
@@ -28,6 +32,46 @@ namespace Mur_Vegetal.Pages
                 IsError = false;
                 Result = JsonConvert.DeserializeObject<List<News>>(requestNews); 
             }
+        }
+
+        public void OnPost(){
+            var name = Request.Form["name"];
+            var text = Request.Form["text"];
+            var startdate = ((DateTimeOffset)DateTime.Parse(Request.Form["startdate"])).ToUnixTimeSeconds();
+            var enddate = ((DateTimeOffset)DateTime.Parse(Request.Form["enddate"])).ToUnixTimeSeconds();
+            var submit = Request.Form["submit"];
+            var id = Request.Form["id"];
+            if(submit == "add"){
+                News toAdd = new News();
+                toAdd.name = name;
+                toAdd.text = text;
+                toAdd.beginningDate = Convert.ToInt32(startdate);
+                toAdd.endingDate = Convert.ToInt32(enddate);
+                using (var ms = new MemoryStream()){
+                    ImageUpload.CopyTo(ms);
+                    var fileBytes = ms.ToArray();
+                    toAdd.eventImage = Convert.ToBase64String(fileBytes);
+                }
+                var data =  JsonConvert.SerializeObject(toAdd);
+                Console.WriteLine(text);
+                var result = Query.Post("http://iotdata.yhdf.fr/api/web/events/",data);
+            }
+            else if(submit == "edit"){
+                var image = Request.Form["image"];
+                News toEdit = new News();
+                toEdit.eventImage = image;
+                toEdit.name = name;
+                toEdit.text = text;
+                toEdit.beginningDate = Convert.ToInt32(startdate);
+                toEdit.endingDate = Convert.ToInt32(enddate);
+                toEdit.id = id;
+                var data =  JsonConvert.SerializeObject(toEdit);
+                var result = Query.Put("http://iotdata.yhdf.fr/api/web/events/"+toEdit.id,data);
+            }
+            else if (submit == "delete"){
+                var result = Query.Delete("http://iotdata.yhdf.fr/api/web/events/"+id);
+            }
+            OnGet();
         }
     }
 }
