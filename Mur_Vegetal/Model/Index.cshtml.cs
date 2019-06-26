@@ -34,16 +34,6 @@ namespace Mur_Vegetal.Pages
             public string widget { get; set; }
             public string id { get; set; }
         }
-
-        public class Medias
-        {
-            public string name { get; set; }
-            public int beginningDate { get; set; }
-            public int endingDate { get; set; }
-            public string video { get; set; }
-            public string image { get; set; }
-            public string id { get; set; }
-        }
         public class News{
             public string name { get; set; }
             public int eventDate { get; set; }
