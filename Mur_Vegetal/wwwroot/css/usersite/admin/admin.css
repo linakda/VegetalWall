@@ -180,17 +180,13 @@ label[class="param-img"] {
     min-width: 20%;
 }
 
-.param-img span {
+.param-img:active {
     position: absolute;
-    visibility: hidden;
+    target-new: tab;
 }
 
-.param-img:hover,
-.param-img:hover span {
-    visibility: visible;
-    top: 0;
-    left: 250px;
-    z-index: 1;
+.param-img span {
+    visibility: hidden;
 }
 
 
