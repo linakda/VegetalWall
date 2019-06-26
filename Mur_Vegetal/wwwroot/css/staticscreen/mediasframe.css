@@ -47,8 +47,8 @@ MEDIA VIDEO
 .medias-video iframe {
     display: block;
     width: 100%; 
-    min-width: 450px;
-    min-height: 255px;
+    min-width: 600px;
+    min-height: 400px;
 }
 
 

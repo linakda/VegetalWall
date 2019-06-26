@@ -58,7 +58,7 @@ MEDIAS IMAGE AND VIDEO
         min-width: 200px;
         max-width: 250px;
     }
-    .medias-video video {
+    .medias-video iframe {
         min-width: 200px;
         max-width: 250px;
     }
