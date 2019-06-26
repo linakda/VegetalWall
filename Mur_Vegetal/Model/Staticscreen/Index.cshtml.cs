@@ -8,6 +8,15 @@ namespace Mur_Vegetal.Pages
 {
     public class StaticscreenModel : PageModel
     {
+
+        public class Frame{
+            public int onScreenTime { get; set; }
+            public bool isOnScreen { get; set; }
+            public string name { get; set; }
+            public int carrousselTime { get; set; }
+            public string id { get; set; }
+        }
+
         public class Sensors
         {
             public int idSensor { get; set; }
@@ -66,6 +75,7 @@ namespace Mur_Vegetal.Pages
             public string widget { get; set; }
             public string id { get; set; }
         }
+        public string _ResultViewAdminFrame {get; private set;}
         public string _ResultViewWall {get; private set;}
         public string _ResultViewNews { get; private set; }
         public string _ResultViewCountdown {get; private set;}
@@ -200,6 +210,62 @@ namespace Mur_Vegetal.Pages
 
                     }
                 }
+            }
+
+            var timeWall = 0;
+            var timeNews = 0;
+            var timeCountdown = 0;
+            var timeMedias = 0;
+            var timeSocial = 0;
+            var requestFrame = Query.Get("http://iotdata.yhdf.fr/api/web/tables");
+            if(requestFrame =="Error" || String.IsNullOrEmpty(requestFrame)){
+                _ResultViewAdminFrame = "<div class=\"frame-param \"> Error Api </div> ";
+            }else{
+                var result = JsonConvert.DeserializeObject<List<Frame>>(requestFrame);
+                _ResultViewAdminFrame = "";
+                foreach(var e in result){
+                    if(e.name=="wall"){
+                        if(e.isOnScreen==true){
+                            timeWall = e.onScreenTime;
+                        }
+                        else{
+                            timeWall = 0;
+                        }
+                    }
+                    else if(e.name=="news"){
+                        if(e.isOnScreen==true){
+                            timeNews = e.carrousselTime;
+                        }
+                        else{
+                            timeNews = 0;
+                        }
+                    }
+                    else if(e.name=="countdown"){
+                        if(e.isOnScreen==true){
+                            timeCountdown = e.onScreenTime;
+                        }
+                        else{
+                            timeCountdown = 0;
+                        }
+                    }
+                    else if(e.name=="medias"){
+                        if(e.isOnScreen==true){
+                            timeMedias = e.carrousselTime;
+                        }
+                        else{
+                            timeMedias = 0;
+                        }
+                    }
+                    else if(e.name=="socialnetworks"){
+                        if(e.isOnScreen==true){
+                            timeSocial = e.onScreenTime;
+                        }
+                        else{
+                            timeSocial = 0;
+                        }
+                    }
+                }
+                _ResultViewAdminFrame += "<script>frame.init("+timeWall+","+timeNews+","+timeCountdown+","+timeCountdown+","+timeMedias+","+timeSocial+");</script>";
             }
         }
     }
