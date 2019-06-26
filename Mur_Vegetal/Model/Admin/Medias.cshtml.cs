@@ -14,7 +14,6 @@ namespace Mur_Vegetal.Pages{
             public string image { get; set; }
             public string id { get; set; }
         }
-        public string _ResultViewAdminMedias { get; private set; }
         public List <Medias> Result { get; private set; }
         public void OnGet(){
 

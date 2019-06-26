@@ -50,28 +50,28 @@
   //Traitement de la requête GET
   DateTime epoch = new DateTime(1970, 1, 1, 0, 0, 0, 0).ToLocalTime();
 
-  @foreach (var item in @Model.Result){
-    var beginningDate = epoch.AddSeconds(item.beginningDate).ToString("yyyy-MM-dd");
-    var endingDate = epoch.AddSeconds(item.endingDate).ToString("yyyy-MM-dd");
+  @foreach (var e in @Model.Result){
+    var beginningDate = epoch.AddSeconds(e.beginningDate).ToString("yyyy-MM-dd");
+    var endingDate = epoch.AddSeconds(e.endingDate).ToString("yyyy-MM-dd");
     @if (1==1){//condition de verification données
         <form method="post">
           <div class="medias-param">
-          <legend class="medias-name">@item.name</legend>
+          <legend class="medias-name">@e.name</legend>
           <div class="param-name">
               <label class="param-name">Nom de la photo : </label>
-              <input type="text" name="name" class="param-name" placeholder="Ex: JPO" value="@item.name">
+              <input type="text" name="name" class="param-name" placeholder="Ex: JPO" value="@e.name">
           </div>
 
-          @if (@item.image != ""){
+          @if (@e.image != ""){
             <div class="param-img">
               <label class="param-img">Image : </label>
-              <img class="param-img" name="image" src="data:image/png;base64,@item.image"><span><img src="data:image/png;base64,@item.image" alt="@item.image"></span>
+              <img class="param-img" name="image" src="data:image/png;base64,@e.image"><span><img src="data:image/png;base64,@e.image" alt="@e.image"></span>
             </div>
           }
-          else if (@item.video !=""){
+          else if (@e.video !=""){
             <div class="param-video">
               <label class="param-video">Video : </label>
-              <input type="text" name="video" class="param-video" placeholder="Ex: https://www.youtube.com/watch?v=WIIAbl7pBnI" value="@item.video">
+              <input type="text" name="video" class="param-video" placeholder="Ex: https://www.youtube.com/watch?v=WIIAbl7pBnI" value="@e.video">
             </div>
           }
           <div class="param-start-date">
