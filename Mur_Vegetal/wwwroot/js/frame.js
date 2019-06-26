@@ -12,13 +12,6 @@ var blockPassIndex = 0;
 var lastBlockPassIndex;
 var lastBlockPassNbr;
 
-function timedRefresh(timeoutPeriod) {
-    setTimeout("location.reload(true);",timeoutPeriod);
-    console.log("refreshing");
-}
-
-window.onload = timedRefresh(900000);
-
 var frame = {
     init(walltime, newstime, countdowntime, mediastime, socialnetworkstime) {
         let wall = $(".wall-frame:first");
@@ -54,6 +47,9 @@ var frame = {
         };
 
         lastFrameIndex = frameValidDiv.size - 1;
+
+        frame.timedRefresh(900000); //Auto refresh
+
         frame.roll(); //Start frame animation
     },
 
@@ -148,10 +144,8 @@ var frame = {
         }
     },
 
-    animateIn(element) {
-
-    },
-    animateOut(element) {
-
+    timedRefresh(timeoutPeriod) {
+        setTimeout("location.reload(true);",timeoutPeriod);
+        console.log("refreshing");
     }
 }
