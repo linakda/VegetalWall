@@ -22,9 +22,14 @@ namespace Mur_Vegetal.Pages
             var result = JsonConvert.DeserializeObject<List<CountDown>>(Query.Get("http://iotdata.yhdf.fr/api/web/countdowns"));
             _ResultViewCountdown = "";
             var currentTimeStamp = (Int32)(DateTime.Now.Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
+            CountDown lastCountdown;
             foreach(var e in result){
-                if (e.beginningDateEvent <= currentTimeStamp && e.endingDateEvent >= currentTimeStamp){
-                    _ResultViewCountdown = "<div class=\"countdown-block\"> <div class=\"countdown-image box\"> <img class=\"mur\" src=\"data:image/png;base64, " +e.image + "\" alt=" + e.name + " >   </div>  <div class=\"countdown-text box\"> " +e.text+ "<div id=\"countdown-display\"> </div> <script> countDown(\" " + e.endingDateCountdown + "  \",\"countdown-display\"); </script> </div> </div>";
+                lastCountdown = e;
+                if(lastCountdown.endingDateEvent > e.endingDateCountdown){
+                    lastCountdown = e;
+                }
+                if (lastCountdown.beginningDateEvent <= currentTimeStamp && lastCountdown.endingDateEvent >= currentTimeStamp){
+                    _ResultViewCountdown = "<div class=\"countdown-block\"> <div class=\"countdown-image box\"> <img class=\"mur\" src=\"data:image/png;base64, " +lastCountdown.image + "\" alt=" + lastCountdown.name + " >   </div>  <div class=\"countdown-text box\"> " +lastCountdown.text+ "<div id=\"countdown-display\"> </div> <script> countDown(\" " + lastCountdown.endingDateCountdown + "  \",\"countdown-display\"); </script> </div> </div>";
                 }
                 else {
                 }            

@@ -73,7 +73,7 @@ namespace Mur_Vegetal.Pages
             //Answer traitement 
             _ResultViewSocialnetworks = "";
             foreach(var e in resultSocial){
-                if(e.pageWidget == "Accueil"){
+                if(e.pageWidget == "accueil"){
                     _ResultViewSocialnetworks += "<div class=\"socialnetworks-box box\"> <a href=\"~/Socialnetworks\"> <script src=\"https://snapwidget.com/js/snapwidget.js\"></script> <iframe src=\" " + e.widget + " \" class=\"snapwidget-widget\"></iframe> </a></div>";
                 }
             }
@@ -107,7 +107,7 @@ namespace Mur_Vegetal.Pages
             News lastNews;
             foreach(var e in resultNew){
                 lastNews = e;
-                if(lastNews.beginningDate < e.beginningDate){
+                if(lastNews.beginningDate > e.beginningDate){
                     lastNews = e;
                 }
                 if (lastNews.beginningDate <= currentTimeStamp && lastNews.endingDate >= currentTimeStamp){
