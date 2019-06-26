@@ -43,6 +43,8 @@ body {
     padding: 0;
     font-family: Mukta-Regular, sans-serif;
     background-color: #EFEDEC;
+    background-image: url('~/../../../images/backgrounds/fond2.jpg');
+    background-size: 300%;
     color:#629460;
 
 }
