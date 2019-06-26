@@ -45,13 +45,11 @@ body {
     background-color: #EFEDEC;
     background-image: url('~/../../../images/backgrounds/fond2.jpg');
     background-size: 300%;
-    color:#629460;
-
+    color: #629460;
 }
 
 .main-body {
     display: flex;
-    margin-bottom: 10px;
 }
 
 
