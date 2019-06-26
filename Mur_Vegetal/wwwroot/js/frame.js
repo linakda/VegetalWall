@@ -12,6 +12,13 @@ var blockPassIndex = 0;
 var lastBlockPassIndex;
 var lastBlockPassNbr;
 
+function timedRefresh(timeoutPeriod) {
+    setTimeout("location.reload(true);",timeoutPeriod);
+    console.log("refreshing");
+}
+
+window.onload = timedRefresh(900000);
+
 var frame = {
     init(walltime, newstime, countdowntime, mediastime, socialnetworkstime){
         let wall = $(".wall-frame:first");
