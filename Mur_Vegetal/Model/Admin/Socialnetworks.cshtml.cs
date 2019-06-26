@@ -1,13 +1,7 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using static Query;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;	
-using System.Linq;
+
 
 namespace Mur_Vegetal.Pages
 {
@@ -20,11 +14,15 @@ namespace Mur_Vegetal.Pages
             public string widget { get; set; }
             public string id { get; set; }
         }
-        public string Answer { get; private set; }
+        public string _ResultViewAdminSocialnetworks { get; private set; }
+
         public void OnGet()
         {
-            Answer = Query.Get("http://iotdata.yhdf.fr/api/web/socials");
-            var result = JsonConvert.DeserializeObject<List<Social>>(Answer);
+            var result = JsonConvert.DeserializeObject<List<Social>>(Query.Get("http://iotdata.yhdf.fr/api/web/socials"));
+            _ResultViewAdminSocialnetworks = "";
+            foreach(var e in result){
+                _ResultViewAdminSocialnetworks += "<div class=\"home-param\"> <legend class=\"home-name\"> Page : " +e.pageWidget + "</legend> <div class=\"page-param\"> <label class=\"page-param\">Nom de page : </label> <input type=\"text\" class=\"page-param\" placeholder=\"Nom de la page \" value=\" " + e.pageWidget + "  \"> </div> <div class=\"widget-param\"> <label class=\"widget-param\">Lien widget : </label> <input type=\"text\" class=\"widget-param\" placeholder=\"Lien du widget \" value=\" " +e.widget + " \"> </div> <div class=button> <button class=\"button-apply\"> Valider </button> </div> </div>";
+            }
         }
     }
 }

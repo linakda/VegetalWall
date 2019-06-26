@@ -20,7 +20,7 @@ namespace Mur_Vegetal.Pages
             var result = JsonConvert.DeserializeObject<List<Social>>(Query.Get("http://iotdata.yhdf.fr/api/web/socials"));
             _ResultViewSocialnetworks = "";
             foreach(var e in result){
-                if(e.pageWidget == "Socialnetworks"){
+                if(e.pageWidget == "socialnetworks"){
                     _ResultViewSocialnetworks += "<script src=\"https://snapwidget.com/js/snapwidget.js\"></script> <iframe src=\" " + e.widget + " \" class=\"snapwidget-widget\" allowtransparency=\"true\" frameborder=\"0\" scrolling=\"no\" style=\"border:none; overflow:hidden; width:100%;\"></iframe>";
 
                 }

@@ -180,6 +180,19 @@ label[class="param-img"] {
     min-width: 20%;
 }
 
+.param-img span {
+    position: absolute;
+    visibility: hidden;
+}
+
+.param-img:hover,
+.param-img:hover span {
+    visibility: visible;
+    top: 0;
+    left: 250px;
+    z-index: 1;
+}
+
 
 /* --------------------------------------------------------------------------------------
 ADMIN BOUTON

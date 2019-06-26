@@ -17,7 +17,7 @@ countdown.style.display = "none";
 medias.style.display = "block";
 insta.style.display = "none";
 
-
+reloadStatic();
 modifyTime(1, 12000, 200000);
 fillElments();
 defile();
@@ -83,4 +83,10 @@ function modifyTime(timerCountdown, timerInsta, timerWall) {
     this.timerCountdown = (timerCountdown === 1) ? displayTimer : timerCountdown;
     this.timerInsta = (timerInsta === 1) ? displayTimer : timerInsta;
     this.timerWall = (timerWall === 1) ? displayTimer : timerWall;
+}
+
+
+function reloadStatic(){
+
+    console.log("Refreshing yyyyyyyyyyyyyyyyyyyyyy");
 }
