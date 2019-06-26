@@ -17,8 +17,7 @@ namespace Mur_Vegetal.Pages
         public string _ResultViewSocialnetworks {get; private set;}
         public void OnGet()
         {
-            Answer = Query.Get("http://iotdata.yhdf.fr/api/web/socials");
-            var result = JsonConvert.DeserializeObject<List<Social>>(Answer);
+            var result = JsonConvert.DeserializeObject<List<Social>>(Query.Get("http://iotdata.yhdf.fr/api/web/socials"));
             _ResultViewSocialnetworks = "";
             foreach(var e in result){
                 if(e.pageWidget == "Socialnetworks"){

@@ -31,8 +31,8 @@ namespace Mur_Vegetal.Pages
 
         public void OnGet()
         {
-            Answer = Query.Get("http://iotdata.yhdf.fr/api/web/sensors");
-            var result = JsonConvert.DeserializeObject<List<Sensors>>(Answer);
+         
+            var result = JsonConvert.DeserializeObject<List<Sensors>>(Query.Get("http://iotdata.yhdf.fr/api/web/sensors"));
             _ResultViewWall = "";
             foreach(var e in result){
                 if(e.idSensorType==0){
