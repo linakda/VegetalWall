@@ -9,5 +9,66 @@
 }
 
   <div class="frame-box">
-    @Html.Raw(@Model._ResultViewAdminFrame)
+    
+    @{
+  //Traitement de la requête GET
+      @if (@Model.IsError == false){ 
+        @foreach (var e in @Model.Result){
+          @if (1==1){//condition de verification données
+              <form method="post">
+                <div class="frame-param">
+                  <legend class="frame-name" name="name" value="@e.name">@e.name</legend>
+                  <div class="param-disp">
+                      <label class="param-disp">Affichage </label>
+                      @if (e.isOnScreen == true){
+                        <input type="checkbox" name="isOnScreen" class="param-disp" checked>
+                      }
+                      else {
+                        <input type="checkbox" name="isOnScreen" class="param-disp">
+                      }
+                  </div>
+                  @if(e.name == "medias" || e.name == "news"){
+                    <div class="param-carroussel">
+                      <label class="param-carroussel">Temps affichage du carroussel : </label>
+                      <input list="Sec" type="text"  name="time" class="param-carroussel" placeholder="En secondes" value="@e.carrousselTime">
+                      <datalist id="Sec">
+                        <option value="10"></option>
+                        <option value="20"></option>
+                        <option value="30"></option>
+                        <option value="40"></option>
+                        <option value="50"></option>
+                        <option value="60"></option>
+                        <option value="120"></option>
+                      </datalist>
+                    </div>
+                  }
+                  else if(e.name == "wall" || e.name == "socialnetworks" || e.name == "countdown"){
+                    <div class="param-disptime">
+                      <label class="param-disptime">Temps affichage : </label>
+                      <input list="Sec" type="text" name="time" class="param-disptime" placeholder="En secondes" value="@e.onScreenTime">
+                      <datalist id="Sec">
+                        <option value="10"></option>
+                        <option value="20"></option>
+                        <option value="30"></option>
+                        <option value="40"></option>
+                        <option value="50"></option>
+                        <option value="60"></option>
+                        <option value="120"></option>
+                      </datalist>
+                    </div>
+                  }
+                  <div class=button>
+                      <button class="button-apply" name="edit" value="edit"> Modifier </button>
+                  </div>
+                </div>
+              </form>
+          }
+        }
+      }
+      else {
+        <div class="frame-param"> Erreur API</div>
+      }
+    }
+
+
   </div>
