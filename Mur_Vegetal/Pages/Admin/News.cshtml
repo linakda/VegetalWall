@@ -7,8 +7,8 @@
 @section heads{
   <link href="@Url.Content("~/css/usersite/admin/newsadmin.css")" rel="stylesheet" type="text/css" />
 }
-<form method="post" enctype="multipart/form-data">
   <div class="news-box">
+    <form method="post" enctype="multipart/form-data">
     <div class="news-addnew">
       <legend class="news-name">Ajouter événement</legend>
 
@@ -40,9 +40,8 @@
         <div class=button>
          <button class="button-apply" name="submit" value="add"> Ajouter </button>
         </div>
-      
+      </form>
     </div>
-</form>
 
 @{
   //Traitement de la requête GET
