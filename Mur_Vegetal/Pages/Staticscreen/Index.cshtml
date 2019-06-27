@@ -58,7 +58,6 @@
                       </div>
                     }
                     @if(e.idSensorType==2){
-                      <div class="wall-block box">
                         <div class="info">
                           <div class="pression-icon"><img class="i1" src="~/images/icones/pression.png"/></div>
                           <div class="pression-text">Pression : </div>
@@ -66,10 +65,8 @@
                         <div class="chart @e.id"> 
                           <script>graph.lineChart(@e.id, tab_temp, 1);</script>
                         </div>
-                      </div>
                     }
                     @if(e.idSensorType==3){
-                      <div class="wall-block box">
                         <div class="info">
                           <div class="hydro-icon"><img class="i1" src="~/images/icones/hydro.png"/></div>
                           <div class="hydro-text">Humidité :</div>
@@ -77,10 +74,8 @@
                         <div class="chart @e.id"> 
                           <script>graph.lineChart(@e.id, tab_temp, 1);</script>
                         </div>
-                      </div>
                     }
                     @if(e.idSensorType==4){
-                      <div class="wall-block box">
                         <div class="info">
                           <div class="pr-icon"><img class="i1" src="~/images/icones/pression_ruche.png"/></div>
                           <div class="pr-text">Pression ruche :</div>
@@ -88,10 +83,8 @@
                         <div class="chart @e.id"> 
                           <script>graph.lineChart(@e.id, tab_temp, 1);</script>
                         </div>
-                      </div>
                     }
                     @if(e.idSensorType==5){
-                      <div class="wall-block box">
                         <div class="info">
                           <div class="mouv-icon"><img class="i1" src="~/images/icones/mouvement.png"/></div>
                           <div class="mouv-text">Flux entrant/sortant : </div>
@@ -99,10 +92,8 @@
                         <div class="chart @e.id"> 
                           <script>graph.columnChart(@e.id, tab_temp);</script>
                         </div>
-                      </div>
                     }
                     @if(e.idSensorType==6){
-                      <div class="wall-block box">
                         <div class="info">
                           <div class="tr-icon"><img class="i1" src="~/images/icones/thermo_ruche.png"/></div>
                           <div class="tr-text">Température ruche : </div>
@@ -110,7 +101,6 @@
                         <div class="chart @e.id"> 
                           <script>graph.lineChart(@e.id, tab_temp, 1);</script>
                         </div>
-                      </div>
                     }
                     </div>
                 }
