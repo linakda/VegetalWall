@@ -18,6 +18,8 @@ namespace Mur_Vegetal.Pages
         }
         public bool IsError { get; private set; }
         public List <Medias> Result {get; private set;}
+
+        public Match RegexMatch {get; set;}
         public void OnGet(){
 
             var requestMedias = Query.Get("http://iotdata.yhdf.fr/api/web/medias");
