@@ -18,6 +18,7 @@
               <form method="post">
                 <div class="frame-param">
                   <legend class="frame-name" name="name" value="@e.name">@e.name</legend>
+                  <input type="hidden" name="name" value="@e.name">
                   <div class="param-disp">
                       <label class="param-disp">Affichage </label>
                       @if (e.isOnScreen == true){
@@ -58,9 +59,10 @@
                     </div>
                   }
                   <div class=button>
-                      <button class="button-apply" name="edit" value="edit"> Modifier </button>
+                      <button class="button-apply" name="submit" value="edit"> Modifier </button>
                   </div>
                 </div>
+                <input type="hidden" name="id" value="@e.id">
               </form>
           }
         }
