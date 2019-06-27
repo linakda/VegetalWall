@@ -25,16 +25,17 @@
             <form method="post">
               <div class="home-param">
                 <legend class="home-name">@e.pageWidget</legend>
-                
+                <input type="hidden" name="username" value="@e.username">
+                <input type="hidden" name="pagewidget" value="@e.pageWidget">
                 <div class="widget-param">
                   <label class="widget-param">Lien widget : </label>
-                  <input type="text" name="widgetlink" class="widget-param" placeholder="ex:https://snapwidget.com/js/snapwidget.js" value="@e.widget">
+                  <input type="text" name="widget" class="widget-param" placeholder="ex:https://snapwidget.com/js/snapwidget.js" value="@e.widget">
                 </div>
 
                 <div class="button">
-                  <button class="button-apply" name="edit" value="edit"> Modifier </button>
+                  <button class="button-apply" name="submit" value="edit"> Modifier </button>
                 </div>
-
+                <input type="hidden" name="id" value="@e.id">
               </div>
             </form>
         }
