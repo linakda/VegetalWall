@@ -32,7 +32,7 @@
     <div class="staticscreen-body">
 
       <div class="wall-frame">
-           @{
+          @{
              var currentTimeStamp = (Int32)(DateTime.Now.Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
             //Traitement de la requête GET
             @if (@Model.IsErrorWall == false){ 
