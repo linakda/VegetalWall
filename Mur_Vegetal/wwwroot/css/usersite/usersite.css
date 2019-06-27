@@ -38,15 +38,14 @@ LAYOUT
 }
 
 body {
-    height: 100vh;
+    height: 100%;
     margin-top: 0;
     margin-left: 0;
     margin-right: 0;
     padding: 0;
     font-family: Mukta-Regular, sans-serif;
     background-color: #EFEDEC;
-    background-image: url('~/../../../images/backgrounds/fond2.jpg');
-    background-size: 300%;
+    background-image: url('~/../../../images/backgrounds/fond3.jpg');
     color: #629460;
 }
 
