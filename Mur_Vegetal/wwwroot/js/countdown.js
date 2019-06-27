@@ -22,7 +22,10 @@ function countDown(userDefinedEventDate,id){ //Paramètre : date de fin et id de
         document.getElementById(id).innerHTML = 'C\'est maintenant !';
         clearTimeout(actualisation);
     }
+    else if (days <= 0 ){
+        document.getElementById(id).innerHTML = hours  + 'H' + minutes + 'm' + secondes +'s';
+    }
     else {
-        document.getElementById(id).innerHTML = days + 'J ' + hours  + 'H' + minutes + 'M' + secondes +'S';
+        document.getElementById(id).innerHTML = days + 'J ' + hours  + 'H' + minutes + 'm' + secondes +'s';
     }
 }  
