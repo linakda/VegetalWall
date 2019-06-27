@@ -1,8 +1,8 @@
 using System.Security.Cryptography;
 using System.Text;
 public partial class Auth{
-    public static string AdminPass = "";
-    public static string CommPass = "";
+    public static string AdminPass = "AdminAdmin2019";
+    public static string CommPass = "AdminComm2019";
     public static string CalculateMD5Hash(string input)
         {
             // step 1, calculate MD5 hash from input

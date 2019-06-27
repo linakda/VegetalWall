@@ -36,6 +36,7 @@ namespace Mur_Vegetal.Pages
                             Expires = DateTime.Now.AddHours(1)
                         };
                         Response.Cookies.Append("communication",password , cookieOptions);
+                        Response.Redirect("/Admin/Admin");
                     }
                 }
                 if (login == "administration"){
@@ -44,10 +45,10 @@ namespace Mur_Vegetal.Pages
                             Expires = DateTime.Now.AddHours(1)
                         };
                         Response.Cookies.Append("administration",password , cookieOptions);
+                        Response.Redirect("/AdminWall");
                     }
                 }
             }
-            OnGet();
         }
 
     }
