@@ -8,35 +8,42 @@ namespace Mur_Vegetal.Pages
     {
         public void OnGet(){
             if( Request.Cookies["communication"] != null ){
-                Redirect("/Admin");
+                var value = Request.Cookies["communication"].ToString();
+                if (Auth.CalculateMD5Hash(Auth.CommPass) == value){
+                    Response.Redirect("/Admin/Admin");
+                }
+                else{
+                }
             }
             if( Request.Cookies["administration"] != null ){
-                Redirect("/AdminWall");
+                var value = Request.Cookies["administration"];
+                if (Auth.CalculateMD5Hash(Auth.AdminPass) == value){
+                    Response.Redirect("/AdminWall");
+                }
+                else{
+                }
             }
         }
 
         public void OnPost(){
             var login = Request.Form["login"];
-            var password = Request.Form["password"];
+            var password = Auth.CalculateMD5Hash(Request.Form["password"]);
             var submit = Request.Form["submit"];
             if (submit == "connexion"){
-                Console.WriteLine("LOGIN");
                 if (login == "communication"){
-                    if (password == "AdminComm2019"){
+                    if (password == Auth.CalculateMD5Hash(Auth.CommPass)){
                         var cookieOptions = new CookieOptions{
-                            Expires = DateTime.Now.AddHours(2)
+                            Expires = DateTime.Now.AddHours(1)
                         };
-                        //Response.Cookies.Append("communication", "ok", cookieOptions)
-                        Console.WriteLine("COMMM");
+                        Response.Cookies.Append("communication",password , cookieOptions);
                     }
                 }
                 if (login == "administration"){
-                    if (password == "AdminAdmin2019"){
+                    if (password == Auth.CalculateMD5Hash(Auth.AdminPass)){
                         var cookieOptions = new CookieOptions{
-                            Expires = DateTime.Now.AddHours(2)
+                            Expires = DateTime.Now.AddHours(1)
                         };
-                        Response.Cookies.Append("administration", "ok", cookieOptions);
-                        Console.WriteLine("ADMIN");
+                        Response.Cookies.Append("administration",password , cookieOptions);
                     }
                 }
             }

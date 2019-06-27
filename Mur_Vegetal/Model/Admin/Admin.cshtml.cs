@@ -1,8 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Mur_Vegetal.Pages
@@ -11,7 +6,17 @@ namespace Mur_Vegetal.Pages
     {
         public void OnGet()
         {
-
+            if( Request.Cookies["communication"] != null ){
+                var value = Request.Cookies["communication"].ToString();
+                if (Auth.CalculateMD5Hash(Auth.CommPass) == value){
+                }
+                else{
+                    Response.Redirect("/Admin/Login");
+                }
+            }
+            else {
+                Response.Redirect("/Admin/Login");
+            }
         }
     }
 }

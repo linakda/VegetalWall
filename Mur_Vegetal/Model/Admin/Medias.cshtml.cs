@@ -20,13 +20,24 @@ namespace Mur_Vegetal.Pages{
         public List <Medias> Result { get; private set; }
         public bool IsError { get; private set; }
         public void OnGet(){
-            var requestMedias = Query.Get("http://iotdata.yhdf.fr/api/web/medias");
-            if(requestMedias == "Error" || String.IsNullOrEmpty(requestMedias)){
-                IsError = true;
+            if( Request.Cookies["communication"] != null ){
+                var value = Request.Cookies["communication"].ToString();
+                if (Auth.CalculateMD5Hash(Auth.CommPass) == value){
+                    var requestMedias = Query.Get("http://iotdata.yhdf.fr/api/web/medias");
+                    if(requestMedias == "Error" || String.IsNullOrEmpty(requestMedias)){
+                        IsError = true;
+                    }
+                    else{
+                        IsError = false;
+                        Result = JsonConvert.DeserializeObject<List<Medias>>(requestMedias); 
+                    }
+                }
+                else{
+                    Response.Redirect("/Admin/Login");
+                }
             }
-            else{
-                IsError = false;
-                Result = JsonConvert.DeserializeObject<List<Medias>>(requestMedias); 
+            else {
+                Response.Redirect("/Admin/Login");
             }
         }
         public void OnPost(){

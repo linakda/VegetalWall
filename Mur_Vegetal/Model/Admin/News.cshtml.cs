@@ -24,13 +24,24 @@ namespace Mur_Vegetal.Pages
         public IFormFile ImageUpload { get; set; }
         public bool IsError { get; private set; }
         public void OnGet(){
-            var requestNews = Query.Get("http://iotdata.yhdf.fr/api/web/events");
-            if(requestNews == "Error" || String.IsNullOrEmpty(requestNews)){
-                IsError = true;
+            if( Request.Cookies["communication"] != null ){
+                var value = Request.Cookies["communication"].ToString();
+                if (Auth.CalculateMD5Hash(Auth.CommPass) == value){
+                    var requestNews = Query.Get("http://iotdata.yhdf.fr/api/web/events");
+                    if(requestNews == "Error" || String.IsNullOrEmpty(requestNews)){
+                        IsError = true;
+                    }
+                    else{
+                        IsError = false;
+                        Result = JsonConvert.DeserializeObject<List<News>>(requestNews); 
+                    }
+                }
+                else{
+                    Response.Redirect("/Admin/Login");
+                }
             }
-            else{
-                IsError = false;
-                Result = JsonConvert.DeserializeObject<List<News>>(requestNews); 
+            else {
+                Response.Redirect("/Admin/Login");
             }
         }
 

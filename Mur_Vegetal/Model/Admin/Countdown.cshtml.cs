@@ -25,13 +25,24 @@ namespace Mur_Vegetal.Pages
 
          public bool IsError { get; private set; }
         public void OnGet(){
-            var requestCountdown = Query.Get("http://iotdata.yhdf.fr/api/web/countdowns");
-            if(requestCountdown == "Error" || String.IsNullOrEmpty(requestCountdown)){
-                IsError = true;
+            if( Request.Cookies["communication"] != null ){
+                var value = Request.Cookies["communication"].ToString();
+                if (Auth.CalculateMD5Hash(Auth.CommPass) == value){
+                    var requestCountdown = Query.Get("http://iotdata.yhdf.fr/api/web/countdowns");
+                    if(requestCountdown == "Error" || String.IsNullOrEmpty(requestCountdown)){
+                        IsError = true;
+                    }
+                    else{
+                        IsError = false;
+                        Result = JsonConvert.DeserializeObject<List<CountDown>>(requestCountdown); 
+                    }
+                }
+                else{
+                    Response.Redirect("/Admin/Login");
+                }
             }
-            else{
-                IsError = false;
-                Result = JsonConvert.DeserializeObject<List<CountDown>>(requestCountdown); 
+            else {
+                Response.Redirect("/Admin/Login");
             }
         }
 

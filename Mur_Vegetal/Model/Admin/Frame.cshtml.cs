@@ -16,13 +16,24 @@ namespace Mur_Vegetal.Pages{
         public List <Frame> Result { get; private set; }
         public bool IsError { get; private set; }
         public void OnGet(){
-            var requestFrame = Query.Get("http://iotdata.yhdf.fr/api/web/tables");
-            if(requestFrame == "Error" || String.IsNullOrEmpty(requestFrame)){
-                IsError = true;
+            if( Request.Cookies["communication"] != null ){
+                var value = Request.Cookies["communication"].ToString();
+                if (Auth.CalculateMD5Hash(Auth.CommPass) == value){
+                    var requestFrame = Query.Get("http://iotdata.yhdf.fr/api/web/tables");
+                    if(requestFrame == "Error" || String.IsNullOrEmpty(requestFrame)){
+                        IsError = true;
+                    }
+                    else{
+                        IsError = false;
+                        Result = JsonConvert.DeserializeObject<List<Frame>>(requestFrame); 
+                    }
+                }
+                else{
+                    Response.Redirect("/Admin/Login");
+                }
             }
-            else{
-                IsError = false;
-                Result = JsonConvert.DeserializeObject<List<Frame>>(requestFrame); 
+            else {
+                Response.Redirect("/Admin/Login");
             }
         }
 
