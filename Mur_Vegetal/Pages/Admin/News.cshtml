@@ -56,7 +56,12 @@
               <legend class="news-name">@e.name</legend>
               <div class="param-name">
                 <label class="param-name">Nom de l'événement : </label>
-                <input type="text" name="name" class="param-name" placeholder="Ex: JPO" value="@e.name" required>
+                @if (!String.IsNullOrEmpty(e.name)){
+                  <input type="text" name="name" class="param-name" placeholder="Ex: JPO" value="@e.name" required>
+                }
+                else {
+                  <input type="text" name="name" class="param-name" placeholder="Ex: JPO" value="News" required>
+                }
               </div>
               <div class="param-text">
                 <label class="param-text">Texte : </label>

@@ -59,7 +59,12 @@
             <legend class="medias-name">@e.name</legend>
             <div class="param-name">
                 <label class="param-name">Nom de la photo : </label>
+                @if (!String.IsNullOrEmpty(e.name)){
                 <input type="text" name="name" class="param-name" placeholder="Ex: JPO" value="@e.name" required>
+              }
+              else {
+                <input type="text" name="name" class="param-name" placeholder="Ex: JPO" value="Média" required>
+              }
             </div>
 
             @if (@e.image != "" && @e.image != null){

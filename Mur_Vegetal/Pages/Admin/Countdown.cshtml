@@ -67,7 +67,12 @@
           <legend class="coutndown-name">@e.name</legend>
           <div class="param-name">
               <label class="param-name">Nom du compte à rebours : </label>
-              <input type="text" name="name" class="param-name" placeholder="Ex: JPO" value="@e.name">
+              @if (!String.IsNullOrEmpty(e.name)){
+                <input type="text" name="name" class="param-name" placeholder="Ex: JPO" value="@e.name" required>
+              }
+              else {
+                <input type="text" name="name" class="param-name" placeholder="Ex: JPO" value="Compte à rebours" required>
+              }
           </div>
           <div class="param-text">
               <label class="param-text">Texte : </label>
