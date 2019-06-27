@@ -10,43 +10,11 @@
 
 <div class="home-body">
     <div class="wall-box box">
-        @{
-            @if(@Model.IsErrorWall == false){
-                @foreach(var e in @Model.ResultWall){
-                    @if(1==1){
-                        <div class="wall-info">
-                            <div class="wall-icon"><a href="~/Wall"> <img src="~/images/icones/lumiere.png"/> </a></div>
-                            <div class="wall-text"><a href="~/Wall"> @e.name </a></div> 
-                        </div>
-                        <div class="wall-info">
-                            <div class="wall-icon"><a href="~/Wall"> <img rc="~/images/icones/air.png"/> </a></div>
-                            <div class="wall-text"><a href="~/Wall"> @e.name </a></div> 
-                        </div>
-                        <div class="wall-info">
-                            <div class="wall-icon"><a href="~/Wall"> <img src="~/images/icones/pression.png"/> </a></div>
-                            <div class="wall-text"><a href="~/Wall"> @e.name </a></div> 
-                        </div>
-                        <div class="wall-info">
-                            <div class="wall-icon"><a href="~/Wall"> <img src="~/images/icones/hydro.png"/> </a></div>
-                            <div class="wall-text"><a href="~/Wall"> @e.name </a></div> 
-                        </div>
-                        <div class="wall-info">
-                            <div class="wall-icon"><a href="~/Wall"> <img src="~/images/icones/mouvement.png"/> </a></div>
-                            <div class="wall-text"><a href="~/Wall"> @e.name </a></div> 
-                        </div>
-                        <div class="wall-info">
-                            <div class="wall-icon"><a href="~/Wall"> <img src="~/images/icones/pression_ruche.png"/> </a></div>
-                            <div class="wall-text"><a href="~/Wall"> @e.name </a></div>  
-                        </div>
-                        <div class="wall-info">
-                            <div class="wall-icon"><a href="~/Wall"> <img src="~/images/icones/thermo_ruche.png"/> </a></div>
-                            <div class="wall-text"><a href="~/Wall"> @e.name </a></div>  
-                        </div>
-                    }
-                }
-            }
-        }
+    @Html.Raw(Model._ResultViewWall)
     </div>
+    @Html.Raw(Model._ResultViewNews) 
+    @Html.Raw(Model._ResultViewSocialnetworks)
+    @Html.Raw(Model._ResultViewCountdown)
 </div>
 
 
