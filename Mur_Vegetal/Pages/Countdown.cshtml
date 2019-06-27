@@ -14,7 +14,7 @@
           @if (@Model.IsError == false && @Model.ResultLastCountdown != null){ 
               @if (1==1){//condition de verification données
                       <div class="countdown-block">
-                        @if(!String.IsNullOrEmpty(@Model.ResultLastCountdown.text)){
+                        @if(!String.IsNullOrEmpty(@Model.ResultLastCountdown.image)){
                            <div class="countdown-image box">
                                   <img src="data:image;base64,@Model.ResultLastCountdown.image"/>
                               </div> 
