@@ -14,7 +14,7 @@ namespace Mur_Vegetal.Pages
             public int beginningDateEvent { get; set; }
             public int endingDateCountdown { get; set; }
             public int position { get; set; }
-            public object image { get; set; }
+            public string image { get; set; }
             public string id { get; set; }
         }
         public List <CountDown> ResultCountdown { get; private set; }
