@@ -62,8 +62,8 @@
       var endingDateCountdown = epoch.AddSeconds(e.endingDateCountdown).ToString("yyyy-MM-dd");  
       var endingTimeCountdown = epoch.AddSeconds(e.endingDateCountdown).ToString("HH:mm");  //heure minutes conde HH:mm
       @if (1==1){//condition de verification données
-        <form method="post">
-        <div class="countdown-param">
+        <form method="post" class="countdown-param">
+        <div>
           <legend class="coutndown-name">@e.name</legend>
           <div class="param-name">
               <label class="param-name">Nom du compte à rebours : </label>

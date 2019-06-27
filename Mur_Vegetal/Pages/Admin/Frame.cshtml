@@ -15,8 +15,8 @@
       @if (@Model.IsError == false){ 
         @foreach (var e in @Model.Result){
           @if (1==1){//condition de verification données
-              <form method="post">
-                <div class="frame-param">
+              <form method="post" class="frame-param">
+                <div>
                   <legend class="frame-name" name="name" value="@e.name">@e.name</legend>
                   <input type="hidden" name="name" value="@e.name">
                   <div class="param-disp">

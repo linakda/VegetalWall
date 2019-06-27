@@ -181,7 +181,7 @@ label[class="param-img"] {
 }
 
 .param-img:active {
-    position: absolute;
+    position: relative;
     target-new: tab;
 }
 
