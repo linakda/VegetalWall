@@ -67,7 +67,8 @@ namespace Mur_Vegetal
             app.UseStaticFiles(); // DON'T FORGET THE LEADING SLASH!
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-            app.UseCookiePolicy();
+            //app.UseCookiePolicy();
+            app.UseStatusCodePagesWithRedirects("~/Index"); // TO REDIRECT TO ERROR PAGES /errors/{0}
 
             app.UseMvc();
         }
