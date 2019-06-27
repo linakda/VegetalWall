@@ -118,10 +118,11 @@ namespace Mur_Vegetal.Pages
             else {
                 var resultCountdown = JsonConvert.DeserializeObject<List<CountDown>>(requestCountdown);
                 _ResultViewCountdown = "";
-                CountDown lastCountdown;
+                CountDown lastCountdown = resultCountdown[0];
                 foreach(var e in resultCountdown){
-                    lastCountdown = e;
-                    if(lastCountdown.endingDateEvent > e.endingDateEvent){
+                    Console.Write(lastCountdown.endingDateEvent);
+                    Console.Write(e.endingDateEvent);
+                    if(lastCountdown.endingDateEvent >= e.endingDateEvent){
                         lastCountdown = e;
                     }
                     if (lastCountdown.beginningDateEvent <= currentTimeStamp && lastCountdown.endingDateEvent >= currentTimeStamp){
@@ -140,18 +141,17 @@ namespace Mur_Vegetal.Pages
             else {
                 _ResultViewNews = "";
                 var resultNew = JsonConvert.DeserializeObject<List<News>>(requestNews);            
-                News lastNews;
+                News lastNews = resultNew[0];
                 foreach(var e in resultNew){
-                    lastNews = e;
-                    if(lastNews.eventDate > e.eventDate){
-                        lastNews = e;
+                    if(lastNews.beginningDate <= e.beginningDate){
+                        lastNews = e;                    
                     }
                     if (lastNews.beginningDate <= currentTimeStamp && lastNews.endingDate >= currentTimeStamp){
                         if(String.IsNullOrEmpty(lastNews.text)){
                             _ResultViewNews = "<a href=\"~/News\"><div class=\"news-box\"> <div class=\"news-image box\"> <img src=\"data:image/png;base64, " +lastNews.eventImage + " \" alt=\" " + lastNews.name + " \"> </div></div></a>";
                         }
                         else {
-                            _ResultViewNews = "<a href=\"~/News\"><div class=\"news-box\"> <div class=\"news-image box\"> <img src=\"data:image/png;base64, " +lastNews.eventImage + " \" alt=\" " + lastNews.name + " \"> </div><div class=\"news-text box\"> </div> </div></a> ";
+                            _ResultViewNews = "<a href=\"~/News\"><div class=\"news-box\"> <div class=\"news-image box\"> <img src=\"data:image/png;base64, " +lastNews.eventImage + " \" alt=\" " + lastNews.name + " \"> </div><div class=\"news-text box\"> "+lastNews.text +"  </div> </div></a> ";
                         }
                     }
                     else {
