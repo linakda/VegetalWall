@@ -18,29 +18,17 @@ namespace Mur_Vegetal.Pages
             public string id { get; set; }
         }
 
-        public string _ResultViewNews { get; private set; }
+        public bool IsError { get; private set; }
+        public List <News> Result { get; private set; }
         public void OnGet(){
-
+            
             var requestNews = Query.Get("http://iotdata.yhdf.fr/api/web/events");
-            if(requestNews=="Error" || String.IsNullOrEmpty(requestNews)){
-                _ResultViewNews = "<div class=\"news-block box\">Error Api</div>";
+            if(requestNews == "Error" || String.IsNullOrEmpty(requestNews)){
+                IsError = true;
             }
             else{
-                var result = JsonConvert.DeserializeObject<List<News>>(requestNews);
-                _ResultViewNews = "";
-                var currentTimeStamp = (Int32)(DateTime.Now.Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
-                foreach(var e in result){
-                    if (e.beginningDate <= currentTimeStamp && e.endingDate >= currentTimeStamp){
-                        if(String.IsNullOrEmpty(e.text)){
-                            _ResultViewNews += "<div class=\"news-block\"><div class=\"news-image box\"><img src=\"data:image;base64, "+e.eventImage+"\"/></div></div>";
-                        }
-                        else {
-                            _ResultViewNews += "<div class=\"news-block\"><div class=\"news-image box\"><img src=\"data:image;base64, "+e.eventImage+"\"/></div><div class=\"news-text box\">"+e.text+"</div></div>";
-                        }
-                    }
-                    else {
-                    }
-                }
+                IsError = false;
+                Result = JsonConvert.DeserializeObject<List<News>>(requestNews); 
             }
         }
     }
