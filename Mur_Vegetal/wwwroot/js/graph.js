@@ -1,3 +1,55 @@
+var tab_temp = [
+    {
+        date: 1,
+        value: 7
+    },
+    {
+        date: 2,
+        value: 10
+    },
+    {
+        date: 3,
+        value: 9
+    },
+    {
+        date: 4,
+        value: 22
+    },
+    {
+        date: 5,
+        value: 12
+    },
+    {
+        date: 6,
+        value: 14
+    },
+    {
+        date: 7,
+        value: 34
+    },
+    {
+        date: 8,
+        value: 43
+    },
+    {
+        date: 9,
+        value: 15
+    },
+    {
+        date: 10,
+        value: 8
+    },
+    {
+        date: 11,
+        value: 10
+    },
+    {
+        date: 12,
+        value: 19
+    }
+];
+
+
 var graph = {
     lineChart(divname, tab, state) {
         // state pour Staticscreen (= 0) et Usersite (= 1)
