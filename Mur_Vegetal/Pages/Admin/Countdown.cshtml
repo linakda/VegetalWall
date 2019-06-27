@@ -26,7 +26,7 @@
 
         <div class="addnew-img">
           <label class="addnew-img">Image : </label>
-          <input class="addnew-img" name="image" type="file" accept="image/png, image/jpeg">
+          <input class="addnew-img" asp-for="ImageUpload" type="file" accept="image/png, image/jpeg">
         </div>
 
         <div class="addnew-start-date">
@@ -45,7 +45,7 @@
         </div>
 
         <div class=button>
-          <button class="button-apply" name="add"> Ajouter </button>
+          <button class="button-apply" name="submit" value="add"> Ajouter </button>
         </div>
       
     </div>
@@ -58,7 +58,8 @@
     @foreach (var e in @Model.Result){
       var beginningDate = epoch.AddSeconds(e.beginningDateEvent).ToString("yyyy-MM-dd");
       var endingDate = epoch.AddSeconds(e.endingDateEvent).ToString("yyyy-MM-dd");
-      var endingDateCountdown = epoch.AddSeconds(e.endingDateCountdown).ToString("yyyy-MM-dd");
+      var endingDateCountdown = 0; e.endingDateCountdown; //date yyyy-MM-dd
+      var endingTimeCountdown = 0; endingDateCountdown //heure minutes conde HH:mm
       @if (1==1){//condition de verification données
         <form method="post">
         <div class="countdown-param">
@@ -73,7 +74,8 @@
           </div>
           <div class="param-img">
               <label class="param-img">Image : </label>
-                <img class="param-img" name="image" name="image" src="data:image/png;base64,@e.image"><span><img src="data:image/png;base64,@e.image" alt="@e.name"></span>
+                <img class="param-img" src="data:image/png;base64,@e.image"><span><img src="data:image/png;base64,@e.image" alt="@e.name"></span>
+                <input type="hidden" name="image" value="@e.image">
           </div>
           <div class="param-start-date">
               <label class="param-start-date">Date de début : </label>
@@ -85,13 +87,15 @@
           </div>
           <div class="param-countdown-date">
               <label class="param-end-date">Date compteur : </label>
-              <input class="param-end-date"  name="countdowndate" value="@endingDateCountdown" type="date">
+              <input class="param-end-date"  name="countdowndate" value="@endingDateCountdown" type="datel">
+              <input class="param-end-date" name="countdowntime" value="@endingTimeCountdown" type="time">
           </div>
           <div class=button>
-              <button class="button-delete" name="delete" value="delete"> Supprimer </button>
-              <button class="button-apply" name="edit" value="edit"> Modifier </button>
+              <button class="button-delete" name="submit" value="delete"> Supprimer </button>
+              <button class="button-apply" name="submit" value="edit"> Modifier </button>
           </div>
         </div>
+        <input type="hidden" name="id" value="@e.id">
         </form>
       }
     }
