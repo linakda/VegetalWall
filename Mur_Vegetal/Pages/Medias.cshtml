@@ -9,7 +9,28 @@
 
 
 <div class="mediaspage-body">
-  @Html.Raw(Model._ResultViewMedias)
+   @{
+      var currentTimeStamp = (Int32)(DateTime.Now.Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
+          //Traitement de la requête GET
+          @if (@Model.IsError == false){ 
+            @foreach (var e in @Model.Result){
+              @if (1==1){//condition de verification données
+                  @if (e.beginningDate <= currentTimeStamp && e.endingDate >= currentTimeStamp){
+                      @if(!String.IsNullOrEmpty(e.image)){
+                        <div class="medias-block">
+                          <div class="medias-image box">
+                            <img src="data:image;base64,@e.image"/>
+                          </div>
+                        </div>
+                      }
+                  }
+              }
+            }
+          }
+          else {
+            <div class="news-block box">Erreur API</div>
+          }
+        }
 </div>
 
 
