@@ -26,7 +26,7 @@
 
         <div class="addnew-img">
           <label class="addnew-img">Image : </label>
-          <input class="addnew-img" asp-for="ImageUpload" type="file" accept="image/png, image/jpeg">
+          <input class="addnew-img" asp-for="ImageUpload" type="file" accept="image/png, image/jpeg, image/jpg">
         </div>
 
         <div class="addnew-start-date">
@@ -41,7 +41,8 @@
 
         <div class="addnew-countdown-date">
           <label class="addnew-end-date">Date compteur : </label>
-          <input class="addnew-end-date" name="countdowndate" type="date">
+          <input class="param-end-date"  name="countdowndate" type="date">
+          <input class="param-end-date" name="countdowntime"  type="time">
         </div>
 
         <div class=button>
@@ -58,8 +59,8 @@
     @foreach (var e in @Model.Result){
       var beginningDate = epoch.AddSeconds(e.beginningDateEvent).ToString("yyyy-MM-dd");
       var endingDate = epoch.AddSeconds(e.endingDateEvent).ToString("yyyy-MM-dd");
-      var endingDateCountdown = 0; e.endingDateCountdown; //date yyyy-MM-dd
-      var endingTimeCountdown = 0; endingDateCountdown //heure minutes conde HH:mm
+      var endingDateCountdown = epoch.AddSeconds(e.endingDateCountdown).ToString("yyyy-MM-dd");  
+      var endingTimeCountdown = epoch.AddSeconds(e.endingDateCountdown).ToString("HH:mm");  //heure minutes conde HH:mm
       @if (1==1){//condition de verification données
         <form method="post">
         <div class="countdown-param">
@@ -72,11 +73,13 @@
               <label class="param-text">Texte : </label>
               <textarea class="param-text" name="text" rows="5" cols="60" placeholder="Entrez votre texte">@e.text</textarea>
           </div>
+          @if (@e.image != "" && @e.image != null){
           <div class="param-img">
               <label class="param-img">Image : </label>
                 <img class="param-img" src="data:image/png;base64,@e.image"><span><img src="data:image/png;base64,@e.image" alt="@e.name"></span>
                 <input type="hidden" name="image" value="@e.image">
           </div>
+          }
           <div class="param-start-date">
               <label class="param-start-date">Date de début : </label>
               <input class="param-start-date" name="startdate" value="@beginningDate" type="date">
@@ -87,7 +90,7 @@
           </div>
           <div class="param-countdown-date">
               <label class="param-end-date">Date compteur : </label>
-              <input class="param-end-date"  name="countdowndate" value="@endingDateCountdown" type="datel">
+              <input class="param-end-date"  name="countdowndate" value="@endingDateCountdown" type="date">
               <input class="param-end-date" name="countdowntime" value="@endingTimeCountdown" type="time">
           </div>
           <div class=button>
