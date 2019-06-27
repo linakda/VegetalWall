@@ -32,6 +32,7 @@ namespace Mur_Vegetal.Pages{
             var time = Request.Form["time"];
             var name = Request.Form["name"];
             var id = Request.Form["id"];
+            var result = "";
             if(submit == "edit"){
                 Frame toEdit = new Frame();
                 if (name == "news" || name == "medias"){
@@ -49,7 +50,10 @@ namespace Mur_Vegetal.Pages{
                 toEdit.name = name;
                 toEdit.id = id;
                 var data =  JsonConvert.SerializeObject(toEdit);
-                var result = Query.Put("http://iotdata.yhdf.fr/api/web/tables/"+toEdit.id,data);
+                result = Query.Put("http://iotdata.yhdf.fr/api/web/tables/"+toEdit.id,data);
+            }
+            if(result=="Error"){
+                //Code Alert
             }
             OnGet();
         }

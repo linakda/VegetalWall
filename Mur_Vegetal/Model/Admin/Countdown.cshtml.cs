@@ -45,6 +45,7 @@ namespace Mur_Vegetal.Pages
             var totalcountdown = countdowndate + countdowntime; //mix date + time
             var submit = Request.Form["submit"];
             var id = Request.Form["id"];
+            var result ="";
             if(submit == "add"){
                 CountDown toAdd = new CountDown();
                 toAdd.name = name;
@@ -63,7 +64,7 @@ namespace Mur_Vegetal.Pages
                     toAdd.image = "";
                 }
                 var data =  JsonConvert.SerializeObject(toAdd);
-                var result = Query.Post("http://iotdata.yhdf.fr/api/web/countdowns/",data);
+                result = Query.Post("http://iotdata.yhdf.fr/api/web/countdowns/",data);
             }
             else if(submit == "edit"){
                 var image = Request.Form["image"];
@@ -82,10 +83,13 @@ namespace Mur_Vegetal.Pages
                 toEdit.endingDateCountdown = totalcountdown;
                 toEdit.id = id;
                 var data =  JsonConvert.SerializeObject(toEdit);
-                var result = Query.Put("http://iotdata.yhdf.fr/api/web/countdowns/"+toEdit.id,data);
+                result = Query.Put("http://iotdata.yhdf.fr/api/web/countdowns/"+toEdit.id,data);
             }
             else if(submit == "delete"){
-                var result = Query.Delete("http://iotdata.yhdf.fr/api/web/countdowns/"+id);
+                result = Query.Delete("http://iotdata.yhdf.fr/api/web/countdowns/"+id);
+            }
+            if(result=="Error"){
+                //Code Alert
             }
             OnGet();
         }

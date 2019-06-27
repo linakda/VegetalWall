@@ -41,6 +41,7 @@ namespace Mur_Vegetal.Pages
             var enddate = (((DateTimeOffset)DateTime.Parse(Request.Form["enddate"])).Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
             var submit = Request.Form["submit"];
             var id = Request.Form["id"];
+            var result = "";
             if(submit == "add"){
                 News toAdd = new News();
                 toAdd.name = name;
@@ -54,7 +55,7 @@ namespace Mur_Vegetal.Pages
                 }
                 var data =  JsonConvert.SerializeObject(toAdd);
                 Console.WriteLine(text);
-                var result = Query.Post("http://iotdata.yhdf.fr/api/web/events/",data);
+                result = Query.Post("http://iotdata.yhdf.fr/api/web/events/",data);
             }
             else if(submit == "edit"){
                 var image = Request.Form["image"];
@@ -66,10 +67,13 @@ namespace Mur_Vegetal.Pages
                 toEdit.endingDate = Convert.ToInt32(enddate);
                 toEdit.id = id;
                 var data =  JsonConvert.SerializeObject(toEdit);
-                var result = Query.Put("http://iotdata.yhdf.fr/api/web/events/"+toEdit.id,data);
+                result = Query.Put("http://iotdata.yhdf.fr/api/web/events/"+toEdit.id,data);
             }
             else if (submit == "delete"){
-                var result = Query.Delete("http://iotdata.yhdf.fr/api/web/events/"+id);
+                result = Query.Delete("http://iotdata.yhdf.fr/api/web/events/"+id);
+            }
+            if(result=="Error"){
+                //Code Alert
             }
             OnGet();
         }

@@ -33,6 +33,7 @@ namespace Mur_Vegetal.Pages
             var widget = Request.Form["widget"];
             var submit = Request.Form["submit"];
             var id = Request.Form["id"];
+            var result = "";
             if(submit == "edit"){
                 Social toEdit = new Social();
                 toEdit.widget = widget;
@@ -40,7 +41,10 @@ namespace Mur_Vegetal.Pages
                 toEdit.username = username;
                 toEdit.id = id;
                 var data =  JsonConvert.SerializeObject(toEdit);
-                var result = Query.Put("http://iotdata.yhdf.fr/api/web/socials/"+toEdit.id,data);
+                result = Query.Put("http://iotdata.yhdf.fr/api/web/socials/"+toEdit.id,data);
+            }
+            if(result=="Error"){
+                //Code Alert
             }
             OnGet();
         }
