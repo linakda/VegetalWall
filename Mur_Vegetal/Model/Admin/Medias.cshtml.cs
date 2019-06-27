@@ -32,8 +32,8 @@ namespace Mur_Vegetal.Pages{
         public void OnPost(){
             var name = Request.Form["name"];
             var video = Request.Form["video"];
-            var startdate = ((DateTimeOffset)DateTime.Parse(Request.Form["startdate"])).ToUnixTimeSeconds();
-            var enddate = ((DateTimeOffset)DateTime.Parse(Request.Form["enddate"])).ToUnixTimeSeconds();
+            var startdate = (((DateTimeOffset)DateTime.Parse(Request.Form["startdate"])).Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
+            var enddate = (((DateTimeOffset)DateTime.Parse(Request.Form["enddate"])).Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
             var submit = Request.Form["submit"];
             var id = Request.Form["id"];
             if(submit == "add"){
