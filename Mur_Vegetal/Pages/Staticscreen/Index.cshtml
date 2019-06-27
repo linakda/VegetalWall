@@ -45,7 +45,7 @@
                           <div class="air-text">Qualité de l'air :</div>
                         </div>
                         <div class="chart @e.id"> 
-                        <script>graph.lineChart(@e.id, tab_temp, 0);</script>
+                        <script>graph.lineChart("@e.id", tab_temp, 0);</script>
                         </div>
                     }
                     @if(e.idSensorType==1){
@@ -54,7 +54,7 @@
                         <div class="temp-text">Température :</div>
                       </div>
                       <div class="chart @e.id"> 
-                        <script>graph.lineChart(@e.id, tab_temp, 0);</script>
+                        <script>graph.lineChart("@e.id", tab_temp, 0);</script>
                       </div>
                     }
                     @if(e.idSensorType==2){
@@ -63,7 +63,7 @@
                           <div class="pression-text">Pression : </div>
                         </div>
                         <div class="chart @e.id"> 
-                          <script>graph.lineChart(@e.id, tab_temp, 1);</script>
+                          <script>graph.columnChart("@e.id", tab_temp);</script>
                         </div>
                     }
                     @if(e.idSensorType==3){
@@ -72,7 +72,7 @@
                           <div class="hydro-text">Humidité :</div>
                         </div>
                         <div class="chart @e.id"> 
-                          <script>graph.lineChart(@e.id, tab_temp, 1);</script>
+                          <script>graph.columnChart("@e.id", tab_temp);</script>
                         </div>
                     }
                     @if(e.idSensorType==4){
@@ -81,7 +81,7 @@
                           <div class="pr-text">Pression ruche :</div>
                         </div>
                         <div class="chart @e.id"> 
-                          <script>graph.lineChart(@e.id, tab_temp, 1);</script>
+                          <script>graph.columnChart("@e.id", tab_temp);</script>
                         </div>
                     }
                     @if(e.idSensorType==5){
@@ -99,7 +99,7 @@
                           <div class="tr-text">Température ruche : </div>
                         </div>
                         <div class="chart @e.id"> 
-                          <script>graph.lineChart(@e.id, tab_temp, 1);</script>
+                          <script>graph.columnChart("@e.id", tab_temp);</script>
                         </div>
                     }
                     </div>
