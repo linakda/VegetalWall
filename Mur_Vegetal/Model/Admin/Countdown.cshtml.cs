@@ -15,7 +15,7 @@ namespace Mur_Vegetal.Pages
             public int beginningDateEvent { get; set; }
             public double endingDateCountdown { get; set; }
             public int position { get; set; }
-            public object image { get; set; }
+            public string image { get; set; }
             public string id { get; set; }
         }
 
@@ -75,7 +75,6 @@ namespace Mur_Vegetal.Pages
                 else {
                     toEdit.image = "";
                 }
-                Console.Write(toEdit.endingDateCountdown);
                 toEdit.text = text;
                 toEdit.name = name;
                 toEdit.beginningDateEvent = Convert.ToInt32(startdate);
