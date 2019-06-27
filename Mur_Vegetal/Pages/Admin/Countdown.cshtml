@@ -64,7 +64,12 @@
       @if (1==1){//condition de verification données
         <form method="post" class="countdown-param">
         <div>
-          <legend class="coutndown-name">@e.name</legend>
+          @if (!String.IsNullOrEmpty(e.name)){
+                <legend class="coutndown-name">@e.name</legend>
+              }
+              else {
+                <legend class="coutndown-name">Compte à rebours</legend>
+              }
           <div class="param-name">
               <label class="param-name">Nom du compte à rebours : </label>
               @if (!String.IsNullOrEmpty(e.name)){

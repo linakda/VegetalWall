@@ -56,7 +56,12 @@
       @if (1==1){//condition de verification données
           <form method="post" class="medias-param">
             <div>
-            <legend class="medias-name">@e.name</legend>
+              @if (!String.IsNullOrEmpty(e.name)){
+                <legend class="medias-name">@e.name</legend>
+              }
+              else {
+                <legend class="medias-name">Médias</legend>
+              }
             <div class="param-name">
                 <label class="param-name">Nom de la photo : </label>
                 @if (!String.IsNullOrEmpty(e.name)){
@@ -67,14 +72,14 @@
               }
             </div>
 
-            @if (@e.image != "" && @e.image != null){
+            @if (!String.IsNullOrEmpty(@e.image)){
               <div class="param-img">
                 <label class="param-img">Image : </label>
                 <img class="param-img" src="data:image/png;base64,@e.image"><span><img src="data:image/png;base64,@e.image" alt="@e.name"></span>
                 <input type="hidden" name="image" value="@e.image">
               </div>
             }
-            else if (@e.video !="" && @e.video != null){
+            else if (!String.IsNullOrEmpty(@e.video)){
               <div class="param-video">
                 <label class="param-video">Video : </label>
                 <input type="text" name="video" class="param-video" placeholder="Ex: https://www.youtube.com/watch?v=WIIAbl7pBnI" value="@e.video" readonly>
