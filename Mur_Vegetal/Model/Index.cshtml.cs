@@ -54,110 +54,66 @@ namespace Mur_Vegetal.Pages
             public object image { get; set; }
             public string id { get; set; }
         }
-        public string _ResultViewCountdown {get; private set;}
-        public string _ResultViewNews { get; private set; }
-        public string _ResultViewWall {get; private set;}
-        public string _ResultViewSocialnetworks {get; private set;}
+        public bool IsErrorNews { get; private set; }
+        public bool IsErrorSocial { get; private set; }
+        public bool IsErrorWall { get; private set; }
+        public bool IsErrorCountdown { get; private set; }
+
+        public List <Social> ResultSocialnetworks {get; private set;}
+        public CountDown ResultLastCountdown {get; private set;}
+        public List <Sensors> ResultWall {get; private set;}
+        public List <News> ResultNews { get; private set; }
+        public List <CountDown> ResultCountdown {get; private set;}
 
         public void OnGet()
         {
             var currentTimeStamp = (Int32)(DateTime.Now.Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
 
-            //Call request
-            var requestWall = Query.Get("http://iotdata.yhdf.fr/api/web/sensors");
-            if(requestWall == "Error" || String.IsNullOrEmpty(requestWall)){
-                _ResultViewWall = "<div>Error API</div>";
+            var requestSocials = Query.Get("http://iotdata.yhdf.fr/api/web/socials");
+            if(requestSocials == "Error" || String.IsNullOrEmpty(requestSocials)){
+                IsErrorSocial = true;
             }
-            else {
-                var resultWall = JsonConvert.DeserializeObject<List<Sensors>>(requestWall);
-                _ResultViewWall = "";
-                foreach(var e in resultWall){
-                    if(e.idSensorType==0){
-                        _ResultViewWall += "<div class=\"wall-info\"> <div class=\"wall-icon\"><a href=\"~/Wall\"> <img src=\"/images/icones/air.png\"/> </a></div> <div class=\"wall-text\"><a href=\"~/Wall\"> Qualité d'air : </a></div> </div> ";
-                    }
-                    if(e.idSensorType==1){
-                        _ResultViewWall += "<div class=\"wall-info\"> <div class=\"wall-icon\"><a href=\"~/Wall\"> <img src=\"/images/icones/thermo.png\"/> </a></div> <div class=\"wall-text\"><a href=\"~/Wall\"> Température : </a></div> </div> ";
-                    }
-                    if(e.idSensorType==2){
-                        _ResultViewWall += "<div class=\"wall-info\"> <div class=\"wall-icon\"><a href=\"~/Wall\"> <img src=\"/images/icones/pression.png\"/> </a></div> <div class=\"wall-text\"><a href=\"~/Wall\"> Commande pompe : </a></div> </div> ";
-                    }
-                    if(e.idSensorType==3){
-                        _ResultViewWall += "<div class=\"wall-info\"> <div class=\"wall-icon\"><a href=\"~/Wall\"> <img src=\"/images/icones/hydro.png\"/> </a></div> <div class=\"wall-text\"><a href=\"~/Wall\"> Humidité : </a></div> </div> ";
-                    }
-                    if(e.idSensorType==4){
-                        _ResultViewWall += "<div class=\"wall-info\"> <div class=\"wall-icon\"><a href=\"~/Wall\"> <img src=\"/images/icones/pression_ruche.png\"/> </a></div> <div class=\"wall-text\"><a href=\"~/Wall\"> Pression ruche : </a></div> </div> ";
-                    }
-                    if(e.idSensorType==5){
-                        _ResultViewWall += "<div class=\"wall-info\"> <div class=\"wall-icon\"><a href=\"~/Wall\"> <img src=\"/images/icones/mouvement.png\"/> </a></div> <div class=\"wall-text\"><a href=\"~/Wall\"> Flux entrant/sortant : </a></div> </div> ";
-                    }
-                    if(e.idSensorType==6){
-                        _ResultViewWall += "<div class=\"wall-info\"> <div class=\"wall-icon\"><a href=\"~/Wall\"> <img src=\"/images/icones/thermo_ruche.png\"/> </a></div> <div class=\"wall-text\"><a href=\"~/Wall\"> Température ruche :  </a></div> </div> ";
-                    }
-                }
+            else{
+                IsErrorSocial = false;
+                ResultSocialnetworks = JsonConvert.DeserializeObject<List<Social>>(requestSocials); 
             }
-
-            var requestSocial = Query.Get("http://iotdata.yhdf.fr/api/web/socials");
-            if(requestSocial == "Error" || String.IsNullOrEmpty(requestSocial)){
-                _ResultViewSocialnetworks = "<div>Error API</div>";
-            }
-            else {
-                _ResultViewSocialnetworks = "";
-                var resultSocial = JsonConvert.DeserializeObject<List<Social>>(requestSocial);
-                foreach(var e in resultSocial){
-                    if(e.pageWidget == "accueil"){
-                        _ResultViewSocialnetworks += "<div class=\"socialnetworks-box box\"> <a href=\"~/Socialnetworks\"> <script src=\"https://snapwidget.com/js/snapwidget.js\"></script> <iframe src=\" " + e.widget + " \" class=\"snapwidget-widget\"></iframe> </a></div>";
-                    }
-                }
-            }
-
-
-            var requestCountdown = Query.Get("http://iotdata.yhdf.fr/api/web/countdowns");
-            if(requestCountdown=="Error" || String.IsNullOrEmpty(requestCountdown)){
-                _ResultViewCountdown = "<div>Error Api</div>";
-            }
-            else {
-                var resultCountdown = JsonConvert.DeserializeObject<List<CountDown>>(requestCountdown);
-                _ResultViewCountdown = "";
-                CountDown lastCountdown = resultCountdown[0];
-                foreach(var e in resultCountdown){
-                    Console.Write(lastCountdown.endingDateEvent);
-                    Console.Write(e.endingDateEvent);
-                    if(lastCountdown.endingDateEvent >= e.endingDateEvent){
-                        lastCountdown = e;
-                    }
-                    if (lastCountdown.beginningDateEvent <= currentTimeStamp && lastCountdown.endingDateEvent >= currentTimeStamp){
-                        _ResultViewCountdown = "<div class=\"countdown-box \"> <a href=\"~/Countdown\"> <div class=\"countdown-image box\"> <img src=\" data:image/png;base64, " + lastCountdown.image + "  \"/> </div> <div class=\"countdown-text box \"> " + lastCountdown.text + " <div id=\"countdown-display\"> </div> <script> countDown(\" " + lastCountdown.endingDateCountdown + "  \",\"countdown-display\"); </script> </div> </a> </div> ";
-                    }
-                    else {
-                    }            
-                }
-            }
-            
 
             var requestNews = Query.Get("http://iotdata.yhdf.fr/api/web/events");
-            if(requestNews=="Error" || String.IsNullOrEmpty(requestNews)){
-                _ResultViewNews = "<div>Error Api</div>";
+            if(requestNews == "Error" || String.IsNullOrEmpty(requestNews)){
+                IsErrorNews = true;
             }
-            else {
-                _ResultViewNews = "";
-                var resultNew = JsonConvert.DeserializeObject<List<News>>(requestNews);            
-                News lastNews = resultNew[0];
-                foreach(var e in resultNew){
-                    if(lastNews.beginningDate <= e.beginningDate){
-                        lastNews = e;                    
-                    }
-                    if (lastNews.beginningDate <= currentTimeStamp && lastNews.endingDate >= currentTimeStamp){
-                        if(String.IsNullOrEmpty(lastNews.text)){
-                            _ResultViewNews = "<a href=\"~/News\"><div class=\"news-box\"> <div class=\"news-image box\"> <img src=\"data:image/png;base64, " +lastNews.eventImage + " \" alt=\" " + lastNews.name + " \"> </div></div></a>";
-                        }
-                        else {
-                            _ResultViewNews = "<a href=\"~/News\"><div class=\"news-box\"> <div class=\"news-image box\"> <img src=\"data:image/png;base64, " +lastNews.eventImage + " \" alt=\" " + lastNews.name + " \"> </div><div class=\"news-text box\"> "+lastNews.text +"  </div> </div></a> ";
-                        }
-                    }
-                    else {
-                    }
-                }
+            else{
+                IsErrorNews = false;
+                ResultNews = JsonConvert.DeserializeObject<List<News>>(requestNews); 
             }
+
+            var requestCountdown = Query.Get("http://iotdata.yhdf.fr/api/web/countdowns");
+            if(requestCountdown == "Error" || String.IsNullOrEmpty(requestCountdown)){
+                IsErrorCountdown = true;
+            }
+            else{
+                IsErrorCountdown = false;
+                ResultCountdown = JsonConvert.DeserializeObject<List<CountDown>>(requestCountdown); 
+                    CountDown lastCountdown;
+                    foreach(var e in ResultCountdown){
+                        lastCountdown = e;
+                        if(lastCountdown.endingDateEvent > e.endingDateCountdown){
+                            lastCountdown = e;
+                        }
+                        if (lastCountdown.beginningDateEvent <= currentTimeStamp && lastCountdown.endingDateEvent >= currentTimeStamp){
+                            ResultLastCountdown = lastCountdown;
+                        }        
+                    }
+            }
+
+            var requestWall = Query.Get("http://iotdata.yhdf.fr/api/web/sensors");
+            if(requestWall == "Error" || String.IsNullOrEmpty(requestWall)){
+                IsErrorWall = true;
+            }
+            else{
+                IsErrorWall = false;
+                ResultWall = JsonConvert.DeserializeObject<List<Sensors>>(requestWall); 
+            }            
 
         }
     }
