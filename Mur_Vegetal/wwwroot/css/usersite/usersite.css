@@ -45,10 +45,8 @@ body {
     padding: 0;
     font-family: Mukta-Regular, sans-serif;
     background-color: #EFEDEC;
-    background-image: url('~/../../../images/backgrounds/fond3.jpg');
-    color: #629460;
+    background-image: linear-gradient(to right top, #b8b5b3, #c2bfbd, #cccac8, #d7d4d2, #e1dfdd, #e1dfdd, #e1dfdd, #e1dfdd, #d7d4d2, #cccac8, #c2bfbd, #b8b5b3);
 }
-
 .main-body {
     display: flex;
 }
