@@ -42,7 +42,7 @@ namespace Mur_Vegetal.Pages
             var enddate = ((DateTimeOffset)DateTime.Parse(Request.Form["enddate"])).ToUnixTimeSeconds();
             var countdowndate = 0;//transform string to date
             var countdowntime = 0;//transform string to time
-            var totalcountdown = 0 //mix date + time
+            var totalcountdown = 0; //mix date + time
             var submit = Request.Form["submit"];
             var id = Request.Form["id"];
             if(submit == "add"){
