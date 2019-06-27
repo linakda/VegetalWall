@@ -38,10 +38,14 @@ namespace Mur_Vegetal.Pages
         public void OnPost(){
             var name = Request.Form["name"];
             var text = Request.Form["text"];
-            var startdate = (((DateTimeOffset)DateTime.Parse(Request.Form["startdate"])).Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
-            var enddate = (((DateTimeOffset)DateTime.Parse(Request.Form["enddate"])).Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
+            var startdate = (Convert.ToDateTime(Request.Form["startdate"]).Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
+            Console.Write("Date debut : " + startdate);
+            var enddate = ((DateTime.Parse(Request.Form["enddate"])).Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
+            Console.Write("Date fin : " + enddate);
             var countdowndate = (((DateTimeOffset)DateTime.Parse(Request.Form["countdowndate"])).Subtract(new DateTime(1970, 1, 1))).TotalSeconds;//transform string to date
+            Console.Write("Date CAR : " + countdowndate);
             var countdowntime = TimeSpan.Parse(Request.Form["countdowntime"]).TotalSeconds;//transform string to time
+            Console.Write("Temps CAR : " + countdowntime);
             var totalcountdown = countdowndate + countdowntime; //mix date + time
             var submit = Request.Form["submit"];
             var id = Request.Form["id"];
